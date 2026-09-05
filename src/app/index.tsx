@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     flexDirection: 'row',
-    backgroundColor: '#1f1147',
+    backgroundColor: '#090a1c',
   },
   safeArea: {
     flex: 1,
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: Spacing.five,
     paddingVertical: Spacing.five,
-    backgroundColor: '#1f1147',
+    backgroundColor: '#090a1c',
     // borderRadius: 28,
     // borderWidth: 1,
     // borderColor: '#4B3A78',

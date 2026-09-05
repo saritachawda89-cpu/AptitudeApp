@@ -182,7 +182,7 @@ export default function PracticeScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#1f1147',
+        backgroundColor: '#090a1c',
         alignItems: 'center',
     },
     screenShell: {
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: Spacing.four,
         paddingTop: Spacing.five,
         paddingBottom: Spacing.five,
-        backgroundColor: '#1f1147',
+        backgroundColor: '#090a1c',
     },
     headerCard: {
         flexDirection: 'row',
@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#4B3A78',
         borderRadius: 14,
-        backgroundColor: '#2A1D49',
+        backgroundColor: '#121230',
     },
     selectedOption: {
         borderColor: '#F472B6',
@@ -275,7 +275,7 @@ const styles = StyleSheet.create({
         marginTop: Spacing.three,
         borderWidth: 1,
         borderColor: '#4B3A78',
-        backgroundColor: '#2A1D49',
+        backgroundColor: '#121230',
         borderRadius: 16,
         padding: Spacing.three,
     },

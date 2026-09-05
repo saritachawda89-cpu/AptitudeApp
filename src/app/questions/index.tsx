@@ -38,9 +38,9 @@ export default function QuestionsScreen() {
 
                 <View style={styles.headerCard}>
                     <View style={styles.titleWrap}>
-                        <ThemedText type="small" style={styles.labelText}>
+                        {/* <ThemedText type="small" style={styles.labelText}>
                             Topic
-                        </ThemedText>
+                        </ThemedText> */}
                         <ThemedText type="title" style={styles.screenTitle}>
                             {selectedTopic.name}
                         </ThemedText>
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        backgroundColor: '#1f1147',
+        backgroundColor: '#090a1c',
     },
     screenShell: {
         width: '100%',
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: Spacing.four,
         paddingTop: Spacing.four,
         paddingBottom: Spacing.five,
-        backgroundColor: '#1f1147',
+        backgroundColor: '#090a1c',
     },
     backButton: {
         marginBottom: Spacing.two,
@@ -126,21 +126,21 @@ const styles = StyleSheet.create({
         fontWeight: '600',
     },
     headerCard: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        backgroundColor: '#24163F',
-        borderRadius: 22,
-        paddingHorizontal: Spacing.three,
+        //     flexDirection: 'row',
+        //     alignItems: 'center',
+        //     justifyContent: 'space-between',
+        //     backgroundColor: '#24163F',
+        //     borderRadius: 22,
+        //     paddingHorizontal: Spacing.three,
         paddingVertical: Spacing.three,
-        marginBottom: Spacing.three,
-        borderWidth: 1,
-        borderColor: '#4B3A78',
-        shadowColor: '#120A25',
-        shadowOpacity: 0.2,
-        shadowRadius: 12,
-        shadowOffset: { width: 0, height: 4 },
-        elevation: 3,
+        //     marginBottom: Spacing.three,
+        //     borderWidth: 1,
+        //     borderColor: '#4B3A78',
+        //     shadowColor: '#120A25',
+        //     shadowOpacity: 0.2,
+        //     shadowRadius: 12,
+        //     shadowOffset: { width: 0, height: 4 },
+        //     elevation: 3,
     },
     titleWrap: {
         flex: 1,
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     progressPanel: {
-        backgroundColor: '#24163F',
+        // backgroundColor: '#24163F',
         borderRadius: 18,
         paddingHorizontal: Spacing.three,
         paddingVertical: Spacing.three,
@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
     questionTile: {
         width: '30%',
         aspectRatio: 1,
-        backgroundColor: '#2A1D49',
+        backgroundColor: '#121230',
         borderWidth: 1,
         borderColor: '#4B3A78',
         borderRadius: 18,
