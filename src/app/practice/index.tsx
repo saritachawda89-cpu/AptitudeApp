@@ -1,4 +1,5 @@
 import { router, useLocalSearchParams } from 'expo-router';
+import { ArrowLeft, CheckCircle2, ChevronRight, RotateCcw } from 'lucide-react-native';
 import { useEffect, useMemo, useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 
@@ -67,9 +68,11 @@ export default function PracticeScreen() {
         <ThemedView style={styles.container}>
             <ThemedView style={styles.screenShell}>
                 <View style={styles.headerCard}>
-                    <ThemedText type="small" style={styles.topicLabel}>
-                        {selectedTopic.name}
-                    </ThemedText>
+                    <View style={styles.topicBadge}>
+                        <ThemedText type="small" style={styles.topicLabel}>
+                            {selectedTopic.name}
+                        </ThemedText>
+                    </View>
                     <View style={styles.counterChip}>
                         <ThemedText type="smallBold" style={styles.counterText}>
                             {currentIndex + 1}/{questions.length}
@@ -120,9 +123,16 @@ export default function PracticeScreen() {
 
                     {showFeedback && (
                         <View style={styles.feedbackBox}>
-                            <ThemedText type="default" style={isCorrect ? styles.successText : styles.errorText}>
-                                {isCorrect ? 'Correct answer!' : `Wrong answer. Correct option is ${currentQuestion.rightOption}.`}
-                            </ThemedText>
+                            <View style={styles.feedbackHeader}>
+                                {isCorrect ? (
+                                    <CheckCircle2 size={16} color="#5EEAD4" />
+                                ) : (
+                                    <RotateCcw size={16} color="#FF6B6B" />
+                                )}
+                                <ThemedText type="default" style={isCorrect ? styles.successText : styles.errorText}>
+                                    {isCorrect ? 'Correct answer!' : `Wrong answer. Correct option is ${currentQuestion.rightOption}.`}
+                                </ThemedText>
+                            </View>
                             <ThemedText type="small" style={styles.explanationText}>
                                 {currentQuestion.explanation}
                             </ThemedText>
@@ -134,6 +144,7 @@ export default function PracticeScreen() {
                     <Pressable
                         onPress={() => router.push({ pathname: '/questions', params: { topic: selectedTopic.id } })}
                         style={styles.secondaryButton}>
+                        <ArrowLeft size={16} color="#F0F4F8" />
                         <ThemedText type="default" style={styles.secondaryText}>
                             Questions
                         </ThemedText>
@@ -204,6 +215,9 @@ const styles = StyleSheet.create({
         paddingVertical: Spacing.two,
         borderWidth: 1,
         borderColor: '#4B3A78',
+    },
+    topicBadge: {
+        flex: 1,
     },
     topicLabel: {
         color: '#F5EEFF',
@@ -279,15 +293,19 @@ const styles = StyleSheet.create({
         borderRadius: 16,
         padding: Spacing.three,
     },
+    feedbackHeader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 8,
+        marginBottom: Spacing.one,
+    },
     successText: {
         color: '#66E3B5',
         fontWeight: '700',
-        marginBottom: Spacing.one,
     },
     errorText: {
         color: '#FF7A9D',
         fontWeight: '700',
-        marginBottom: Spacing.one,
     },
     explanationText: {
         color: '#D0C3F8',
@@ -307,6 +325,9 @@ const styles = StyleSheet.create({
         borderRadius: 14,
         paddingVertical: Spacing.two,
         alignItems: 'center',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        gap: 6,
     },
     primaryButton: {
         flex: 1,
@@ -314,6 +335,9 @@ const styles = StyleSheet.create({
         borderRadius: 14,
         paddingVertical: Spacing.two,
         alignItems: 'center',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        gap: 6,
         shadowColor: '#148363',
         shadowOpacity: 0.2,
         shadowRadius: 8,

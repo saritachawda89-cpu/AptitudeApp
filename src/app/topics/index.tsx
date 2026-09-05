@@ -1,4 +1,5 @@
 import { router } from 'expo-router';
+import { ArrowRight, Coins, Sparkles } from 'lucide-react-native';
 import { FlatList, Pressable, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -23,10 +24,13 @@ export default function TopicsScreen() {
         <ThemedView style={styles.container}>
             <SafeAreaView style={styles.safeArea}>
                 <View style={styles.headerCard}>
-                    <ThemedText type="subtitle" style={styles.title}>
-                        Choose a topic
-                    </ThemedText>
+                    <View style={styles.titleWrap}>
+                        <ThemedText type="subtitle" style={styles.title}>
+                            Choose a topic
+                        </ThemedText>
+                    </View>
                     <View style={styles.coinBadge}>
+                        <Coins size={16} color="#0F111A" />
                         <ThemedText type="smallBold" style={styles.coinText}>
                             {parentData.coins}
                         </ThemedText>
@@ -55,17 +59,20 @@ export default function TopicsScreen() {
                                     pressed && styles.topicItemPressed,
                                 ]}>
                                 <View style={styles.topicRow}>
-                                    <View>
-                                        <ThemedText type="default" style={styles.topicName}>
-                                            {item.name}
-                                        </ThemedText>
-                                        <ThemedText type="small" style={styles.topicCount}>
-                                            {totalQuestions} questions
-                                        </ThemedText>
+                                    <View style={styles.topicMeta}>
+                                        <View style={styles.topicIconWrap}>
+                                            <Sparkles size={16} color="#5EEAD4" />
+                                        </View>
+                                        <View>
+                                            <ThemedText type="default" style={styles.topicName}>
+                                                {item.name}
+                                            </ThemedText>
+                                            <ThemedText type="small" style={styles.topicCount}>
+                                                {totalQuestions} questions
+                                            </ThemedText>
+                                        </View>
                                     </View>
-                                    <ThemedText type="smallBold" style={styles.chevron}>
-                                        →
-                                    </ThemedText>
+                                    <ArrowRight size={18} color="#5EEAD4" />
                                 </View>
                             </Pressable>
                         );
@@ -95,18 +102,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        // backgroundColor: '#24163F',
-        // borderRadius: 22,
-        // paddingHorizontal: Spacing.three,
-        // paddingVertical: Spacing.three,
         marginBottom: Spacing.three,
-        // borderWidth: 1,
-        // borderColor: '#4B3A78',
-        // shadowColor: '#120A25',
-        // shadowOpacity: 0.25,
-        // shadowRadius: 10,
-        // shadowOffset: { width: 0, height: 6 },
-        // elevation: 4,
+    },
+    titleWrap: {
+        flex: 1,
     },
     title: {
         marginBottom: 0,
@@ -121,6 +120,8 @@ const styles = StyleSheet.create({
         paddingVertical: Spacing.one,
         borderRadius: 999,
         alignItems: 'center',
+        flexDirection: 'row',
+        gap: 4,
         backgroundColor: '#F8D66C',
         borderWidth: 1,
         borderColor: '#F7C84C',
@@ -149,6 +150,21 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
+    },
+    topicMeta: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: Spacing.two,
+    },
+    topicIconWrap: {
+        width: 28,
+        height: 28,
+        borderRadius: 10,
+        backgroundColor: 'rgba(94, 234, 212, 0.12)',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderWidth: 1,
+        borderColor: 'rgba(94, 234, 212, 0.3)',
     },
     topicName: {
         fontSize: 18,

@@ -1,4 +1,5 @@
 import { router, useLocalSearchParams } from 'expo-router';
+import { ArrowLeft, CheckCheck, CircleDashed } from 'lucide-react-native';
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import { ThemedText } from '@/components/themed-text';
@@ -30,21 +31,18 @@ export default function QuestionsScreen() {
     return (
         <ThemedView style={styles.container}>
             <ThemedView style={styles.screenShell}>
-                <Pressable onPress={() => router.push('/topics')} style={styles.backButton}>
-                    <ThemedText type="default" style={styles.backText}>
-                        Back
-                    </ThemedText>
-                </Pressable>
+                <View style={styles.topBar}>
+                    <Pressable onPress={() => router.push('/topics')} style={styles.backButton}>
+                        <ArrowLeft size={16} color="#F0F4F8" />
+                    </Pressable>
 
-                <View style={styles.headerCard}>
                     <View style={styles.titleWrap}>
-                        {/* <ThemedText type="small" style={styles.labelText}>
-                            Topic
-                        </ThemedText> */}
                         <ThemedText type="title" style={styles.screenTitle}>
                             {selectedTopic.name}
                         </ThemedText>
                     </View>
+
+                    <View style={styles.headerSpacer} />
                 </View>
 
                 <View style={styles.progressPanel}>
@@ -87,7 +85,11 @@ export default function QuestionsScreen() {
                                 <ThemedText type="smallBold" style={styles.tileNumber}>
                                     {index + 1}
                                 </ThemedText>
-                                {isDone && <ThemedText style={styles.checkMark}>✓</ThemedText>}
+                                {isDone ? (
+                                    <CheckCheck size={12} color="#34D399" style={styles.checkMark} />
+                                ) : (
+                                    <CircleDashed size={12} color="#8E9BB0" style={styles.checkMark} />
+                                )}
                             </Pressable>
                         );
                     })}
@@ -111,11 +113,17 @@ const styles = StyleSheet.create({
         paddingBottom: Spacing.five,
         backgroundColor: '#090a1c',
     },
+    topBar: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginBottom: Spacing.four,
+    },
     backButton: {
-        marginBottom: Spacing.two,
-        alignSelf: 'flex-start',
-        paddingVertical: Spacing.one,
-        paddingHorizontal: Spacing.two,
+        width: 40,
+        height: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
         borderRadius: 999,
         backgroundColor: '#24163F',
         borderWidth: 1,
@@ -125,38 +133,21 @@ const styles = StyleSheet.create({
         color: '#F5EEFF',
         fontWeight: '600',
     },
-    headerCard: {
-        //     flexDirection: 'row',
-        //     alignItems: 'center',
-        //     justifyContent: 'space-between',
-        //     backgroundColor: '#24163F',
-        //     borderRadius: 22,
-        //     paddingHorizontal: Spacing.three,
-        paddingVertical: Spacing.three,
-        //     marginBottom: Spacing.three,
-        //     borderWidth: 1,
-        //     borderColor: '#4B3A78',
-        //     shadowColor: '#120A25',
-        //     shadowOpacity: 0.2,
-        //     shadowRadius: 12,
-        //     shadowOffset: { width: 0, height: 4 },
-        //     elevation: 3,
-    },
     titleWrap: {
         flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
-    labelText: {
-        color: '#D0C3F8',
-        textTransform: 'uppercase',
-        letterSpacing: 1,
-        marginBottom: 4,
+    headerSpacer: {
+        width: 40,
+        height: 40,
     },
     screenTitle: {
-        fontSize: 30,
+        fontSize: 24,
         lineHeight: 38,
         fontWeight: '700',
         color: '#F5EEFF',
-        flex: 1,
+        textAlign: 'center',
     },
     progressPanel: {
         // backgroundColor: '#24163F',
