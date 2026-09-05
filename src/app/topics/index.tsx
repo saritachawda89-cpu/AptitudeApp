@@ -26,11 +26,11 @@ export default function TopicsScreen() {
                     <ThemedText type="subtitle" style={styles.title}>
                         Choose a topic
                     </ThemedText>
-                    <ThemedView style={styles.countChip}>
-                        <ThemedText type="smallBold" style={styles.countText}>
-                            {parentData.topics.length} topics
+                    <View style={styles.coinBadge}>
+                        <ThemedText type="smallBold" style={styles.coinText}>
+                            {parentData.coins}
                         </ThemedText>
-                    </ThemedView>
+                    </View>
                 </View>
 
                 <FlatList
@@ -95,33 +95,38 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        backgroundColor: '#24163F',
-        borderRadius: 22,
-        paddingHorizontal: Spacing.three,
-        paddingVertical: Spacing.three,
+        // backgroundColor: '#24163F',
+        // borderRadius: 22,
+        // paddingHorizontal: Spacing.three,
+        // paddingVertical: Spacing.three,
         marginBottom: Spacing.three,
-        borderWidth: 1,
-        borderColor: '#4B3A78',
-        shadowColor: '#120A25',
-        shadowOpacity: 0.25,
-        shadowRadius: 10,
-        shadowOffset: { width: 0, height: 6 },
-        elevation: 4,
+        // borderWidth: 1,
+        // borderColor: '#4B3A78',
+        // shadowColor: '#120A25',
+        // shadowOpacity: 0.25,
+        // shadowRadius: 10,
+        // shadowOffset: { width: 0, height: 6 },
+        // elevation: 4,
     },
     title: {
         marginBottom: 0,
-        color: '#F5EEFF',
+        color: '#37e9bb',
+        fontSize: 24,
+        fontWeight: '800',
+        lineHeight: 32,
     },
-    countChip: {
-        backgroundColor: '#2D1D50',
-        borderRadius: 999,
+    coinBadge: {
+        minWidth: 54,
         paddingHorizontal: Spacing.two,
         paddingVertical: Spacing.one,
+        borderRadius: 999,
+        alignItems: 'center',
+        backgroundColor: '#F8D66C',
         borderWidth: 1,
-        borderColor: '#6048B6',
+        borderColor: '#F7C84C',
     },
-    countText: {
-        color: '#E7DDFF',
+    coinText: {
+        color: '#4B2D00',
     },
     listContent: {
         gap: Spacing.two,

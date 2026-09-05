@@ -32,7 +32,7 @@ export default function QuestionsScreen() {
             <ThemedView style={styles.screenShell}>
                 <Pressable onPress={() => router.push('/topics')} style={styles.backButton}>
                     <ThemedText type="default" style={styles.backText}>
-                        ← Back
+                        Back
                     </ThemedText>
                 </Pressable>
 
@@ -43,11 +43,6 @@ export default function QuestionsScreen() {
                         </ThemedText>
                         <ThemedText type="title" style={styles.screenTitle}>
                             {selectedTopic.name}
-                        </ThemedText>
-                    </View>
-                    <View style={styles.coinBadge}>
-                        <ThemedText type="smallBold" style={styles.coinText}>
-                            {parentData.coins}
                         </ThemedText>
                     </View>
                 </View>
@@ -162,19 +157,6 @@ const styles = StyleSheet.create({
         fontWeight: '700',
         color: '#F5EEFF',
         flex: 1,
-    },
-    coinBadge: {
-        minWidth: 56,
-        paddingHorizontal: Spacing.two,
-        paddingVertical: Spacing.one,
-        borderRadius: 999,
-        alignItems: 'center',
-        backgroundColor: '#F8D66C',
-        borderWidth: 1,
-        borderColor: '#F7C84C',
-    },
-    coinText: {
-        color: '#4B2D00',
     },
     progressPanel: {
         backgroundColor: '#24163F',

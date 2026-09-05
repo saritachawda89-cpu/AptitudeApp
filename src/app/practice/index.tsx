@@ -78,7 +78,7 @@ export default function PracticeScreen() {
                 </View>
 
                 <ThemedView style={styles.questionCard}>
-                    <ThemedText type="title" style={styles.questionHeading}>
+                    <ThemedText type="subtitle" style={styles.questionHeading}>
                         Question {currentIndex + 1}
                     </ThemedText>
 
@@ -237,6 +237,7 @@ const styles = StyleSheet.create({
     questionHeading: {
         marginBottom: Spacing.two,
         color: '#F5EEFF',
+        textAlign: 'center',
     },
     questionText: {
         fontSize: 20,
