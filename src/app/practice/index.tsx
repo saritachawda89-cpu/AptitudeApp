@@ -11,6 +11,7 @@ import {
     numberSystemQuestions,
     parentData,
     percentageQuestions,
+    saveQuestionProgress,
     timeAndWorkQuestions,
     trainQuestions,
 } from '@/data/data';
@@ -29,6 +30,7 @@ const markQuestionCompleted = (topicId: string, questionId: string) => {
 
     if (question) {
         question.isCompleted = true;
+        void saveQuestionProgress();
     }
 };
 

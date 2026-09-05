@@ -1,3 +1,5 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 export const parentData = {
     topics: [
         { id: "numberSystemQuestions", name: "Number System" },
@@ -9,7 +11,6 @@ export const parentData = {
     coins: 50,
     unlockedTopics: ["numberSystemQuestions", "timeAndWorkQuestions", "trainQuestions", "averageQuestions"]
 };
-
 
 export const numberSystemQuestions = [
     {
@@ -720,3 +721,50 @@ export const percentageQuestions = [
         isCompleted: false
     }
 ];
+
+const STORAGE_KEY = 'aptitude-question-progress-v1';
+
+export const questionMap: Record<string, Array<{ id: string; isCompleted: boolean }>> = {
+    numberSystemQuestions,
+    timeAndWorkQuestions,
+    trainQuestions,
+    averageQuestions,
+    percentageQuestions,
+};
+
+export const hydrateQuestionProgress = async () => {
+    try {
+        const storedValue = await AsyncStorage.getItem(STORAGE_KEY);
+
+        if (!storedValue) {
+            return;
+        }
+
+        const parsedProgress = JSON.parse(storedValue) as Record<string, Record<string, boolean>>;
+
+        Object.entries(questionMap).forEach(([topicId, questions]) => {
+            const topicProgress = parsedProgress[topicId] ?? {};
+
+            questions.forEach((question) => {
+                question.isCompleted = Boolean(topicProgress[question.id]);
+            });
+        });
+    } catch (error) {
+        console.warn('Failed to hydrate question progress', error);
+    }
+};
+
+export const saveQuestionProgress = async () => {
+    try {
+        const payload = Object.fromEntries(
+            Object.entries(questionMap).map(([topicId, questions]) => [
+                topicId,
+                Object.fromEntries(questions.map((question) => [question.id, Boolean(question.isCompleted)])),
+            ])
+        );
+
+        await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+    } catch (error) {
+        console.warn('Failed to save question progress', error);
+    }
+};

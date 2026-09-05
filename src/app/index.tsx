@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     marginBottom: Spacing.three,
     flexWrap: 'wrap',
     justifyContent: 'center',
-    backgroundColor: '#24163F',
+    backgroundColor: '#090a1c',
   },
   badge: {
     backgroundColor: '#2A1D4D',
