@@ -67,12 +67,19 @@ export default function PracticeScreen() {
     return (
         <ThemedView style={styles.container}>
             <ThemedView style={styles.screenShell}>
-                <View style={styles.headerCard}>
-                    <View style={styles.topicBadge}>
-                        <ThemedText type="small" style={styles.topicLabel}>
+                <View style={styles.topBar}>
+                    <Pressable
+                        onPress={() => router.push({ pathname: '/questions', params: { topic: selectedTopic.id } })}
+                        style={styles.backButton}>
+                        <ArrowLeft size={16} color="#F0F4F8" />
+                    </Pressable>
+
+                    <View style={styles.titleWrap}>
+                        <ThemedText type="title" style={styles.screenTitle}>
                             {selectedTopic.name}
                         </ThemedText>
                     </View>
+
                     <View style={styles.counterChip}>
                         <ThemedText type="smallBold" style={styles.counterText}>
                             {currentIndex + 1}/{questions.length}
@@ -141,15 +148,6 @@ export default function PracticeScreen() {
                 </ThemedView>
 
                 <View style={styles.actionsRow}>
-                    <Pressable
-                        onPress={() => router.push({ pathname: '/questions', params: { topic: selectedTopic.id } })}
-                        style={styles.secondaryButton}>
-                        <ArrowLeft size={16} color="#F0F4F8" />
-                        <ThemedText type="default" style={styles.secondaryText}>
-                            Questions
-                        </ThemedText>
-                    </Pressable>
-
                     {showFeedback && (
                         <Pressable
                             onPress={() => {
@@ -200,31 +198,42 @@ const styles = StyleSheet.create({
         width: '100%',
         maxWidth: MaxContentWidth,
         paddingHorizontal: Spacing.four,
-        paddingTop: Spacing.five,
+        paddingTop: Spacing.four,
         paddingBottom: Spacing.five,
         backgroundColor: '#090a1c',
     },
-    headerCard: {
+    topBar: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
         marginBottom: Spacing.three,
+        // paddingVertical: Spacing.two,
+    },
+    backButton: {
+        width: 40,
+        height: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 999,
         backgroundColor: '#24163F',
-        borderRadius: 18,
-        paddingHorizontal: Spacing.three,
-        paddingVertical: Spacing.two,
         borderWidth: 1,
         borderColor: '#4B3A78',
     },
-    topicBadge: {
+    titleWrap: {
         flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
-    topicLabel: {
+    screenTitle: {
+        fontSize: 24,
+        lineHeight: 38,
+        fontWeight: '700',
         color: '#F5EEFF',
-        textTransform: 'uppercase',
-        letterSpacing: 1,
+        textAlign: 'center',
     },
     counterChip: {
+        minWidth: 52,
+        alignItems: 'center',
         backgroundColor: '#2D1D50',
         borderRadius: 999,
         paddingHorizontal: Spacing.two,
@@ -250,8 +259,9 @@ const styles = StyleSheet.create({
     },
     questionHeading: {
         marginBottom: Spacing.two,
-        color: '#F5EEFF',
+        color: '#29aa68',
         textAlign: 'center',
+        fontSize: 24,
     },
     questionText: {
         fontSize: 20,
@@ -312,25 +322,10 @@ const styles = StyleSheet.create({
         lineHeight: 22,
     },
     actionsRow: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
         marginTop: Spacing.four,
-        gap: Spacing.two,
-    },
-    secondaryButton: {
-        flex: 1,
-        backgroundColor: '#24163F',
-        borderWidth: 1,
-        borderColor: '#4B3A78',
-        borderRadius: 14,
-        paddingVertical: Spacing.two,
-        alignItems: 'center',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        gap: 6,
     },
     primaryButton: {
-        flex: 1,
+        width: '100%',
         backgroundColor: '#148363',
         borderRadius: 14,
         paddingVertical: Spacing.two,
