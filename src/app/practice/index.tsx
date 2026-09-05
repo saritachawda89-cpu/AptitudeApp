@@ -63,6 +63,8 @@ export default function PracticeScreen() {
     const currentIndex = questions.findIndex((question) => question.id === currentQuestion.id);
     const nextQuestion = questions[currentIndex + 1] ?? null;
     const isCorrect = selectedOption === currentQuestion.rightOption;
+    const isSubmitDisabled = !selectedOption && !showFeedback;
+    const submitButtonLabel = showFeedback ? (isCorrect ? (nextQuestion ? 'Next question' : 'Finish') : 'Retry') : 'Submit';
 
     return (
         <ThemedView style={styles.container}>
@@ -103,7 +105,7 @@ export default function PracticeScreen() {
 
                             const optionStyle = [
                                 styles.optionButton,
-                                isSelected && styles.selectedOption,
+                                !showFeedback && isSelected && styles.selectedOption,
                                 showFeedback && isRight && styles.correctOption,
                                 showFeedback && isSelected && !isRight && styles.wrongOption,
                             ];
@@ -117,7 +119,6 @@ export default function PracticeScreen() {
                                         }
 
                                         setSelectedOption(option.id);
-                                        setShowFeedback(true);
                                     }}
                                     style={optionStyle}>
                                     <ThemedText type="default" style={styles.optionLabel}>
@@ -148,40 +149,45 @@ export default function PracticeScreen() {
                 </ThemedView>
 
                 <View style={styles.actionsRow}>
-                    {showFeedback && (
-                        <Pressable
-                            onPress={() => {
-                                if (!isCorrect) {
-                                    setSelectedOption(null);
-                                    setShowFeedback(false);
-                                    return;
-                                }
+                    <Pressable
+                        disabled={isSubmitDisabled}
+                        onPress={() => {
+                            if (!showFeedback) {
+                                setShowFeedback(true);
+                                return;
+                            }
 
-                                markQuestionCompleted(selectedTopic.id, currentQuestion.id);
+                            if (!isCorrect) {
+                                setSelectedOption(null);
+                                setShowFeedback(false);
+                                return;
+                            }
 
-                                if (!nextQuestion) {
-                                    router.push({ pathname: '/questions', params: { topic: selectedTopic.id } });
-                                    return;
-                                }
+                            markQuestionCompleted(selectedTopic.id, currentQuestion.id);
 
-                                router.push({
-                                    pathname: '/practice',
-                                    params: {
-                                        topic: selectedTopic.id,
-                                        questionId: nextQuestion.id,
-                                    },
-                                });
-                            }}
-                            style={({ pressed }) => [
-                                styles.primaryButton,
-                                !isCorrect && styles.retryButton,
-                                pressed && styles.primaryButtonPressed,
-                            ]}>
-                            <ThemedText type="default" style={styles.primaryText}>
-                                {isCorrect ? (nextQuestion ? 'Next question' : 'Finish') : 'Retry'}
-                            </ThemedText>
-                        </Pressable>
-                    )}
+                            if (!nextQuestion) {
+                                router.push({ pathname: '/questions', params: { topic: selectedTopic.id } });
+                                return;
+                            }
+
+                            router.push({
+                                pathname: '/practice',
+                                params: {
+                                    topic: selectedTopic.id,
+                                    questionId: nextQuestion.id,
+                                },
+                            });
+                        }}
+                        style={({ pressed }) => [
+                            styles.primaryButton,
+                            !isCorrect && showFeedback && styles.retryButton,
+                            isSubmitDisabled && styles.disabledButton,
+                            pressed && !isSubmitDisabled && styles.primaryButtonPressed,
+                        ]}>
+                        <ThemedText type="default" style={styles.primaryText}>
+                            {submitButtonLabel}
+                        </ThemedText>
+                    </Pressable>
                 </View>
             </ThemedView>
         </ThemedView>
@@ -281,8 +287,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#121230',
     },
     selectedOption: {
-        borderColor: '#F472B6',
-        backgroundColor: '#3A255F',
+        borderColor: '#7C6F9E',
+        backgroundColor: '#1D1C35',
     },
     correctOption: {
         borderColor: '#66E3B5',
@@ -346,6 +352,12 @@ const styles = StyleSheet.create({
         shadowRadius: 10,
         shadowOffset: { width: 0, height: 6 },
         elevation: 6,
+    },
+    disabledButton: {
+        backgroundColor: '#2D1D50',
+        opacity: 0.65,
+        shadowOpacity: 0,
+        elevation: 0,
     },
     primaryButtonPressed: {
         opacity: 0.9,
