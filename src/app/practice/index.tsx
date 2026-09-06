@@ -226,7 +226,7 @@ export default function PracticeScreen() {
                         <View style={styles.modalCard}>
                             <View style={styles.modalHeader}>
                                 {isCorrect ? (
-                                    <CheckCircle2 size={20} color="#5EEAD4" />
+                                    <CheckCircle2 size={20} color="#22c55f" />
                                 ) : (
                                     <RotateCcw size={20} color="#FF6B6B" />
                                 )}
@@ -369,7 +369,7 @@ const styles = StyleSheet.create({
     },
     questionHeading: {
         flex: 1,
-        color: '#29aa68',
+        color: '#22c55f',
         textAlign: 'center',
         fontSize: 24,
     },
@@ -412,7 +412,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#1D1C35',
     },
     correctOption: {
-        borderColor: '#66E3B5',
+        borderColor: '#22c55f',
         backgroundColor: '#16322A',
     },
     wrongOption: {
@@ -437,7 +437,7 @@ const styles = StyleSheet.create({
         marginBottom: Spacing.one,
     },
     successText: {
-        color: '#66E3B5',
+        color: '#22c55f',
         fontWeight: '700',
     },
     errorText: {
@@ -453,12 +453,12 @@ const styles = StyleSheet.create({
     },
     primaryButton: {
         width: '100%',
-        backgroundColor: '#148363',
+        backgroundColor: '#22c55f',
         borderRadius: 14,
         paddingVertical: Spacing.two,
         alignItems: 'center',
         justifyContent: 'center',
-        shadowColor: '#148363',
+        shadowColor: '#22c55f',
         shadowOpacity: 0.2,
         shadowRadius: 8,
         shadowOffset: { width: 0, height: 4 },
@@ -508,7 +508,7 @@ const styles = StyleSheet.create({
         marginBottom: Spacing.two,
     },
     modalSuccessTitle: {
-        color: '#5EEAD4',
+        color: '#22c55f',
         fontWeight: '700',
     },
     modalErrorTitle: {
@@ -560,7 +560,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     modalPrimaryButton: {
-        backgroundColor: '#148363',
+        backgroundColor: '#22c55f',
         borderRadius: 12,
         paddingVertical: Spacing.two,
         alignItems: 'center',

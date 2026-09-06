@@ -148,7 +148,7 @@ export default function TopicsScreen() {
                                                     resizeMode="contain"
                                                 />
                                             ) : (
-                                                <Sparkles size={16} color={isUnlocked ? '#5EEAD4' : '#8E9BB0'} />
+                                                <Sparkles size={16} color={isUnlocked ? '#22c55f' : '#8E9BB0'} />
                                             )}
                                         </View>
                                         <View>
@@ -181,7 +181,7 @@ export default function TopicsScreen() {
                                                     cx={21}
                                                     cy={21}
                                                     r={radius}
-                                                    stroke="#5EEAD4"
+                                                    stroke="#22c55f"
                                                     strokeWidth={strokeWidth}
                                                     strokeDasharray={circumference}
                                                     strokeDashoffset={strokeDashoffset}
@@ -203,7 +203,7 @@ export default function TopicsScreen() {
                                     )}
 
                                     {isUnlocked ? (
-                                        <ArrowRight size={18} color="#5EEAD4" />
+                                        <ArrowRight size={18} color="#22c55f" />
                                     ) : (
                                         <View style={styles.lockSpacer} />
                                     )}
@@ -274,7 +274,7 @@ const styles = StyleSheet.create({
     },
     title: {
         marginBottom: 0,
-        color: '#37e9bb',
+        color: '#22c55f',
         fontSize: 24,
         fontWeight: '800',
         lineHeight: 32,
@@ -493,7 +493,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingVertical: Spacing.two,
         borderRadius: 12,
-        backgroundColor: '#5EEAD4',
+        backgroundColor: '#22c55f',
         alignItems: 'center',
     },
     unlockButtonText: {

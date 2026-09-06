@@ -86,7 +86,7 @@ export default function QuestionsScreen() {
                                     {index + 1}
                                 </ThemedText>
                                 {isDone ? (
-                                    <CheckCheck size={12} color="#34D399" style={styles.checkMark} />
+                                    <CheckCheck size={12} color="#22c55f" style={styles.checkMark} />
                                 ) : (
                                     <CircleDashed size={12} color="#8E9BB0" style={styles.checkMark} />
                                 )}
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     },
     progressFill: {
         height: '100%',
-        backgroundColor: '#148363',
+        backgroundColor: '#22c55f',
         borderRadius: 999,
     },
     progressValue: {
@@ -208,7 +208,7 @@ const styles = StyleSheet.create({
     },
     questionTileCompleted: {
         backgroundColor: '#1A2B2A',
-        borderColor: '#66E3B5',
+        borderColor: '#22c55f',
     },
     tileNumber: {
         fontSize: 20,
@@ -219,7 +219,7 @@ const styles = StyleSheet.create({
         right: 8,
         top: 6,
         fontSize: 12,
-        color: '#66E3B5',
+        color: '#22c55f',
         fontWeight: '700',
     },
 });
