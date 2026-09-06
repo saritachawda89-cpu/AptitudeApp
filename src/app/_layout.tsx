@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
 
 import { AnimatedSplashOverlay } from '@/components/animated-icon';
-import { hydrateQuestionProgress } from '@/data/data';
+import { hydrateAppState } from '@/data/data';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -12,7 +12,7 @@ export default function RootLayout() {
   const colorScheme = useColorScheme();
 
   useEffect(() => {
-    void hydrateQuestionProgress();
+    void hydrateAppState();
   }, []);
 
   return (

@@ -1,5 +1,5 @@
 import { router, useLocalSearchParams } from 'expo-router';
-import { ArrowLeft, CheckCircle2, ChevronRight, RotateCcw } from 'lucide-react-native';
+import { ArrowLeft, CheckCircle2, ChevronRight, Coins, RotateCcw } from 'lucide-react-native';
 import { useEffect, useMemo, useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 
@@ -7,6 +7,7 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { MaxContentWidth, Spacing, colors as appColors } from '@/constants/theme';
 import {
+    addCoins,
     averageQuestions,
     numberSystemQuestions,
     parentData,
@@ -48,10 +49,14 @@ export default function PracticeScreen() {
 
     const [selectedOption, setSelectedOption] = useState<string | null>(null);
     const [showFeedback, setShowFeedback] = useState(false);
+    const [isResultModalOpen, setIsResultModalOpen] = useState(false);
+    const [showExplanation, setShowExplanation] = useState(false);
 
     useEffect(() => {
         setSelectedOption(null);
         setShowFeedback(false);
+        setIsResultModalOpen(false);
+        setShowExplanation(false);
     }, [topic, questionId]);
 
     if (!currentQuestion) {
@@ -65,8 +70,56 @@ export default function PracticeScreen() {
     const currentIndex = questions.findIndex((question) => question.id === currentQuestion.id);
     const nextQuestion = questions[currentIndex + 1] ?? null;
     const isCorrect = selectedOption === currentQuestion.rightOption;
-    const isSubmitDisabled = !selectedOption && !showFeedback;
-    const submitButtonLabel = showFeedback ? (isCorrect ? (nextQuestion ? 'Next question' : 'Finish') : 'Retry') : 'Submit';
+    const isSubmitDisabled = !selectedOption || showFeedback;
+    const resultMessage = isCorrect ? 'It\'s correct!' : 'It\'s incorrect.';
+
+    const handleSubmit = () => {
+        if (!selectedOption || showFeedback) {
+            return;
+        }
+
+        setShowFeedback(true);
+        setIsResultModalOpen(true);
+        setShowExplanation(false);
+
+        if (isCorrect) {
+            markQuestionCompleted(selectedTopic.id, currentQuestion.id);
+            void addCoins(10);
+        }
+    };
+
+    const closeResultModal = () => {
+        setIsResultModalOpen(false);
+        setShowExplanation(false);
+    };
+
+    const handleRetry = () => {
+        setSelectedOption(null);
+        setShowFeedback(false);
+        closeResultModal();
+    };
+
+    const handleGoToQuestions = () => {
+        closeResultModal();
+        router.push({ pathname: '/questions', params: { topic: selectedTopic.id } });
+    };
+
+    const handleNextOrFinish = () => {
+        closeResultModal();
+
+        if (!nextQuestion) {
+            router.push({ pathname: '/questions', params: { topic: selectedTopic.id } });
+            return;
+        }
+
+        router.push({
+            pathname: '/practice',
+            params: {
+                topic: selectedTopic.id,
+                questionId: nextQuestion.id,
+            },
+        });
+    };
 
     return (
         <ThemedView style={styles.container}>
@@ -131,66 +184,88 @@ export default function PracticeScreen() {
                         })}
                     </View>
 
-                    {showFeedback && (
-                        <View style={styles.feedbackBox}>
-                            <View style={styles.feedbackHeader}>
-                                {isCorrect ? (
-                                    <CheckCircle2 size={16} color="#5EEAD4" />
-                                ) : (
-                                    <RotateCcw size={16} color="#FF6B6B" />
-                                )}
-                                <ThemedText type="default" style={isCorrect ? styles.successText : styles.errorText}>
-                                    {isCorrect ? 'Correct answer!' : `Wrong answer. Correct option is ${currentQuestion.rightOption}.`}
-                                </ThemedText>
-                            </View>
-                            <ThemedText type="small" style={styles.explanationText}>
-                                {currentQuestion.explanation}
-                            </ThemedText>
-                        </View>
-                    )}
                 </ThemedView>
 
                 <View style={styles.actionsRow}>
                     <Pressable
                         disabled={isSubmitDisabled}
-                        onPress={() => {
-                            if (!showFeedback) {
-                                setShowFeedback(true);
-                                return;
-                            }
-
-                            if (!isCorrect) {
-                                setSelectedOption(null);
-                                setShowFeedback(false);
-                                return;
-                            }
-
-                            markQuestionCompleted(selectedTopic.id, currentQuestion.id);
-
-                            if (!nextQuestion) {
-                                router.push({ pathname: '/questions', params: { topic: selectedTopic.id } });
-                                return;
-                            }
-
-                            router.push({
-                                pathname: '/practice',
-                                params: {
-                                    topic: selectedTopic.id,
-                                    questionId: nextQuestion.id,
-                                },
-                            });
-                        }}
+                        onPress={handleSubmit}
                         style={({ pressed }) => [
                             styles.primaryButton,
-                            !isCorrect && showFeedback && styles.retryButton,
                             isSubmitDisabled && styles.disabledButton,
                             pressed && !isSubmitDisabled && styles.primaryButtonPressed,
                         ]}>
                         <ThemedText type="default" style={styles.primaryText}>
-                            {submitButtonLabel}
+                            Submit
                         </ThemedText>
                     </Pressable>
                 </View>
+
+                {isResultModalOpen && (
+                    <View style={styles.modalOverlay} pointerEvents="box-none">
+                        <View style={styles.modalCard}>
+                            <View style={styles.modalHeader}>
+                                {isCorrect ? (
+                                    <CheckCircle2 size={20} color="#5EEAD4" />
+                                ) : (
+                                    <RotateCcw size={20} color="#FF6B6B" />
+                                )}
+                                <ThemedText type="default" style={isCorrect ? styles.modalSuccessTitle : styles.modalErrorTitle}>
+                                    {isCorrect ? 'Correct' : 'Incorrect'}
+                                </ThemedText>
+                            </View>
+
+                            <ThemedText type="default" style={styles.modalMessage}>
+                                {resultMessage}
+                            </ThemedText>
+
+                            {isCorrect && (
+                                <View style={styles.coinRewardRow}>
+                                    <Coins size={18} color="#F8D66C" />
+                                    <ThemedText type="smallBold" style={styles.coinRewardText}>
+                                        +10
+                                    </ThemedText>
+                                </View>
+                            )}
+
+                            {showExplanation && (
+                                <View style={styles.modalExplanationBox}>
+                                    <ThemedText type="small" style={styles.modalExplanationText}>
+                                        {currentQuestion.explanation}
+                                    </ThemedText>
+                                </View>
+                            )}
+
+                            <View style={styles.modalActions}>
+                                <Pressable onPress={() => setShowExplanation((value) => !value)} style={styles.modalSecondaryButton}>
+                                    <ThemedText type="smallBold" style={styles.modalSecondaryText}>
+                                        {showExplanation ? 'Hide explain' : 'Explain'}
+                                    </ThemedText>
+                                </Pressable>
+
+                                {isCorrect ? (
+                                    <Pressable onPress={handleNextOrFinish} style={styles.modalPrimaryButton}>
+                                        <ThemedText type="smallBold" style={styles.modalPrimaryText}>
+                                            {nextQuestion ? 'Next' : 'Finish'}
+                                        </ThemedText>
+                                    </Pressable>
+                                ) : (
+                                    <Pressable onPress={handleRetry} style={styles.modalDangerButton}>
+                                        <ThemedText type="smallBold" style={styles.modalDangerText}>
+                                            Retry
+                                        </ThemedText>
+                                    </Pressable>
+                                )}
+
+                                <Pressable onPress={handleGoToQuestions} style={styles.modalSecondaryButton}>
+                                    <ThemedText type="smallBold" style={styles.modalSecondaryText}>
+                                        Go to questions
+                                    </ThemedText>
+                                </Pressable>
+                            </View>
+                        </View>
+                    </View>
+                )}
             </ThemedView>
         </ThemedView>
     );
@@ -338,22 +413,12 @@ const styles = StyleSheet.create({
         borderRadius: 14,
         paddingVertical: Spacing.two,
         alignItems: 'center',
-        flexDirection: 'row',
         justifyContent: 'center',
-        gap: 6,
         shadowColor: '#148363',
         shadowOpacity: 0.2,
         shadowRadius: 8,
         shadowOffset: { width: 0, height: 4 },
         elevation: 3,
-    },
-    retryButton: {
-        backgroundColor: '#6c2144',
-        shadowColor: '#6c2144',
-        shadowOpacity: 0.45,
-        shadowRadius: 10,
-        shadowOffset: { width: 0, height: 6 },
-        elevation: 6,
     },
     disabledButton: {
         backgroundColor: '#2D1D50',
@@ -364,12 +429,118 @@ const styles = StyleSheet.create({
     primaryButtonPressed: {
         opacity: 0.9,
     },
-    secondaryText: {
-        color: '#F5EEFF',
-        fontWeight: '600',
-    },
     primaryText: {
         color: '#FFFFFF',
         fontWeight: '600',
+    },
+    modalOverlay: {
+        position: 'absolute',
+        inset: 0,
+        backgroundColor: 'rgba(9, 10, 28, 0.7)',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingHorizontal: Spacing.four,
+    },
+    modalCard: {
+        width: '100%',
+        maxWidth: 360,
+        backgroundColor: '#181B31',
+        borderRadius: 22,
+        borderWidth: 1,
+        borderColor: '#4B3A78',
+        padding: Spacing.three,
+        shadowColor: '#120A25',
+        shadowOpacity: 0.35,
+        shadowRadius: 18,
+        shadowOffset: { width: 0, height: 12 },
+        elevation: 8,
+        alignItems: 'center',
+    },
+    modalHeader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 8,
+        marginBottom: Spacing.two,
+    },
+    modalSuccessTitle: {
+        color: '#5EEAD4',
+        fontWeight: '700',
+    },
+    modalErrorTitle: {
+        color: '#FF7A9D',
+        fontWeight: '700',
+    },
+    modalMessage: {
+        color: '#F5EEFF',
+        fontSize: 18,
+        lineHeight: 26,
+        marginBottom: Spacing.two,
+        textAlign: 'center',
+    },
+    coinRewardRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 6,
+        marginBottom: Spacing.two,
+    },
+    coinRewardText: {
+        color: '#F8D66C',
+    },
+    modalExplanationBox: {
+        backgroundColor: '#121230',
+        borderWidth: 1,
+        borderColor: '#4B3A78',
+        borderRadius: 14,
+        padding: Spacing.two,
+        marginBottom: Spacing.three,
+        width: '100%',
+    },
+    modalExplanationText: {
+        color: '#D0C3F8',
+        lineHeight: 20,
+        textAlign: 'center',
+    },
+    modalActions: {
+        gap: Spacing.two,
+        width: '100%',
+    },
+    modalSecondaryButton: {
+        backgroundColor: '#24163F',
+        borderWidth: 1,
+        borderColor: '#4B3A78',
+        borderRadius: 12,
+        paddingVertical: Spacing.two,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    modalPrimaryButton: {
+        backgroundColor: '#148363',
+        borderRadius: 12,
+        paddingVertical: Spacing.two,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    modalDangerButton: {
+        backgroundColor: '#6c2144',
+        borderRadius: 12,
+        paddingVertical: Spacing.two,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: '#6c2144',
+        shadowOpacity: 0.45,
+        shadowRadius: 10,
+        shadowOffset: { width: 0, height: 6 },
+        elevation: 6,
+    },
+    modalPrimaryText: {
+        color: '#FFFFFF',
+    },
+    modalDangerText: {
+        color: '#FFFFFF',
+    },
+    modalSecondaryText: {
+        color: '#F5EEFF',
     },
 });

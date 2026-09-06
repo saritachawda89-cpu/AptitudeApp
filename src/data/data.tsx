@@ -722,7 +722,8 @@ export const percentageQuestions = [
     }
 ];
 
-const STORAGE_KEY = 'aptitude-question-progress-v1';
+const PROGRESS_KEY = 'aptitude-question-progress-v1';
+const COINS_KEY = 'aptitude-coins-v1';
 
 export const questionMap: Record<string, Array<{ id: string; isCompleted: boolean }>> = {
     numberSystemQuestions,
@@ -732,9 +733,14 @@ export const questionMap: Record<string, Array<{ id: string; isCompleted: boolea
     percentageQuestions,
 };
 
+export const hydrateAppState = async () => {
+    await hydrateQuestionProgress();
+    await hydrateCoins();
+};
+
 export const hydrateQuestionProgress = async () => {
     try {
-        const storedValue = await AsyncStorage.getItem(STORAGE_KEY);
+        const storedValue = await AsyncStorage.getItem(PROGRESS_KEY);
 
         if (!storedValue) {
             return;
@@ -763,8 +769,31 @@ export const saveQuestionProgress = async () => {
             ])
         );
 
-        await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+        await AsyncStorage.setItem(PROGRESS_KEY, JSON.stringify(payload));
     } catch (error) {
         console.warn('Failed to save question progress', error);
+    }
+};
+
+export const hydrateCoins = async () => {
+    try {
+        const storedValue = await AsyncStorage.getItem(COINS_KEY);
+
+        if (storedValue !== null) {
+            parentData.coins = Number(storedValue) || 0;
+        }
+    } catch (error) {
+        console.warn('Failed to hydrate coins', error);
+    }
+};
+
+export const addCoins = async (amount: number) => {
+    const nextCoins = parentData.coins + amount;
+    parentData.coins = nextCoins;
+
+    try {
+        await AsyncStorage.setItem(COINS_KEY, String(nextCoins));
+    } catch (error) {
+        console.warn('Failed to save coins', error);
     }
 };
