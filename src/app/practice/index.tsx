@@ -78,7 +78,7 @@ export default function PracticeScreen() {
         ? earnedRewardForCurrentSubmission
             ? 'It\'s correct!'
             : 'You already solved this question.'
-        : 'It\'s incorrect.';
+        : 'That\'s not the correct answer.';
 
     const handleSubmit = () => {
         if (!selectedOption || showFeedback) {

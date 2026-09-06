@@ -2,6 +2,7 @@ import { router } from 'expo-router';
 import { ArrowRight, Coins, Sparkles } from 'lucide-react-native';
 import { FlatList, Pressable, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Svg, { Circle } from 'react-native-svg';
 
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
@@ -26,7 +27,10 @@ export default function TopicsScreen() {
                 <View style={styles.headerCard}>
                     <View style={styles.titleWrap}>
                         <ThemedText type="subtitle" style={styles.title}>
-                            Choose a topic
+                            AptitudeApp Logo
+                        </ThemedText>
+                        <ThemedText type="small" style={styles.subtitle}>
+                            Practice smarter with quick topic-based aptitude drills.
                         </ThemedText>
                     </View>
                     <View style={styles.coinBadge}>
@@ -43,7 +47,14 @@ export default function TopicsScreen() {
                     contentContainerStyle={styles.listContent}
                     showsVerticalScrollIndicator={false}
                     renderItem={({ item }) => {
-                        const totalQuestions = questionCountMap[item.id as keyof typeof questionCountMap]?.length ?? 0;
+                        const questions = questionCountMap[item.id as keyof typeof questionCountMap] ?? [];
+                        const totalQuestions = questions.length;
+                        const completedQuestions = questions.filter((question) => question.isCompleted).length;
+                        const progress = totalQuestions ? (completedQuestions / totalQuestions) * 100 : 0;
+                        const radius = 18;
+                        const strokeWidth = 4;
+                        const circumference = 2 * Math.PI * radius;
+                        const strokeDashoffset = circumference - (progress / 100) * circumference;
 
                         return (
                             <Pressable
@@ -55,7 +66,6 @@ export default function TopicsScreen() {
                                 }
                                 style={({ pressed }) => [
                                     styles.topicItem,
-                                    // { backgroundColor: theme.backgroundElement },
                                     pressed && styles.topicItemPressed,
                                 ]}>
                                 <View style={styles.topicRow}>
@@ -72,6 +82,37 @@ export default function TopicsScreen() {
                                             </ThemedText>
                                         </View>
                                     </View>
+
+                                    <View style={styles.progressRingOuter}>
+                                        <Svg width={42} height={42} viewBox="0 0 42 42">
+                                            <Circle
+                                                cx={21}
+                                                cy={21}
+                                                r={radius}
+                                                stroke="#4B3A78"
+                                                strokeWidth={strokeWidth}
+                                                fill="transparent"
+                                            />
+                                            <Circle
+                                                cx={21}
+                                                cy={21}
+                                                r={radius}
+                                                stroke="#5EEAD4"
+                                                strokeWidth={strokeWidth}
+                                                strokeDasharray={circumference}
+                                                strokeDashoffset={strokeDashoffset}
+                                                strokeLinecap="round"
+                                                fill="transparent"
+                                                transform="rotate(-90 21 21)"
+                                            />
+                                        </Svg>
+                                        <View style={styles.progressCenter}>
+                                            <ThemedText type="smallBold" style={styles.progressText}>
+                                                {completedQuestions}/{totalQuestions}
+                                            </ThemedText>
+                                        </View>
+                                    </View>
+
                                     <ArrowRight size={18} color="#5EEAD4" />
                                 </View>
                             </Pressable>
@@ -150,11 +191,13 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
+        gap: 12,
     },
     topicMeta: {
         flexDirection: 'row',
         alignItems: 'center',
         gap: Spacing.two,
+        flex: 1,
     },
     topicIconWrap: {
         width: 28,
@@ -165,6 +208,28 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderWidth: 1,
         borderColor: 'rgba(94, 234, 212, 0.3)',
+    },
+    progressRingOuter: {
+        width: 42,
+        height: 42,
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'relative',
+    },
+    progressCenter: {
+        position: 'absolute',
+        width: 26,
+        height: 26,
+        borderRadius: 13,
+        // backgroundColor: '#090a1c',
+        alignItems: 'center',
+        justifyContent: 'center',
+        // borderWidth: 1,
+        // borderColor: '#2B1F49',
+    },
+    progressText: {
+        color: '#F5EEFF',
+        fontSize: 8,
     },
     topicName: {
         fontSize: 18,
@@ -182,5 +247,10 @@ const styles = StyleSheet.create({
     topicItemPressed: {
         opacity: 0.92,
         transform: [{ scale: 0.995 }],
+    },
+    subtitle: {
+        color: '#D0C3F8',
+        fontSize: 14,
+        lineHeight: 20,
     },
 });
