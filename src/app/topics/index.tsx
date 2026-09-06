@@ -1,15 +1,23 @@
 import { router } from 'expo-router';
 import { ArrowRight, Coins, Lock, Sparkles } from 'lucide-react-native';
-import { Alert, FlatList, Modal, Pressable, StyleSheet, View } from 'react-native';
+import { Alert, FlatList, Image, Modal, Pressable, StyleSheet, View } from 'react-native';
 import { useEffect, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Svg, { Circle } from 'react-native-svg';
 
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { BottomTabInset, MaxContentWidth, Spacing, colors } from '@/constants/theme';
+import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
 import { averageQuestions, numberSystemQuestions, parentData, percentageQuestions, timeAndWorkQuestions, trainQuestions, UNLOCK_COST, unlockTopic } from '@/data/data';
 import { useTheme } from '@/hooks/use-theme';
+
+const topicIconMap = {
+    numberSystemQuestions: require('../../../assets/images/numberSystemQuestions.svg'),
+    timeAndWorkQuestions: require('../../../assets/images/timeAndWorkQuestions.svg'),
+    trainQuestions: require('../../../assets/images/trainQuestions.svg'),
+    averageQuestions: require('../../../assets/images/averageQuestions.svg'),
+    percentageQuestions: require('../../../assets/images/percentageQuestions.svg'),
+} as const;
 
 const questionCountMap = {
     numberSystemQuestions,
@@ -110,6 +118,7 @@ export default function TopicsScreen() {
                         const strokeWidth = 4;
                         const circumference = 2 * Math.PI * radius;
                         const strokeDashoffset = circumference - (progress / 100) * circumference;
+                        const topicAsset = topicIconMap[item.id as keyof typeof topicIconMap];
 
                         return (
                             <Pressable
@@ -132,7 +141,15 @@ export default function TopicsScreen() {
                                 <View style={styles.topicRow}>
                                     <View style={styles.topicMeta}>
                                         <View style={styles.topicIconWrap}>
-                                            <Sparkles size={16} color={isUnlocked ? '#5EEAD4' : '#8E9BB0'} />
+                                            {topicAsset ? (
+                                                <Image
+                                                    source={topicAsset}
+                                                    style={styles.topicIconImage}
+                                                    resizeMode="contain"
+                                                />
+                                            ) : (
+                                                <Sparkles size={16} color={isUnlocked ? '#5EEAD4' : '#8E9BB0'} />
+                                            )}
                                         </View>
                                         <View>
                                             <ThemedText type="default" style={styles.topicName}>
@@ -307,14 +324,19 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     topicIconWrap: {
-        width: 28,
-        height: 28,
+        width: 48,
+        height: 48,
         borderRadius: 10,
-        backgroundColor: 'rgba(94, 234, 212, 0.12)',
+        // backgroundColor: 'rgba(94, 234, 212, 0.12)',
         alignItems: 'center',
         justifyContent: 'center',
-        borderWidth: 1,
-        borderColor: 'rgba(94, 234, 212, 0.3)',
+        // borderWidth: 1,
+        // borderColor: 'rgba(94, 234, 212, 0.3)',
+        overflow: 'hidden',
+    },
+    topicIconImage: {
+        width: 48,
+        height: 48,
     },
     progressRingOuter: {
         width: 42,
