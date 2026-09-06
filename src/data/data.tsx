@@ -1,5 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+export const UNLOCK_COST = 200;
+
 export const parentData = {
     topics: [
         { id: "numberSystemQuestions", name: "Number System" },
@@ -8,8 +10,8 @@ export const parentData = {
         { id: "averageQuestions", name: "Average" },
         { id: "percentageQuestions", name: "Percentage" }
     ],
-    coins: 50,
-    unlockedTopics: ["numberSystemQuestions", "timeAndWorkQuestions", "trainQuestions", "averageQuestions"]
+    coins: 500,
+    unlockedTopics: ["numberSystemQuestions", "timeAndWorkQuestions"]
 };
 
 export const numberSystemQuestions = [
@@ -724,6 +726,7 @@ export const percentageQuestions = [
 
 const PROGRESS_KEY = 'aptitude-question-progress-v1';
 const COINS_KEY = 'aptitude-coins-v1';
+const UNLOCKED_TOPICS_KEY = 'aptitude-unlocked-topics-v1';
 
 export const questionMap: Record<string, Array<{ id: string; isCompleted: boolean }>> = {
     numberSystemQuestions,
@@ -736,6 +739,7 @@ export const questionMap: Record<string, Array<{ id: string; isCompleted: boolea
 export const hydrateAppState = async () => {
     await hydrateQuestionProgress();
     await hydrateCoins();
+    await hydrateUnlockedTopics();
 };
 
 export const hydrateQuestionProgress = async () => {
@@ -784,6 +788,59 @@ export const hydrateCoins = async () => {
         }
     } catch (error) {
         console.warn('Failed to hydrate coins', error);
+    }
+};
+
+export const hydrateUnlockedTopics = async () => {
+    try {
+        const storedValue = await AsyncStorage.getItem(UNLOCKED_TOPICS_KEY);
+
+        if (storedValue === null) {
+            return;
+        }
+
+        const parsedUnlockedTopics = JSON.parse(storedValue) as string[];
+
+        if (Array.isArray(parsedUnlockedTopics)) {
+            parentData.unlockedTopics = Array.from(
+                new Set([...parentData.unlockedTopics, ...parsedUnlockedTopics])
+            );
+        }
+    } catch (error) {
+        console.warn('Failed to hydrate unlocked topics', error);
+    }
+};
+
+export const saveUnlockedTopics = async () => {
+    try {
+        await AsyncStorage.setItem(UNLOCKED_TOPICS_KEY, JSON.stringify(parentData.unlockedTopics));
+    } catch (error) {
+        console.warn('Failed to save unlocked topics', error);
+    }
+};
+
+export const unlockTopic = async (topicId: string) => {
+    if (!topicId || parentData.unlockedTopics.includes(topicId)) {
+        return false;
+    }
+
+    if (parentData.coins < UNLOCK_COST) {
+        return false;
+    }
+
+    parentData.coins = parentData.coins - UNLOCK_COST;
+    parentData.unlockedTopics = [...parentData.unlockedTopics, topicId];
+
+    try {
+        await Promise.all([
+            AsyncStorage.setItem(COINS_KEY, String(parentData.coins)),
+            saveUnlockedTopics(),
+        ]);
+
+        return true;
+    } catch (error) {
+        console.warn('Failed to unlock topic', error);
+        return false;
     }
 };
 
