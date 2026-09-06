@@ -160,7 +160,7 @@ export default function TopicsScreen() {
                                             </ThemedText>
                                             {!isUnlocked ? (
                                                 <ThemedText type="small" style={styles.unlockHint}>
-                                                    Spend {UNLOCK_COST} points
+                                                    <Coins size={16} color="#f8d66c" /> {UNLOCK_COST} to unlock
                                                 </ThemedText>
                                             ) : null}
                                         </View>
@@ -299,8 +299,8 @@ const styles = StyleSheet.create({
         paddingBottom: Spacing.three,
     },
     topicItem: {
-        paddingHorizontal: Spacing.three,
-        paddingVertical: Spacing.three,
+        paddingHorizontal: Spacing.two,
+        paddingVertical: Spacing.two,
         borderRadius: 20,
         borderWidth: 1,
         borderColor: '#4B3A78',
@@ -375,7 +375,7 @@ const styles = StyleSheet.create({
         height: 18,
     },
     topicName: {
-        fontSize: 18,
+        fontSize: 16,
         color: '#F5EEFF',
         fontWeight: '600',
     },
@@ -402,7 +402,7 @@ const styles = StyleSheet.create({
     subtitle: {
         color: '#D0C3F8',
         fontSize: 14,
-        lineHeight: 20,
+        lineHeight: 18,
     },
     feedbackBanner: {
         flexDirection: 'row',
