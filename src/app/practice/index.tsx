@@ -226,12 +226,15 @@ export default function PracticeScreen() {
                         <View style={styles.modalCard}>
                             <View style={styles.modalHeader}>
                                 {isCorrect ? (
-                                    <CheckCircle2 size={20} color="#22c55f" />
+                                    <CheckCircle2 size={100} color="#22c55f" />
                                 ) : (
-                                    <RotateCcw size={20} color="#FF6B6B" />
+                                    <RotateCcw size={80} color="#FF6B6B" />
                                 )}
-                                <ThemedText type="default" style={isCorrect ? styles.modalSuccessTitle : styles.modalErrorTitle}>
-                                    {isCorrect ? 'Correct' : 'Incorrect'}
+
+                            </View>
+                            <View style={styles.modalHeader}>
+                                <ThemedText type="subtitle" style={isCorrect ? styles.modalSuccessTitle : styles.modalErrorTitle}>
+                                    {isCorrect ? 'Great!' : 'Incorrect!'}
                                 </ThemedText>
                             </View>
 
@@ -241,7 +244,7 @@ export default function PracticeScreen() {
 
                             {earnedRewardForCurrentSubmission && isCorrect && (
                                 <View style={styles.coinRewardRow}>
-                                    <Coins size={18} color="#F8D66C" />
+                                    <Coins size={32} color="#F8D66C" />
                                     <ThemedText type="smallBold" style={styles.coinRewardText}>
                                         +10
                                     </ThemedText>
@@ -416,7 +419,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#16322A',
     },
     wrongOption: {
-        borderColor: '#FF7A9D',
+        borderColor: '#FF6B6B',
         backgroundColor: '#3A1C2A',
     },
     optionLabel: {
@@ -441,7 +444,7 @@ const styles = StyleSheet.create({
         fontWeight: '700',
     },
     errorText: {
-        color: '#FF7A9D',
+        color: '#FF6B6B',
         fontWeight: '700',
     },
     explanationText: {
@@ -512,14 +515,14 @@ const styles = StyleSheet.create({
         fontWeight: '700',
     },
     modalErrorTitle: {
-        color: '#FF7A9D',
+        color: '#FF6B6B',
         fontWeight: '700',
     },
     modalMessage: {
         color: '#F5EEFF',
         fontSize: 18,
         lineHeight: 26,
-        marginBottom: Spacing.two,
+        marginBottom: Spacing.three,
         textAlign: 'center',
     },
     coinRewardRow: {
@@ -527,10 +530,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         gap: 6,
-        marginBottom: Spacing.two,
+        marginBottom: Spacing.three,
     },
     coinRewardText: {
         color: '#F8D66C',
+        fontSize: 24,
+        fontWeight: '700',
     },
     modalExplanationBox: {
         backgroundColor: '#121230',
@@ -567,16 +572,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     modalDangerButton: {
-        backgroundColor: '#6c2144',
+        backgroundColor: '#FF6B6B',
         borderRadius: 12,
         paddingVertical: Spacing.two,
         alignItems: 'center',
         justifyContent: 'center',
-        shadowColor: '#6c2144',
-        shadowOpacity: 0.45,
-        shadowRadius: 10,
-        shadowOffset: { width: 0, height: 6 },
-        elevation: 6,
+        // shadowColor: '#FF6B6B',
+        // shadowOpacity: 0.45,
+        // shadowRadius: 10,
+        // shadowOffset: { width: 0, height: 6 },
+        // elevation: 6,
     },
     modalPrimaryText: {
         color: '#FFFFFF',
