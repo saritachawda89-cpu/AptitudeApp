@@ -51,12 +51,14 @@ export default function PracticeScreen() {
     const [showFeedback, setShowFeedback] = useState(false);
     const [isResultModalOpen, setIsResultModalOpen] = useState(false);
     const [showExplanation, setShowExplanation] = useState(false);
+    const [earnedRewardForCurrentSubmission, setEarnedRewardForCurrentSubmission] = useState(false);
 
     useEffect(() => {
         setSelectedOption(null);
         setShowFeedback(false);
         setIsResultModalOpen(false);
         setShowExplanation(false);
+        setEarnedRewardForCurrentSubmission(false);
     }, [topic, questionId]);
 
     if (!currentQuestion) {
@@ -72,18 +74,25 @@ export default function PracticeScreen() {
     const isAlreadyCompleted = Boolean(currentQuestion.isCompleted);
     const isCorrect = selectedOption === currentQuestion.rightOption;
     const isSubmitDisabled = !selectedOption || showFeedback;
-    const resultMessage = isCorrect ? (isAlreadyCompleted ? 'You already solved this question.' : 'It\'s correct!') : 'It\'s incorrect.';
+    const resultMessage = isCorrect
+        ? earnedRewardForCurrentSubmission
+            ? 'It\'s correct!'
+            : 'You already solved this question.'
+        : 'It\'s incorrect.';
 
     const handleSubmit = () => {
         if (!selectedOption || showFeedback) {
             return;
         }
 
+        const rewardAwardedNow = isCorrect && !isAlreadyCompleted;
+
         setShowFeedback(true);
         setIsResultModalOpen(true);
         setShowExplanation(false);
+        setEarnedRewardForCurrentSubmission(rewardAwardedNow);
 
-        if (isCorrect && !isAlreadyCompleted) {
+        if (rewardAwardedNow) {
             markQuestionCompleted(selectedTopic.id, currentQuestion.id);
             void addCoins(10);
         }
@@ -230,7 +239,7 @@ export default function PracticeScreen() {
                                 {resultMessage}
                             </ThemedText>
 
-                            {!isAlreadyCompleted && isCorrect && (
+                            {earnedRewardForCurrentSubmission && isCorrect && (
                                 <View style={styles.coinRewardRow}>
                                     <Coins size={18} color="#F8D66C" />
                                     <ThemedText type="smallBold" style={styles.coinRewardText}>
