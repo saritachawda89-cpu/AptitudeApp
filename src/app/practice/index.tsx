@@ -69,9 +69,10 @@ export default function PracticeScreen() {
 
     const currentIndex = questions.findIndex((question) => question.id === currentQuestion.id);
     const nextQuestion = questions[currentIndex + 1] ?? null;
+    const isAlreadyCompleted = Boolean(currentQuestion.isCompleted);
     const isCorrect = selectedOption === currentQuestion.rightOption;
     const isSubmitDisabled = !selectedOption || showFeedback;
-    const resultMessage = isCorrect ? 'It\'s correct!' : 'It\'s incorrect.';
+    const resultMessage = isCorrect ? (isAlreadyCompleted ? 'You already solved this question.' : 'It\'s correct!') : 'It\'s incorrect.';
 
     const handleSubmit = () => {
         if (!selectedOption || showFeedback) {
@@ -82,7 +83,7 @@ export default function PracticeScreen() {
         setIsResultModalOpen(true);
         setShowExplanation(false);
 
-        if (isCorrect) {
+        if (isCorrect && !isAlreadyCompleted) {
             markQuestionCompleted(selectedTopic.id, currentQuestion.id);
             void addCoins(10);
         }
@@ -145,9 +146,19 @@ export default function PracticeScreen() {
                 </View>
 
                 <ThemedView style={styles.questionCard}>
-                    <ThemedText type="subtitle" style={styles.questionHeading}>
-                        Question {currentIndex + 1}
-                    </ThemedText>
+                    <View style={styles.questionCardHeader}>
+                        <ThemedText type="subtitle" style={styles.questionHeading}>
+                            Question {currentIndex + 1}
+                        </ThemedText>
+
+                        {isAlreadyCompleted && (
+                            <View style={styles.completedBadge}>
+                                <ThemedText type="smallBold" style={styles.completedBadgeText}>
+                                    Completed
+                                </ThemedText>
+                            </View>
+                        )}
+                    </View>
 
                     <ThemedText type="default" style={styles.questionText}>
                         {currentQuestion.question}
@@ -219,7 +230,7 @@ export default function PracticeScreen() {
                                 {resultMessage}
                             </ThemedText>
 
-                            {isCorrect && (
+                            {!isAlreadyCompleted && isCorrect && (
                                 <View style={styles.coinRewardRow}>
                                     <Coins size={18} color="#F8D66C" />
                                     <ThemedText type="smallBold" style={styles.coinRewardText}>
@@ -340,11 +351,35 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 4 },
         elevation: 3,
     },
-    questionHeading: {
+    questionCardHeader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: 8,
         marginBottom: Spacing.two,
+    },
+    questionHeading: {
+        flex: 1,
         color: '#29aa68',
         textAlign: 'center',
         fontSize: 24,
+    },
+    completedBadge: {
+        // backgroundColor: '#173E37',
+        // borderWidth: 1,
+        // borderColor: '#73E6C5',
+        // borderRadius: 999,
+        // paddingHorizontal: 8,
+        // paddingVertical: 4,
+        // alignSelf: 'flex-end',
+        position: 'absolute',
+        right: 0,
+        top: 0,
+    },
+    completedBadgeText: {
+        color: '#DFFBF0',
+        fontSize: 10,
+        lineHeight: 12,
     },
     questionText: {
         fontSize: 20,
