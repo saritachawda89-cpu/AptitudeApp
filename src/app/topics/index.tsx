@@ -8,7 +8,7 @@ import Svg, { Circle } from 'react-native-svg';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
-import { averageQuestions, numberSystemQuestions, parentData, percentageQuestions, timeAndWorkQuestions, trainQuestions, UNLOCK_COST, unlockTopic } from '@/data/data';
+import { addCoins, averageQuestions, numberSystemQuestions, parentData, percentageQuestions, timeAndWorkQuestions, trainQuestions, UNLOCK_COST, unlockTopic } from '@/data/data';
 import { useTheme } from '@/hooks/use-theme';
 
 const topicIconMap = {
@@ -32,6 +32,7 @@ export default function TopicsScreen() {
     const [coins, setCoins] = useState(parentData.coins);
     const [unlockedTopics, setUnlockedTopics] = useState<string[]>(parentData.unlockedTopics);
     const [pendingUnlockTopic, setPendingUnlockTopic] = useState<{ id: string; name: string } | null>(null);
+    const [isCoinsInfoOpen, setIsCoinsInfoOpen] = useState(false);
     const [feedback, setFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
 
     useEffect(() => {
@@ -70,6 +71,13 @@ export default function TopicsScreen() {
         Alert.alert('Unlocked successfully', successMessage);
     };
 
+    const handleWatchVideoReward = async () => {
+        await addCoins(50);
+        setCoins(parentData.coins);
+        setIsCoinsInfoOpen(false);
+        setFeedback({ type: 'success', message: 'You earned 50 coins from the video reward.' });
+    };
+
     return (
         <ThemedView style={styles.container}>
             <SafeAreaView style={styles.safeArea}>
@@ -83,12 +91,12 @@ export default function TopicsScreen() {
                             Practice smarter with quick topic-based aptitude drills.
                         </ThemedText>
                     </View>
-                    <View style={styles.coinBadge}>
+                    <Pressable onPress={() => setIsCoinsInfoOpen(true)} style={styles.coinBadge}>
                         <Coins size={16} color="#0F111A" />
                         <ThemedText type="smallBold" style={styles.coinText}>
                             {coins}
                         </ThemedText>
-                    </View>
+                    </Pressable>
                 </View>
 
                 {feedback ? (
@@ -103,6 +111,33 @@ export default function TopicsScreen() {
                         </Pressable>
                     </View>
                 ) : null}
+
+                {isCoinsInfoOpen && (
+                    <View style={styles.overlay} pointerEvents="auto">
+                        <View style={styles.coinsModalCard}>
+                            <ThemedText type="subtitle" style={styles.coinsModalTitle}>
+                                Earn coins
+                            </ThemedText>
+                            <ThemedText type="default" style={styles.coinsModalText}>
+                                You can earn coins by solving questions or you can watch video and earn.
+                            </ThemedText>
+
+                            <View style={styles.coinsModalActions}>
+                                <Pressable onPress={() => setIsCoinsInfoOpen(false)} style={styles.closeCoinsButton}>
+                                    <ThemedText type="smallBold" style={styles.closeCoinsText}>
+                                        Close
+                                    </ThemedText>
+                                </Pressable>
+
+                                <Pressable onPress={handleWatchVideoReward} style={styles.watchVideoButton}>
+                                    <ThemedText type="smallBold" style={styles.watchVideoText}>
+                                        Watch video (+50)
+                                    </ThemedText>
+                                </Pressable>
+                            </View>
+                        </View>
+                    </View>
+                )}
 
                 <FlatList
                     data={parentData.topics}
@@ -297,9 +332,69 @@ const styles = StyleSheet.create({
         backgroundColor: '#F8D66C',
         borderWidth: 1,
         borderColor: '#F7C84C',
+        shadowColor: '#F8D66C',
+        shadowOpacity: 0.4,
+        shadowRadius: 10,
+        shadowOffset: { width: 0, height: 4 },
+        elevation: 4,
     },
     coinText: {
         color: '#4B2D00',
+    },
+    overlay: {
+        position: 'absolute',
+        inset: 0,
+        backgroundColor: 'rgba(9, 10, 28, 0.7)',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingHorizontal: Spacing.four,
+        zIndex: 10,
+    },
+    coinsModalCard: {
+        width: '100%',
+        maxWidth: 320,
+        backgroundColor: '#18162f',
+        borderRadius: 20,
+        borderWidth: 1,
+        borderColor: '#4B3A78',
+        padding: Spacing.three,
+        alignItems: 'center',
+    },
+    coinsModalTitle: {
+        color: '#F8D66C',
+        marginBottom: Spacing.one,
+    },
+    coinsModalText: {
+        color: '#F5EEFF',
+        lineHeight: 22,
+        textAlign: 'center',
+        marginBottom: Spacing.three,
+    },
+    coinsModalActions: {
+        width: '100%',
+        gap: Spacing.two,
+    },
+    closeCoinsButton: {
+        width: '100%',
+        backgroundColor: '#221f3c',
+        borderRadius: 12,
+        paddingVertical: Spacing.two,
+        alignItems: 'center',
+        borderWidth: 1,
+        borderColor: '#4B3A78',
+    },
+    closeCoinsText: {
+        color: '#F5EEFF',
+    },
+    watchVideoButton: {
+        width: '100%',
+        backgroundColor: '#F8D66C',
+        borderRadius: 12,
+        paddingVertical: Spacing.two,
+        alignItems: 'center',
+    },
+    watchVideoText: {
+        color: '#17143A',
     },
     listContent: {
         gap: Spacing.two,
