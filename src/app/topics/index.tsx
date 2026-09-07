@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Svg, { Circle } from 'react-native-svg';
 
+import { CoinBadge } from '@/components/coin-badge';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
@@ -89,12 +90,7 @@ export default function TopicsScreen() {
                             Practice smarter with quick topic-based aptitude drills.
                         </ThemedText>
                     </View>
-                    <Pressable onPress={() => setIsCoinsInfoOpen(true)} style={styles.coinBadge}>
-                        <Coins size={16} color="#0F111A" />
-                        <ThemedText type="smallBold" style={styles.coinText}>
-                            {coins}
-                        </ThemedText>
-                    </Pressable>
+                    <CoinBadge value={coins} onPress={() => setIsCoinsInfoOpen(true)} compact={false} />
                 </View>
 
                 {feedback ? (

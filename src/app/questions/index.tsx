@@ -1,11 +1,14 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import { ArrowLeft, CheckCheck, CircleDashed } from 'lucide-react-native';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { useEffect, useState } from 'react';
+import { Modal, Pressable, StyleSheet, View } from 'react-native';
 
+import { CoinBadge } from '@/components/coin-badge';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { MaxContentWidth, Spacing, colors } from '@/constants/theme';
 import {
+    addCoins,
     averageQuestions,
     numberSystemQuestions,
     parentData,
@@ -27,6 +30,18 @@ export default function QuestionsScreen() {
     const selectedTopic = parentData.topics.find((item) => item.id === topic) ?? parentData.topics[0];
     const questions = questionMap[selectedTopic.id as keyof typeof questionMap] ?? [];
     const completedCount = questions.filter((question) => question.isCompleted).length;
+    const [coins, setCoins] = useState(parentData.coins);
+    const [isCoinsInfoOpen, setIsCoinsInfoOpen] = useState(false);
+
+    useEffect(() => {
+        setCoins(parentData.coins);
+    }, [topic]);
+
+    const handleWatchVideoReward = async () => {
+        await addCoins(50);
+        setCoins(parentData.coins);
+        setIsCoinsInfoOpen(false);
+    };
 
     return (
         <ThemedView style={styles.container}>
@@ -42,8 +57,35 @@ export default function QuestionsScreen() {
                         </ThemedText>
                     </View>
 
-                    <View style={styles.headerSpacer} />
+                    <CoinBadge value={coins} onPress={() => setIsCoinsInfoOpen(true)} compact />
                 </View>
+
+                {isCoinsInfoOpen && (
+                    <View style={styles.overlay} pointerEvents="auto">
+                        <View style={styles.coinsModalCard}>
+                            <ThemedText type="subtitle" style={styles.coinsModalTitle}>
+                                Earn coins
+                            </ThemedText>
+                            <ThemedText type="default" style={styles.coinsModalText}>
+                                You can earn coins by solving questions or you can watch video and earn.
+                            </ThemedText>
+
+                            <View style={styles.coinsModalActions}>
+                                <Pressable onPress={() => setIsCoinsInfoOpen(false)} style={styles.closeCoinsButton}>
+                                    <ThemedText type="smallBold" style={styles.closeCoinsText}>
+                                        Close
+                                    </ThemedText>
+                                </Pressable>
+
+                                <Pressable onPress={handleWatchVideoReward} style={styles.watchVideoButton}>
+                                    <ThemedText type="smallBold" style={styles.watchVideoText}>
+                                        Watch video (+50)
+                                    </ThemedText>
+                                </Pressable>
+                            </View>
+                        </View>
+                    </View>
+                )}
 
                 <View style={styles.progressPanel}>
                     <View style={styles.progressRow}>
@@ -68,6 +110,7 @@ export default function QuestionsScreen() {
                         return (
                             <Pressable
                                 key={question.id}
+                                hitSlop={8}
                                 onPress={() =>
                                     router.push({
                                         pathname: '/practice',
@@ -137,10 +180,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    headerSpacer: {
-        width: 40,
-        height: 40,
+        marginHorizontal: Spacing.one,
     },
     screenTitle: {
         fontSize: 24,
@@ -148,6 +188,62 @@ const styles = StyleSheet.create({
         fontWeight: '700',
         color: '#F5EEFF',
         textAlign: 'center',
+    },
+    overlay: {
+        position: 'absolute',
+        inset: 0,
+        backgroundColor: 'rgba(9, 10, 28, 0.72)',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingHorizontal: Spacing.four,
+        zIndex: 20,
+    },
+    coinsModalCard: {
+        width: '100%',
+        maxWidth: 320,
+        backgroundColor: '#18162f',
+        borderRadius: 20,
+        borderWidth: 1,
+        borderColor: '#4B3A78',
+        padding: Spacing.three,
+        alignItems: 'center',
+    },
+    coinsModalTitle: {
+        color: '#F8D66C',
+        marginBottom: Spacing.one,
+        textAlign: 'center',
+    },
+    coinsModalText: {
+        color: '#F5EEFF',
+        lineHeight: 22,
+        textAlign: 'center',
+        marginBottom: Spacing.three,
+    },
+    coinsModalActions: {
+        width: '100%',
+        gap: Spacing.two,
+    },
+    closeCoinsButton: {
+        width: '100%',
+        backgroundColor: '#221f3c',
+        borderRadius: 12,
+        paddingVertical: Spacing.two,
+        alignItems: 'center',
+        borderWidth: 1,
+        borderColor: '#4B3A78',
+    },
+    closeCoinsText: {
+        color: '#F5EEFF',
+    },
+    watchVideoButton: {
+        width: '100%',
+        backgroundColor: '#F8D66C',
+        borderRadius: 12,
+        paddingVertical: Spacing.two,
+        alignItems: 'center',
+    },
+    watchVideoText: {
+        color: '#17143A',
     },
     progressPanel: {
         // backgroundColor: '#24163F',
@@ -203,8 +299,11 @@ const styles = StyleSheet.create({
         elevation: 2,
     },
     questionTilePressed: {
-        opacity: 0.9,
+        opacity: 1,
         transform: [{ scale: 0.98 }],
+        backgroundColor: '#1B1C35',
+        borderColor: '#8C7FE6',
+        shadowOpacity: 0.25,
     },
     questionTileCompleted: {
         backgroundColor: '#1A2B2A',
