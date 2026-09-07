@@ -98,9 +98,8 @@ export default function HomeScreen() {
             pressed && styles.startButtonPressed,
           ]}>
           <ThemedText type="smallBold" style={styles.startButtonText}>
-            Start Practicing
+            Start
           </ThemedText>
-          <ArrowRight size={22} color="#FFFFFF" />
         </Pressable>
       </SafeAreaView>
     </ThemedView>
