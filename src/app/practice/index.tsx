@@ -1,5 +1,5 @@
 import { router, useLocalSearchParams } from 'expo-router';
-import { ArrowLeft, CheckCircle2, ChevronRight, Coins, RotateCcw } from 'lucide-react-native';
+import { ArrowLeft, CheckCircle2, ChevronRight, Coins, Lightbulb, RotateCcw } from 'lucide-react-native';
 import { useEffect, useMemo, useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 
@@ -50,6 +50,7 @@ export default function PracticeScreen() {
     const [selectedOption, setSelectedOption] = useState<string | null>(null);
     const [showFeedback, setShowFeedback] = useState(false);
     const [isResultModalOpen, setIsResultModalOpen] = useState(false);
+    const [isHintModalOpen, setIsHintModalOpen] = useState(false);
     const [showExplanation, setShowExplanation] = useState(false);
     const [earnedRewardForCurrentSubmission, setEarnedRewardForCurrentSubmission] = useState(false);
 
@@ -57,6 +58,7 @@ export default function PracticeScreen() {
         setSelectedOption(null);
         setShowFeedback(false);
         setIsResultModalOpen(false);
+        setIsHintModalOpen(false);
         setShowExplanation(false);
         setEarnedRewardForCurrentSubmission(false);
     }, [topic, questionId]);
@@ -112,6 +114,10 @@ export default function PracticeScreen() {
     const handleGoToQuestions = () => {
         closeResultModal();
         router.push({ pathname: '/questions', params: { topic: selectedTopic.id } });
+    };
+
+    const handleHintPress = () => {
+        setIsHintModalOpen(true);
     };
 
     const handleNextOrFinish = () => {
@@ -208,6 +214,15 @@ export default function PracticeScreen() {
 
                 <View style={styles.actionsRow}>
                     <Pressable
+                        onPress={handleHintPress}
+                        style={({ pressed }) => [
+                            styles.hintButton,
+                            pressed && styles.hintButtonPressed,
+                        ]}>
+                        <Lightbulb size={20} color="#17143A" />
+                    </Pressable>
+
+                    <Pressable
                         disabled={isSubmitDisabled}
                         onPress={handleSubmit}
                         style={({ pressed }) => [
@@ -221,8 +236,26 @@ export default function PracticeScreen() {
                     </Pressable>
                 </View>
 
+                {isHintModalOpen && (
+                    <View style={styles.modalOverlay} pointerEvents="auto">
+                        <View style={styles.hintModalCard}>
+                            <ThemedText type="subtitle" style={styles.hintModalTitle}>
+                                Hint
+                            </ThemedText>
+                            <ThemedText type="default" style={styles.hintModalText}>
+                                {currentQuestion.explanation}
+                            </ThemedText>
+                            <Pressable onPress={() => setIsHintModalOpen(false)} style={styles.hintModalButton}>
+                                <ThemedText type="smallBold" style={styles.hintModalButtonText}>
+                                    Close
+                                </ThemedText>
+                            </Pressable>
+                        </View>
+                    </View>
+                )}
+
                 {isResultModalOpen && (
-                    <View style={styles.modalOverlay} pointerEvents="box-none">
+                    <View style={styles.modalOverlay} pointerEvents="auto">
                         <View style={styles.modalCard}>
                             <View style={styles.modalHeader}>
                                 {isCorrect ? (
@@ -261,7 +294,7 @@ export default function PracticeScreen() {
 
                             <View style={styles.modalActions}>
                                 <Pressable onPress={() => setShowExplanation((value) => !value)} style={styles.modalSecondaryButton}>
-                                    <ThemedText type="smallBold" style={styles.modalSecondaryText}>
+                                    <ThemedText type="small" style={styles.modalSecondaryText}>
                                         {showExplanation ? 'Hide explain' : 'Explain'}
                                     </ThemedText>
                                 </Pressable>
@@ -453,12 +486,33 @@ const styles = StyleSheet.create({
     },
     actionsRow: {
         marginTop: Spacing.four,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: Spacing.two,
+    },
+    hintButton: {
+        width: 52,
+        height: 48,
+        borderRadius: 14,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#F8D66C',
+        borderWidth: 1,
+        borderColor: '#F7C84C',
+        shadowColor: '#F8D66C',
+        shadowOpacity: 0.35,
+        shadowRadius: 10,
+        shadowOffset: { width: 0, height: 4 },
+        elevation: 4,
+    },
+    hintButtonPressed: {
+        opacity: 0.88,
     },
     primaryButton: {
-        width: '100%',
+        flex: 1,
+        height: 48,
         backgroundColor: '#22c55f',
         borderRadius: 14,
-        paddingVertical: Spacing.two,
         alignItems: 'center',
         justifyContent: 'center',
         shadowColor: '#22c55f',
@@ -502,6 +556,37 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 12 },
         elevation: 8,
         alignItems: 'center',
+    },
+    hintModalCard: {
+        width: '100%',
+        maxWidth: 320,
+        backgroundColor: '#181B31',
+        borderRadius: 18,
+        borderWidth: 1,
+        borderColor: '#4B3A78',
+        padding: Spacing.three,
+        alignItems: 'center',
+    },
+    hintModalTitle: {
+        color: '#F8D66C',
+        marginBottom: Spacing.one,
+    },
+    hintModalText: {
+        color: '#F5EEFF',
+        lineHeight: 22,
+        textAlign: 'center',
+        marginBottom: Spacing.two,
+    },
+    hintModalButton: {
+        width: '100%',
+        backgroundColor: '#F8D66C',
+        borderRadius: 12,
+        paddingVertical: Spacing.two,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    hintModalButtonText: {
+        color: '#17143A',
     },
     modalHeader: {
         flexDirection: 'row',
