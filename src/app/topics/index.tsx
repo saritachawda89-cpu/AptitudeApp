@@ -76,7 +76,8 @@ export default function TopicsScreen() {
                 <View style={styles.headerCard}>
                     <View style={styles.titleWrap}>
                         <ThemedText type="subtitle" style={styles.title}>
-                            AptitudeApp Logo
+                            <ThemedText type="title" style={styles.titleGradient}>Aptitude</ThemedText>
+                            App
                         </ThemedText>
                         <ThemedText type="small" style={styles.subtitle}>
                             Practice smarter with quick topic-based aptitude drills.
@@ -277,6 +278,12 @@ const styles = StyleSheet.create({
         color: '#22c55f',
         fontSize: 24,
         fontWeight: '800',
+        lineHeight: 32,
+    },
+    titleGradient: {
+        color: '#fff',
+        fontSize: 24,
+        fontWeight: '600',
         lineHeight: 32,
     },
     coinBadge: {
@@ -498,5 +505,5 @@ const styles = StyleSheet.create({
     },
     unlockButtonText: {
         color: '#0E1226',
-    },
+    }
 });
