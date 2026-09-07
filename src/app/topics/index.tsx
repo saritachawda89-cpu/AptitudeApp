@@ -1,6 +1,6 @@
 import { router } from 'expo-router';
 import { ArrowRight, Coins, Lock, Sparkles } from 'lucide-react-native';
-import { Alert, FlatList, Image, Modal, Pressable, StyleSheet, View } from 'react-native';
+import { FlatList, Image, Modal, Pressable, StyleSheet, View } from 'react-native';
 import { useEffect, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Svg, { Circle } from 'react-native-svg';
@@ -60,7 +60,6 @@ export default function TopicsScreen() {
         if (!didUnlock) {
             const errorMessage = `You need ${UNLOCK_COST} coins to unlock ${topicName}.`;
             setFeedback({ type: 'error', message: errorMessage });
-            Alert.alert('Not enough coins', errorMessage);
             return;
         }
 
@@ -68,7 +67,6 @@ export default function TopicsScreen() {
         setUnlockedTopics([...parentData.unlockedTopics]);
         setCoins(parentData.coins);
         setFeedback({ type: 'success', message: successMessage });
-        Alert.alert('Unlocked successfully', successMessage);
     };
 
     const handleWatchVideoReward = async () => {
@@ -101,6 +99,11 @@ export default function TopicsScreen() {
 
                 {feedback ? (
                     <View style={[styles.feedbackBanner, feedback.type === 'success' ? styles.successBanner : styles.errorBanner]}>
+                        <View style={styles.feedbackIconWrap}>
+                            <ThemedText type="smallBold" style={styles.feedbackIconText}>
+                                {feedback.type === 'success' ? '✓' : '!'}
+                            </ThemedText>
+                        </View>
                         <ThemedText type="smallBold" style={styles.feedbackText}>
                             {feedback.message}
                         </ThemedText>
@@ -256,7 +259,7 @@ export default function TopicsScreen() {
                     onRequestClose={() => setPendingUnlockTopic(null)}>
                     <View style={styles.modalOverlay}>
                         <View style={styles.modalCard}>
-                            <ThemedText type="subtitle" style={styles.modalTitle}>
+                            <ThemedText type="subtitle" style={styles.coinsModalTitle}>
                                 Unlock level
                             </ThemedText>
                             <ThemedText type="default" style={styles.modalText}>
@@ -363,6 +366,7 @@ const styles = StyleSheet.create({
     coinsModalTitle: {
         color: '#F8D66C',
         marginBottom: Spacing.one,
+        textAlign: 'center',
     },
     coinsModalText: {
         color: '#F5EEFF',
@@ -511,29 +515,49 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingHorizontal: Spacing.two,
-        paddingVertical: Spacing.one,
-        borderRadius: 12,
-        marginBottom: Spacing.two,
+        paddingVertical: Spacing.two,
+        borderRadius: 16,
         borderWidth: 1,
         gap: Spacing.one,
+        marginBottom: Spacing.two,
+        shadowColor: '#000000',
+        shadowOpacity: 0.18,
+        shadowRadius: 12,
+        shadowOffset: { width: 0, height: 6 },
+        elevation: 6,
     },
     successBanner: {
-        backgroundColor: 'rgba(94, 234, 212, 0.12)',
-        borderColor: 'rgba(94, 234, 212, 0.5)',
+        backgroundColor: 'rgba(15, 118, 110, 0.22)',
+        borderColor: 'rgba(94, 234, 212, 0.58)',
     },
     errorBanner: {
-        backgroundColor: 'rgba(255, 124, 124, 0.12)',
-        borderColor: 'rgba(255, 124, 124, 0.5)',
+        backgroundColor: 'rgba(127, 29, 29, 0.22)',
+        borderColor: 'rgba(248, 113, 113, 0.58)',
+    },
+    feedbackIconWrap: {
+        width: 24,
+        height: 24,
+        borderRadius: 12,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'rgba(255,255,255,0.08)',
+    },
+    feedbackIconText: {
+        color: '#F5EEFF',
+        fontSize: 12,
+        lineHeight: 12,
     },
     feedbackText: {
         color: '#F5EEFF',
-        textAlign: 'center',
+        textAlign: 'left',
         flex: 1,
+        fontSize: 12,
+        lineHeight: 18,
     },
     feedbackCloseButton: {
-        width: 22,
-        height: 22,
-        borderRadius: 11,
+        width: 24,
+        height: 24,
+        borderRadius: 12,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'rgba(255,255,255,0.08)',
@@ -559,10 +583,10 @@ const styles = StyleSheet.create({
         borderColor: '#4B3A78',
         padding: Spacing.three,
         shadowColor: '#000000',
-        shadowOpacity: 0.25,
-        shadowRadius: 14,
-        shadowOffset: { width: 0, height: 8 },
-        elevation: 8,
+        shadowOpacity: 0.28,
+        shadowRadius: 16,
+        shadowOffset: { width: 0, height: 10 },
+        elevation: 10,
     },
     modalTitle: {
         color: '#F5EEFF',
@@ -595,7 +619,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingVertical: Spacing.two,
         borderRadius: 12,
-        backgroundColor: '#22c55f',
+        backgroundColor: '#F8D66C',
         alignItems: 'center',
     },
     unlockButtonText: {
