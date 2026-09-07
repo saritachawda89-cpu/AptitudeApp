@@ -1,7 +1,7 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import { ArrowLeft, CheckCheck, CircleDashed } from 'lucide-react-native';
 import { useEffect, useState } from 'react';
-import { Modal, Pressable, StyleSheet, View } from 'react-native';
+import { Modal, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 
 import { CoinBadge } from '@/components/coin-badge';
 import { ThemedText } from '@/components/themed-text';
@@ -15,6 +15,10 @@ import {
     percentageQuestions,
     timeAndWorkQuestions,
     trainQuestions,
+    profitAndLossQuestions,
+    permutationAndCombinationQuestions,
+    ratioAndProportionQuestions,
+    mixtureAndAlligationQuestions
 } from '@/data/data';
 
 const questionMap = {
@@ -23,6 +27,10 @@ const questionMap = {
     trainQuestions,
     averageQuestions,
     percentageQuestions,
+    profitAndLossQuestions,
+    permutationAndCombinationQuestions,
+    ratioAndProportionQuestions,
+    mixtureAndAlligationQuestions
 } as const;
 
 export default function QuestionsScreen() {
@@ -46,97 +54,102 @@ export default function QuestionsScreen() {
     return (
         <ThemedView style={styles.container}>
             <ThemedView style={styles.screenShell}>
-                <View style={styles.topBar}>
-                    <Pressable onPress={() => router.push('/topics')} style={styles.backButton}>
-                        <ArrowLeft size={16} color="#F0F4F8" />
-                    </Pressable>
+                <ScrollView
+                    showsVerticalScrollIndicator={false}
+                    contentContainerStyle={styles.scrollContent}
+                    style={styles.scrollView}>
+                    <View style={styles.topBar}>
+                        <Pressable onPress={() => router.push('/topics')} style={styles.backButton}>
+                            <ArrowLeft size={16} color="#F0F4F8" />
+                        </Pressable>
 
-                    <View style={styles.titleWrap}>
-                        <ThemedText type="title" style={styles.screenTitle}>
-                            {selectedTopic.name}
-                        </ThemedText>
+                        <View style={styles.titleWrap}>
+                            <ThemedText type="title" style={styles.screenTitle}>
+                                {selectedTopic.name}
+                            </ThemedText>
+                        </View>
+
+                        <CoinBadge value={coins} onPress={() => setIsCoinsInfoOpen(true)} compact />
                     </View>
 
-                    <CoinBadge value={coins} onPress={() => setIsCoinsInfoOpen(true)} compact />
-                </View>
+                    {isCoinsInfoOpen && (
+                        <View style={styles.overlay} pointerEvents="auto">
+                            <View style={styles.coinsModalCard}>
+                                <ThemedText type="subtitle" style={styles.coinsModalTitle}>
+                                    Earn coins
+                                </ThemedText>
+                                <ThemedText type="default" style={styles.coinsModalText}>
+                                    You can earn coins by solving questions or you can watch video and earn.
+                                </ThemedText>
 
-                {isCoinsInfoOpen && (
-                    <View style={styles.overlay} pointerEvents="auto">
-                        <View style={styles.coinsModalCard}>
-                            <ThemedText type="subtitle" style={styles.coinsModalTitle}>
-                                Earn coins
-                            </ThemedText>
-                            <ThemedText type="default" style={styles.coinsModalText}>
-                                You can earn coins by solving questions or you can watch video and earn.
-                            </ThemedText>
+                                <View style={styles.coinsModalActions}>
+                                    <Pressable onPress={() => setIsCoinsInfoOpen(false)} style={styles.closeCoinsButton}>
+                                        <ThemedText type="smallBold" style={styles.closeCoinsText}>
+                                            Close
+                                        </ThemedText>
+                                    </Pressable>
 
-                            <View style={styles.coinsModalActions}>
-                                <Pressable onPress={() => setIsCoinsInfoOpen(false)} style={styles.closeCoinsButton}>
-                                    <ThemedText type="smallBold" style={styles.closeCoinsText}>
-                                        Close
-                                    </ThemedText>
-                                </Pressable>
-
-                                <Pressable onPress={handleWatchVideoReward} style={styles.watchVideoButton}>
-                                    <ThemedText type="smallBold" style={styles.watchVideoText}>
-                                        Watch video (+50)
-                                    </ThemedText>
-                                </Pressable>
+                                    <Pressable onPress={handleWatchVideoReward} style={styles.watchVideoButton}>
+                                        <ThemedText type="smallBold" style={styles.watchVideoText}>
+                                            Watch video (+50)
+                                        </ThemedText>
+                                    </Pressable>
+                                </View>
                             </View>
                         </View>
-                    </View>
-                )}
+                    )}
 
-                <View style={styles.progressPanel}>
-                    <View style={styles.progressRow}>
-                        <View style={styles.progressTrack}>
-                            <View
-                                style={[
-                                    styles.progressFill,
-                                    { width: `${questions.length ? (completedCount / questions.length) * 100 : 0}%` },
-                                ]}
-                            />
+                    <View style={styles.progressPanel}>
+                        <View style={styles.progressRow}>
+                            <View style={styles.progressTrack}>
+                                <View
+                                    style={[
+                                        styles.progressFill,
+                                        { width: `${questions.length ? (completedCount / questions.length) * 100 : 0}%` },
+                                    ]}
+                                />
+                            </View>
+                            <ThemedText type="smallBold" style={styles.progressValue}>
+                                {completedCount}/{questions.length}
+                            </ThemedText>
                         </View>
-                        <ThemedText type="smallBold" style={styles.progressValue}>
-                            {completedCount}/{questions.length}
-                        </ThemedText>
                     </View>
-                </View>
 
-                <View style={styles.grid}>
-                    {questions.map((question, index) => {
-                        const isDone = question.isCompleted;
+                    <View style={styles.grid}>
+                        {questions.map((question, index) => {
+                            const isDone = question.isCompleted;
 
-                        return (
-                            <Pressable
-                                key={question.id}
-                                hitSlop={8}
-                                onPress={() =>
-                                    router.push({
-                                        pathname: '/practice',
-                                        params: {
-                                            topic: selectedTopic.id,
-                                            questionId: question.id,
-                                        },
-                                    })
-                                }
-                                style={({ pressed }) => [
-                                    styles.questionTile,
-                                    isDone && styles.questionTileCompleted,
-                                    pressed && styles.questionTilePressed,
-                                ]}>
-                                <ThemedText type="smallBold" style={styles.tileNumber}>
-                                    {index + 1}
-                                </ThemedText>
-                                {isDone ? (
-                                    <CheckCheck size={12} color="#22c55f" style={styles.checkMark} />
-                                ) : (
-                                    <CircleDashed size={12} color="#8E9BB0" style={styles.checkMark} />
-                                )}
-                            </Pressable>
-                        );
-                    })}
-                </View>
+                            return (
+                                <Pressable
+                                    key={question.id}
+                                    hitSlop={8}
+                                    onPress={() =>
+                                        router.push({
+                                            pathname: '/practice',
+                                            params: {
+                                                topic: selectedTopic.id,
+                                                questionId: question.id,
+                                            },
+                                        })
+                                    }
+                                    style={({ pressed }) => [
+                                        styles.questionTile,
+                                        isDone && styles.questionTileCompleted,
+                                        pressed && styles.questionTilePressed,
+                                    ]}>
+                                    <ThemedText type="smallBold" style={styles.tileNumber}>
+                                        {index + 1}
+                                    </ThemedText>
+                                    {isDone ? (
+                                        <CheckCheck size={12} color="#22c55f" style={styles.checkMark} />
+                                    ) : (
+                                        <CircleDashed size={12} color="#8E9BB0" style={styles.checkMark} />
+                                    )}
+                                </Pressable>
+                            );
+                        })}
+                    </View>
+                </ScrollView>
             </ThemedView>
         </ThemedView>
     );
@@ -149,12 +162,19 @@ const styles = StyleSheet.create({
         backgroundColor: '#090a1c',
     },
     screenShell: {
+        flex: 1,
         width: '100%',
         maxWidth: MaxContentWidth,
         paddingHorizontal: Spacing.four,
         paddingTop: Spacing.four,
         paddingBottom: Spacing.five,
         backgroundColor: '#090a1c',
+    },
+    scrollView: {
+        flex: 1,
+    },
+    scrollContent: {
+        paddingBottom: Spacing.three,
     },
     topBar: {
         flexDirection: 'row',

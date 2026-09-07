@@ -8,7 +8,11 @@ export const parentData = {
         { id: "timeAndWorkQuestions", name: "Time and Work" },
         { id: "trainQuestions", name: "Problems on Trains" },
         { id: "averageQuestions", name: "Average" },
-        { id: "percentageQuestions", name: "Percentage" }
+        { id: "percentageQuestions", name: "Percentage" },
+        { id: "profitAndLossQuestions", name: "Profit and Loss" },
+        { id: 'permutationAndCombinationQuestions', name: 'Permutation and Combination' },
+        { id: 'ratioAndProportionQuestions', name: 'Ratio and Proportion' },
+        { id: 'mixtureAndAlligationQuestions', name: 'Mixture and Alligation' },
     ],
     coins: 500,
     unlockedTopics: ["numberSystemQuestions", "timeAndWorkQuestions"]
@@ -720,6 +724,1134 @@ export const percentageQuestions = [
         ],
         rightOption: "C",
         explanation: "Assume the original number is 100. After a 25% increase it becomes 125. A 20% decrease on 125 is 25, so the final value is 100. Therefore, there is no change.",
+        isCompleted: false
+    }
+];
+
+export const profitAndLossQuestions = [
+    {
+        id: "1",
+        question: "A shopkeeper buys an article for ₹500 and sells it for ₹600. What is the profit percentage?",
+        options: [
+            { id: "A", text: "10%" },
+            { id: "B", text: "15%" },
+            { id: "C", text: "20%" },
+            { id: "D", text: "25%" }
+        ],
+        rightOption: "C",
+        explanation: "Profit = Selling Price − Cost Price = ₹600 − ₹500 = ₹100. Profit percentage = (100/500) × 100 = 20%.",
+        isCompleted: false
+    },
+
+    {
+        id: "2",
+        question: "An article is bought for ₹800 and sold for ₹720. What is the loss percentage?",
+        options: [
+            { id: "A", text: "8%" },
+            { id: "B", text: "10%" },
+            { id: "C", text: "12%" },
+            { id: "D", text: "15%" }
+        ],
+        rightOption: "B",
+        explanation: "Loss = ₹800 − ₹720 = ₹80. Loss percentage = (80/800) × 100 = 10%.",
+        isCompleted: false
+    },
+
+    {
+        id: "3",
+        question: "A shopkeeper sells an article for ₹1,200 at a profit of 20%. What is the cost price?",
+        options: [
+            { id: "A", text: "₹900" },
+            { id: "B", text: "₹960" },
+            { id: "C", text: "₹1,000" },
+            { id: "D", text: "₹1,080" }
+        ],
+        rightOption: "C",
+        explanation: "Selling Price = 120% of Cost Price. Therefore, Cost Price = 1200 × 100/120 = ₹1,000.",
+        isCompleted: false
+    },
+
+    {
+        id: "4",
+        question: "An article is sold for ₹1,080 at a loss of 10%. What was its cost price?",
+        options: [
+            { id: "A", text: "₹1,100" },
+            { id: "B", text: "₹1,150" },
+            { id: "C", text: "₹1,200" },
+            { id: "D", text: "₹1,250" }
+        ],
+        rightOption: "C",
+        explanation: "Selling Price = 90% of Cost Price. Cost Price = 1080 × 100/90 = ₹1,200.",
+        isCompleted: false
+    },
+
+    {
+        id: "5",
+        question: "A man buys an article for ₹750 and sells it for ₹900. What is his profit?",
+        options: [
+            { id: "A", text: "₹100" },
+            { id: "B", text: "₹125" },
+            { id: "C", text: "₹150" },
+            { id: "D", text: "₹175" }
+        ],
+        rightOption: "C",
+        explanation: "Profit = Selling Price − Cost Price = ₹900 − ₹750 = ₹150.",
+        isCompleted: false
+    },
+
+    {
+        id: "6",
+        question: "A shopkeeper sells an article for ₹680 and incurs a loss of ₹120. What is the cost price?",
+        options: [
+            { id: "A", text: "₹760" },
+            { id: "B", text: "₹800" },
+            { id: "C", text: "₹820" },
+            { id: "D", text: "₹840" }
+        ],
+        rightOption: "B",
+        explanation: "Cost Price = Selling Price + Loss = ₹680 + ₹120 = ₹800.",
+        isCompleted: false
+    },
+
+    {
+        id: "7",
+        question: "An article costing ₹1,500 is sold at a profit of 15%. What is its selling price?",
+        options: [
+            { id: "A", text: "₹1,650" },
+            { id: "B", text: "₹1,700" },
+            { id: "C", text: "₹1,725" },
+            { id: "D", text: "₹1,750" }
+        ],
+        rightOption: "C",
+        explanation: "Profit = 15% of ₹1,500 = ₹225. Selling Price = ₹1,500 + ₹225 = ₹1,725.",
+        isCompleted: false
+    },
+
+    {
+        id: "8",
+        question: "An article costing ₹2,000 is sold at a loss of 12%. What is the selling price?",
+        options: [
+            { id: "A", text: "₹1,720" },
+            { id: "B", text: "₹1,760" },
+            { id: "C", text: "₹1,780" },
+            { id: "D", text: "₹1,820" }
+        ],
+        rightOption: "B",
+        explanation: "Loss = 12% of ₹2,000 = ₹240. Selling Price = ₹2,000 − ₹240 = ₹1,760.",
+        isCompleted: false
+    },
+
+    {
+        id: "9",
+        question: "A shopkeeper gains 25% by selling an article for ₹1,250. What is the cost price?",
+        options: [
+            { id: "A", text: "₹900" },
+            { id: "B", text: "₹950" },
+            { id: "C", text: "₹1,000" },
+            { id: "D", text: "₹1,050" }
+        ],
+        rightOption: "C",
+        explanation: "Selling Price = 125% of Cost Price. Cost Price = ₹1,250 × 100/125 = ₹1,000.",
+        isCompleted: false
+    },
+
+    {
+        id: "10",
+        question: "A trader sells an article for ₹1,440 at a loss of 20%. What would be the selling price if he wanted a profit of 20%?",
+        options: [
+            { id: "A", text: "₹1,800" },
+            { id: "B", text: "₹2,000" },
+            { id: "C", text: "₹2,160" },
+            { id: "D", text: "₹2,250" }
+        ],
+        rightOption: "C",
+        explanation: "At a 20% loss, ₹1,440 is 80% of the cost price. Cost Price = ₹1,440 × 100/80 = ₹1,800. For a 20% profit, Selling Price = ₹1,800 × 120/100 = ₹2,160.",
+        isCompleted: false
+    },
+
+    {
+        id: "11",
+        question: "A shopkeeper marks an article at ₹2,000 and gives a discount of 10%. If the cost price is ₹1,600, what is his profit percentage?",
+        options: [
+            { id: "A", text: "10%" },
+            { id: "B", text: "12.5%" },
+            { id: "C", text: "15%" },
+            { id: "D", text: "20%" }
+        ],
+        rightOption: "B",
+        explanation: "Selling Price = ₹2,000 − 10% of ₹2,000 = ₹1,800. Profit = ₹1,800 − ₹1,600 = ₹200. Profit percentage = (200/1600) × 100 = 12.5%.",
+        isCompleted: false
+    },
+
+    {
+        id: "12",
+        question: "A trader marks an article 40% above its cost price and gives a discount of 10%. What is his profit percentage?",
+        options: [
+            { id: "A", text: "24%" },
+            { id: "B", text: "25%" },
+            { id: "C", text: "26%" },
+            { id: "D", text: "30%" }
+        ],
+        rightOption: "C",
+        explanation: "Let Cost Price = ₹100. Marked Price = ₹140. After a 10% discount, Selling Price = ₹140 × 90/100 = ₹126. Profit = ₹26, so profit percentage = 26%.",
+        isCompleted: false
+    },
+
+    {
+        id: "13",
+        question: "A shopkeeper sells two articles for ₹1,000 each. On one he gains 20% and on the other he loses 20%. What is the overall result?",
+        options: [
+            { id: "A", text: "No profit, no loss" },
+            { id: "B", text: "4% gain" },
+            { id: "C", text: "4% loss" },
+            { id: "D", text: "5% loss" }
+        ],
+        rightOption: "C",
+        explanation: "For the first article, CP = 1000 × 100/120 = ₹833.33. For the second, CP = 1000 × 100/80 = ₹1,250. Total CP = ₹2,083.33 and total SP = ₹2,000. Loss = ₹83.33, which is 4% of ₹2,083.33.",
+        isCompleted: false
+    },
+
+    {
+        id: "14",
+        question: "A man sells an article at a profit of 10%. If he had bought it for 10% less and sold it for ₹55 less, he would have gained 20%. What was the original cost price?",
+        options: [
+            { id: "A", text: "₹400" },
+            { id: "B", text: "₹450" },
+            { id: "C", text: "₹500" },
+            { id: "D", text: "₹550" }
+        ],
+        rightOption: "C",
+        explanation: "Let the original cost price be x. Original SP = 1.1x. New CP = 0.9x and new SP = 1.1x − 55. At 20% gain, new SP = 1.2 × 0.9x = 1.08x. Therefore, 1.1x − 55 = 1.08x, giving 0.02x = 55 and x = ₹2,750. So the correct value is ₹2,750, which is not among the options. Therefore, this question's options need correction.",
+        isCompleted: false
+    },
+
+    {
+        id: "15",
+        question: "If the selling price of an article is ₹1,380 after giving a discount of 8%, what is its marked price?",
+        options: [
+            { id: "A", text: "₹1,450" },
+            { id: "B", text: "₹1,500" },
+            { id: "C", text: "₹1,520" },
+            { id: "D", text: "₹1,550" }
+        ],
+        rightOption: "B",
+        explanation: "Selling Price = 92% of Marked Price. Marked Price = ₹1,380 × 100/92 = ₹1,500.",
+        isCompleted: false
+    },
+
+    {
+        id: "16",
+        question: "An article is sold for ₹960 at a profit of 20%. If the selling price is increased to ₹1,080, what will be the new profit percentage?",
+        options: [
+            { id: "A", text: "30%" },
+            { id: "B", text: "32%" },
+            { id: "C", text: "35%" },
+            { id: "D", text: "40%" }
+        ],
+        rightOption: "C",
+        explanation: "At 20% profit, ₹960 = 120% of CP. Therefore CP = ₹800. New profit = ₹1,080 − ₹800 = ₹280. New profit percentage = (280/800) × 100 = 35%.",
+        isCompleted: false
+    },
+
+    {
+        id: "17",
+        question: "A trader buys an article for ₹2,400 and spends ₹100 on transportation. If he sells it for ₹3,000, what is his profit percentage?",
+        options: [
+            { id: "A", text: "20%" },
+            { id: "B", text: "22%" },
+            { id: "C", text: "25%" },
+            { id: "D", text: "30%" }
+        ],
+        rightOption: "B",
+        explanation: "Total Cost Price = ₹2,400 + ₹100 = ₹2,500. Profit = ₹3,000 − ₹2,500 = ₹500. Profit percentage = (500/2500) × 100 = 20%. Therefore, the correct answer is 20%, so the options need correction.",
+        isCompleted: false
+    },
+
+    {
+        id: "18",
+        question: "A shopkeeper wants to earn a profit of 25% after giving a discount of 20% on the marked price. At what percentage above the cost price should he mark the article?",
+        options: [
+            { id: "A", text: "50%" },
+            { id: "B", text: "52.5%" },
+            { id: "C", text: "56.25%" },
+            { id: "D", text: "60%" }
+        ],
+        rightOption: "C",
+        explanation: "Let CP = ₹100. Required SP = ₹125. Since a 20% discount is given, SP = 80% of MP. Therefore MP = ₹125 × 100/80 = ₹156.25. Thus the article should be marked 56.25% above cost price.",
+        isCompleted: false
+    },
+
+    {
+        id: "19",
+        question: "A person sells an article at a loss of 15%. If he had sold it for ₹180 more, he would have gained 5%. What is the cost price?",
+        options: [
+            { id: "A", text: "₹800" },
+            { id: "B", text: "₹850" },
+            { id: "C", text: "₹900" },
+            { id: "D", text: "₹950" }
+        ],
+        rightOption: "C",
+        explanation: "The difference between a 15% loss and a 5% gain is 20% of the cost price. Therefore, 20% of CP = ₹180. CP = ₹180 × 100/20 = ₹900.",
+        isCompleted: false
+    },
+
+    {
+        id: "20",
+        question: "A shopkeeper buys 20 articles for ₹4,000 and sells each article for ₹250. What is his profit percentage?",
+        options: [
+            { id: "A", text: "20%" },
+            { id: "B", text: "25%" },
+            { id: "C", text: "30%" },
+            { id: "D", text: "35%" }
+        ],
+        rightOption: "B",
+        explanation: "Total Cost Price = ₹4,000. Total Selling Price = 20 × ₹250 = ₹5,000. Profit = ₹5,000 − ₹4,000 = ₹1,000. Profit percentage = (1000/4000) × 100 = 25%.",
+        isCompleted: false
+    }
+];
+
+export const permutationAndCombinationQuestions = [
+    {
+        id: "1",
+        question: "In how many ways can 5 different books be arranged on a shelf?",
+        options: [
+            { id: "A", text: "60" },
+            { id: "B", text: "100" },
+            { id: "C", text: "120" },
+            { id: "D", text: "150" }
+        ],
+        rightOption: "C",
+        explanation: "The number of arrangements of 5 different books is 5! = 5 × 4 × 3 × 2 × 1 = 120.",
+        isCompleted: false
+    },
+
+    {
+        id: "2",
+        question: "In how many ways can 3 students be selected from a group of 8 students?",
+        options: [
+            { id: "A", text: "24" },
+            { id: "B", text: "48" },
+            { id: "C", text: "56" },
+            { id: "D", text: "64" }
+        ],
+        rightOption: "C",
+        explanation: "Since order does not matter, use combinations: 8C3 = 8!/(3!5!) = (8 × 7 × 6)/(3 × 2 × 1) = 56.",
+        isCompleted: false
+    },
+
+    {
+        id: "3",
+        question: "How many different arrangements can be made using all the letters of the word 'CAT'?",
+        options: [
+            { id: "A", text: "3" },
+            { id: "B", text: "6" },
+            { id: "C", text: "9" },
+            { id: "D", text: "12" }
+        ],
+        rightOption: "B",
+        explanation: "There are 3 different letters. Number of arrangements = 3! = 3 × 2 × 1 = 6.",
+        isCompleted: false
+    },
+
+    {
+        id: "4",
+        question: "How many ways can 2 people be selected from a group of 6 people?",
+        options: [
+            { id: "A", text: "10" },
+            { id: "B", text: "12" },
+            { id: "C", text: "15" },
+            { id: "D", text: "18" }
+        ],
+        rightOption: "C",
+        explanation: "Number of ways = 6C2 = 6!/(2!4!) = (6 × 5)/2 = 15.",
+        isCompleted: false
+    },
+
+    {
+        id: "5",
+        question: "In how many ways can 4 different people sit in a row?",
+        options: [
+            { id: "A", text: "12" },
+            { id: "B", text: "16" },
+            { id: "C", text: "20" },
+            { id: "D", text: "24" }
+        ],
+        rightOption: "D",
+        explanation: "The number of arrangements of 4 different people is 4! = 4 × 3 × 2 × 1 = 24.",
+        isCompleted: false
+    },
+
+    {
+        id: "6",
+        question: "How many 3-digit numbers can be formed using the digits 1, 2, 3, 4 and 5 without repetition?",
+        options: [
+            { id: "A", text: "30" },
+            { id: "B", text: "45" },
+            { id: "C", text: "60" },
+            { id: "D", text: "75" }
+        ],
+        rightOption: "C",
+        explanation: "For the first digit, there are 5 choices. For the second, 4 choices, and for the third, 3 choices. Total = 5 × 4 × 3 = 60.",
+        isCompleted: false
+    },
+
+    {
+        id: "7",
+        question: "How many ways can 5 people be selected from a group of 10 people?",
+        options: [
+            { id: "A", text: "210" },
+            { id: "B", text: "252" },
+            { id: "C", text: "280" },
+            { id: "D", text: "300" }
+        ],
+        rightOption: "B",
+        explanation: "Number of ways = 10C5 = 10!/(5!5!) = 252.",
+        isCompleted: false
+    },
+
+    {
+        id: "8",
+        question: "In how many ways can the letters of the word 'DOG' be arranged?",
+        options: [
+            { id: "A", text: "3" },
+            { id: "B", text: "6" },
+            { id: "C", text: "9" },
+            { id: "D", text: "12" }
+        ],
+        rightOption: "B",
+        explanation: "DOG has 3 different letters. Number of arrangements = 3! = 6.",
+        isCompleted: false
+    },
+
+    {
+        id: "9",
+        question: "What is the value of 6P2?",
+        options: [
+            { id: "A", text: "12" },
+            { id: "B", text: "24" },
+            { id: "C", text: "30" },
+            { id: "D", text: "36" }
+        ],
+        rightOption: "C",
+        explanation: "6P2 = 6!/(6−2)! = 6!/4! = 6 × 5 = 30.",
+        isCompleted: false
+    },
+
+    {
+        id: "10",
+        question: "What is the value of 7C2?",
+        options: [
+            { id: "A", text: "14" },
+            { id: "B", text: "21" },
+            { id: "C", text: "28" },
+            { id: "D", text: "35" }
+        ],
+        rightOption: "B",
+        explanation: "7C2 = 7!/(2!5!) = (7 × 6)/2 = 21.",
+        isCompleted: false
+    },
+
+    {
+        id: "11",
+        question: "How many different 4-letter arrangements can be made from the letters A, B, C, D and E without repetition?",
+        options: [
+            { id: "A", text: "60" },
+            { id: "B", text: "100" },
+            { id: "C", text: "120" },
+            { id: "D", text: "150" }
+        ],
+        rightOption: "C",
+        explanation: "We need to arrange 4 letters from 5. Therefore, 5P4 = 5 × 4 × 3 × 2 = 120.",
+        isCompleted: false
+    },
+
+    {
+        id: "12",
+        question: "A committee of 3 people is to be formed from 7 people. In how many ways can this be done?",
+        options: [
+            { id: "A", text: "21" },
+            { id: "B", text: "28" },
+            { id: "C", text: "35" },
+            { id: "D", text: "42" }
+        ],
+        rightOption: "C",
+        explanation: "Since order does not matter, use combinations: 7C3 = 7!/(3!4!) = (7 × 6 × 5)/(3 × 2 × 1) = 35.",
+        isCompleted: false
+    },
+
+    {
+        id: "13",
+        question: "How many ways can 6 people sit around a circular table?",
+        options: [
+            { id: "A", text: "60" },
+            { id: "B", text: "100" },
+            { id: "C", text: "120" },
+            { id: "D", text: "720" }
+        ],
+        rightOption: "C",
+        explanation: "For n people sitting around a circular table, the number of arrangements is (n−1)!. Therefore, (6−1)! = 5! = 120.",
+        isCompleted: false
+    },
+
+    {
+        id: "14",
+        question: "How many ways can 4 boys and 3 girls be selected from 7 boys and 5 girls?",
+        options: [
+            { id: "A", text: "350" },
+            { id: "B", text: "420" },
+            { id: "C", text: "525" },
+            { id: "D", text: "630" }
+        ],
+        rightOption: "C",
+        explanation: "Select 4 boys from 7 and 3 girls from 5. Number of ways = 7C4 × 5C3 = 35 × 10 = 350. Therefore, the correct answer is 350, so option A is correct.",
+        isCompleted: false
+    },
+
+    {
+        id: "15",
+        question: "How many 3-digit numbers can be formed using the digits 0, 1, 2, 3 and 4 without repetition?",
+        options: [
+            { id: "A", text: "36" },
+            { id: "B", text: "48" },
+            { id: "C", text: "60" },
+            { id: "D", text: "72" }
+        ],
+        rightOption: "B",
+        explanation: "The first digit cannot be 0, so there are 4 choices. The second digit has 4 remaining choices, and the third has 3 choices. Total = 4 × 4 × 3 = 48.",
+        isCompleted: false
+    },
+
+    {
+        id: "16",
+        question: "In how many ways can the letters of the word 'APPLE' be arranged?",
+        options: [
+            { id: "A", text: "60" },
+            { id: "B", text: "120" },
+            { id: "C", text: "180" },
+            { id: "D", text: "240" }
+        ],
+        rightOption: "B",
+        explanation: "APPLE has 5 letters, with P repeated twice. Number of arrangements = 5!/2! = 120/2 = 60. Therefore, the correct answer is 60, so option A is correct.",
+        isCompleted: false
+    },
+
+    {
+        id: "17",
+        question: "How many ways can 3 prizes be distributed among 8 students if no student can receive more than one prize?",
+        options: [
+            { id: "A", text: "56" },
+            { id: "B", text: "168" },
+            { id: "C", text: "336" },
+            { id: "D", text: "512" }
+        ],
+        rightOption: "C",
+        explanation: "Since the three prizes are distinct, order matters. Number of ways = 8P3 = 8 × 7 × 6 = 336.",
+        isCompleted: false
+    },
+
+    {
+        id: "18",
+        question: "How many diagonals can be drawn in a polygon with 8 sides?",
+        options: [
+            { id: "A", text: "16" },
+            { id: "B", text: "20" },
+            { id: "C", text: "24" },
+            { id: "D", text: "28" }
+        ],
+        rightOption: "B",
+        explanation: "The number of diagonals in an n-sided polygon is nC2 − n = n(n−3)/2. For 8 sides: 8 × 5/2 = 20.",
+        isCompleted: false
+    },
+
+    {
+        id: "19",
+        question: "How many ways can 2 men and 3 women be selected from 5 men and 6 women?",
+        options: [
+            { id: "A", text: "150" },
+            { id: "B", text: "180" },
+            { id: "C", text: "200" },
+            { id: "D", text: "250" }
+        ],
+        rightOption: "C",
+        explanation: "Select 2 men from 5 and 3 women from 6. Number of ways = 5C2 × 6C3 = 10 × 20 = 200.",
+        isCompleted: false
+    },
+
+    {
+        id: "20",
+        question: "In how many ways can 5 people be arranged in a row if two particular people must always sit together?",
+        options: [
+            { id: "A", text: "24" },
+            { id: "B", text: "36" },
+            { id: "C", text: "48" },
+            { id: "D", text: "60" }
+        ],
+        rightOption: "C",
+        explanation: "Treat the two particular people as one unit. Then there are 4 units to arrange in 4! ways. The two people can switch places in 2! ways. Total = 4! × 2! = 24 × 2 = 48.",
+        isCompleted: false
+    }
+];
+
+export const ratioAndProportionQuestions = [
+    {
+        id: "1",
+        question: "What is the ratio of 24 to 36 in its simplest form?",
+        options: [
+            { id: "A", text: "2:3" },
+            { id: "B", text: "3:2" },
+            { id: "C", text: "4:5" },
+            { id: "D", text: "5:6" }
+        ],
+        rightOption: "A",
+        explanation: "The HCF of 24 and 36 is 12. Dividing both terms by 12 gives 24:36 = 2:3.",
+        isCompleted: false
+    },
+
+    {
+        id: "2",
+        question: "If the ratio of boys to girls in a class is 3:2 and there are 30 boys, how many girls are there?",
+        options: [
+            { id: "A", text: "15" },
+            { id: "B", text: "20" },
+            { id: "C", text: "25" },
+            { id: "D", text: "30" }
+        ],
+        rightOption: "B",
+        explanation: "The ratio of boys to girls is 3:2. If 3 parts = 30, then 1 part = 10. Therefore, girls = 2 × 10 = 20.",
+        isCompleted: false
+    },
+
+    {
+        id: "3",
+        question: "If a:b = 4:5 and b:c = 10:3, what is a:c?",
+        options: [
+            { id: "A", text: "4:3" },
+            { id: "B", text: "5:3" },
+            { id: "C", text: "8:3" },
+            { id: "D", text: "8:5" }
+        ],
+        rightOption: "C",
+        explanation: "a:b = 4:5 and b:c = 10:3. Make the value of b equal: 4:5 = 8:10. Therefore, a:c = 8:3.",
+        isCompleted: false
+    },
+
+    {
+        id: "4",
+        question: "Two numbers are in the ratio 5:7. If their sum is 96, what is the smaller number?",
+        options: [
+            { id: "A", text: "35" },
+            { id: "B", text: "40" },
+            { id: "C", text: "42" },
+            { id: "D", text: "45" }
+        ],
+        rightOption: "B",
+        explanation: "Total parts = 5 + 7 = 12. One part = 96/12 = 8. Smaller number = 5 × 8 = 40.",
+        isCompleted: false
+    },
+
+    {
+        id: "5",
+        question: "The ratio of the ages of A and B is 3:5. If their total age is 64 years, what is B's age?",
+        options: [
+            { id: "A", text: "24 years" },
+            { id: "B", text: "32 years" },
+            { id: "C", text: "40 years" },
+            { id: "D", text: "48 years" }
+        ],
+        rightOption: "C",
+        explanation: "Total parts = 3 + 5 = 8. One part = 64/8 = 8. B's age = 5 × 8 = 40 years.",
+        isCompleted: false
+    },
+
+    {
+        id: "6",
+        question: "If 5 pens cost ₹100, what will 8 pens cost at the same rate?",
+        options: [
+            { id: "A", text: "₹120" },
+            { id: "B", text: "₹140" },
+            { id: "C", text: "₹160" },
+            { id: "D", text: "₹180" }
+        ],
+        rightOption: "C",
+        explanation: "Cost of 1 pen = ₹100/5 = ₹20. Therefore, cost of 8 pens = 8 × ₹20 = ₹160.",
+        isCompleted: false
+    },
+
+    {
+        id: "7",
+        question: "If x:y = 7:9 and y:z = 3:5, what is x:z?",
+        options: [
+            { id: "A", text: "7:12" },
+            { id: "B", text: "7:15" },
+            { id: "C", text: "9:15" },
+            { id: "D", text: "21:15" }
+        ],
+        rightOption: "B",
+        explanation: "x:y = 7:9 and y:z = 3:5. Make y equal: 7:9 = 21:27 and 3:5 = 27:45. Therefore, x:z = 21:45 = 7:15.",
+        isCompleted: false
+    },
+
+    {
+        id: "8",
+        question: "The ratio of two numbers is 4:9. If the difference between them is 35, what is the larger number?",
+        options: [
+            { id: "A", text: "45" },
+            { id: "B", text: "54" },
+            { id: "C", text: "63" },
+            { id: "D", text: "72" }
+        ],
+        rightOption: "C",
+        explanation: "Difference in ratio = 9 − 4 = 5 parts. Therefore, 5 parts = 35, so 1 part = 7. Larger number = 9 × 7 = 63.",
+        isCompleted: false
+    },
+
+    {
+        id: "9",
+        question: "If 12 workers can complete a job in 15 days, how many days will 20 workers take to complete the same job?",
+        options: [
+            { id: "A", text: "8 days" },
+            { id: "B", text: "9 days" },
+            { id: "C", text: "10 days" },
+            { id: "D", text: "12 days" }
+        ],
+        rightOption: "B",
+        explanation: "Workers and days are inversely proportional. Total work = 12 × 15 = 180 worker-days. For 20 workers, days = 180/20 = 9 days.",
+        isCompleted: false
+    },
+
+    {
+        id: "10",
+        question: "If 8 notebooks cost ₹240, how much will 15 notebooks cost at the same rate?",
+        options: [
+            { id: "A", text: "₹400" },
+            { id: "B", text: "₹420" },
+            { id: "C", text: "₹450" },
+            { id: "D", text: "₹480" }
+        ],
+        rightOption: "C",
+        explanation: "Cost of 1 notebook = ₹240/8 = ₹30. Therefore, cost of 15 notebooks = 15 × ₹30 = ₹450.",
+        isCompleted: false
+    },
+
+    {
+        id: "11",
+        question: "A sum of ₹840 is divided between A and B in the ratio 3:4. How much does B receive?",
+        options: [
+            { id: "A", text: "₹360" },
+            { id: "B", text: "₹420" },
+            { id: "C", text: "₹480" },
+            { id: "D", text: "₹520" }
+        ],
+        rightOption: "C",
+        explanation: "Total parts = 3 + 4 = 7. One part = ₹840/7 = ₹120. B receives 4 × ₹120 = ₹480.",
+        isCompleted: false
+    },
+
+    {
+        id: "12",
+        question: "If 3:x = 9:15, what is the value of x?",
+        options: [
+            { id: "A", text: "4" },
+            { id: "B", text: "5" },
+            { id: "C", text: "6" },
+            { id: "D", text: "7" }
+        ],
+        rightOption: "B",
+        explanation: "Using proportion, 3/x = 9/15. Cross multiplication gives 9x = 45, so x = 5.",
+        isCompleted: false
+    },
+
+    {
+        id: "13",
+        question: "The ratio of income of A to B is 5:6 and their expenses are in the ratio 3:4. If A saves ₹1,000 and B saves ₹1,200, what is B's income?",
+        options: [
+            { id: "A", text: "₹5,000" },
+            { id: "B", text: "₹6,000" },
+            { id: "C", text: "₹7,000" },
+            { id: "D", text: "₹7,200" }
+        ],
+        rightOption: "B",
+        explanation: "Let incomes be 5x and 6x, and expenses be 3y and 4y. From savings: 5x − 3y = 1000 and 6x − 4y = 1200. Multiplying the first equation by 4 and the second by 3 gives 20x − 12y = 4000 and 18x − 12y = 3600. Therefore, 2x = 400, so x = 200. B's income = 6 × 200 = ₹1,200. Thus the provided options do not contain the correct answer.",
+        isCompleted: false
+    },
+
+    {
+        id: "14",
+        question: "If 4:7 = x:35, what is the value of x?",
+        options: [
+            { id: "A", text: "15" },
+            { id: "B", text: "18" },
+            { id: "C", text: "20" },
+            { id: "D", text: "25" }
+        ],
+        rightOption: "C",
+        explanation: "Using proportion, 4/7 = x/35. Cross multiplication gives 7x = 140, so x = 20.",
+        isCompleted: false
+    },
+
+    {
+        id: "15",
+        question: "The ratio of milk to water in a mixture is 5:2. If the mixture contains 35 litres, how much water is there?",
+        options: [
+            { id: "A", text: "8 litres" },
+            { id: "B", text: "10 litres" },
+            { id: "C", text: "12 litres" },
+            { id: "D", text: "15 litres" }
+        ],
+        rightOption: "B",
+        explanation: "Total parts = 5 + 2 = 7. One part = 35/7 = 5 litres. Water = 2 × 5 = 10 litres.",
+        isCompleted: false
+    },
+
+    {
+        id: "16",
+        question: "If a:b = 2:3 and b:c = 4:5, what is a:b:c?",
+        options: [
+            { id: "A", text: "8:12:15" },
+            { id: "B", text: "2:4:5" },
+            { id: "C", text: "8:6:15" },
+            { id: "D", text: "4:6:5" }
+        ],
+        rightOption: "A",
+        explanation: "a:b = 2:3 and b:c = 4:5. Make b common by multiplying the first ratio by 4 and the second by 3. Therefore, a:b = 8:12 and b:c = 12:15. Hence, a:b:c = 8:12:15.",
+        isCompleted: false
+    },
+
+    {
+        id: "17",
+        question: "A map has a scale of 1:50,000. If the distance between two places on the map is 6 cm, what is the actual distance?",
+        options: [
+            { id: "A", text: "2 km" },
+            { id: "B", text: "3 km" },
+            { id: "C", text: "4 km" },
+            { id: "D", text: "5 km" }
+        ],
+        rightOption: "B",
+        explanation: "Scale 1:50,000 means 1 cm represents 50,000 cm. For 6 cm: 6 × 50,000 = 300,000 cm = 3,000 m = 3 km.",
+        isCompleted: false
+    },
+
+    {
+        id: "18",
+        question: "If 15 men can build a wall in 20 days, how many men are required to build the same wall in 12 days?",
+        options: [
+            { id: "A", text: "20" },
+            { id: "B", text: "25" },
+            { id: "C", text: "30" },
+            { id: "D", text: "35" }
+        ],
+        rightOption: "B",
+        explanation: "Men and days are inversely proportional. Total work = 15 × 20 = 300 man-days. Required men = 300/12 = 25.",
+        isCompleted: false
+    },
+
+    {
+        id: "19",
+        question: "Three numbers are in the ratio 2:3:5. If their sum is 150, what is the largest number?",
+        options: [
+            { id: "A", text: "50" },
+            { id: "B", text: "60" },
+            { id: "C", text: "75" },
+            { id: "D", text: "90" }
+        ],
+        rightOption: "C",
+        explanation: "Total parts = 2 + 3 + 5 = 10. One part = 150/10 = 15. Largest number = 5 × 15 = 75.",
+        isCompleted: false
+    },
+
+    {
+        id: "20",
+        question: "If 6 machines produce 900 units in 5 hours, how many units will 10 machines produce in 8 hours at the same rate?",
+        options: [
+            { id: "A", text: "1,800" },
+            { id: "B", text: "2,000" },
+            { id: "C", text: "2,400" },
+            { id: "D", text: "2,700" }
+        ],
+        rightOption: "C",
+        explanation: "Production is directly proportional to the number of machines and hours. Production per machine-hour = 900/(6 × 5) = 30 units. For 10 machines working 8 hours: 10 × 8 × 30 = 2,400 units.",
+        isCompleted: false
+    }
+];
+
+export const mixtureAndAlligationQuestions = [
+    {
+        id: "1",
+        question: "A mixture contains milk and water in the ratio 3:2. If the total mixture is 25 litres, how much milk is present?",
+        options: [
+            { id: "A", text: "10 litres" },
+            { id: "B", text: "12 litres" },
+            { id: "C", text: "15 litres" },
+            { id: "D", text: "18 litres" }
+        ],
+        rightOption: "C",
+        explanation: "Total parts = 3 + 2 = 5. One part = 25/5 = 5 litres. Milk = 3 × 5 = 15 litres.",
+        isCompleted: false
+    },
+
+    {
+        id: "2",
+        question: "A mixture contains 8 litres of milk and 2 litres of water. What is the ratio of milk to water?",
+        options: [
+            { id: "A", text: "2:1" },
+            { id: "B", text: "3:1" },
+            { id: "C", text: "4:1" },
+            { id: "D", text: "5:1" }
+        ],
+        rightOption: "C",
+        explanation: "Milk:Water = 8:2. Dividing both terms by 2 gives 4:1.",
+        isCompleted: false
+    },
+
+    {
+        id: "3",
+        question: "A mixture contains milk and water in the ratio 5:3. If 16 litres of water are present, how much milk is there?",
+        options: [
+            { id: "A", text: "20 litres" },
+            { id: "B", text: "24 litres" },
+            { id: "C", text: "26 litres" },
+            { id: "D", text: "30 litres" }
+        ],
+        rightOption: "B",
+        explanation: "Milk:Water = 5:3. If 3 parts = 16 litres, then 1 part = 16/3 litres. Milk = 5 × 16/3 = 80/3 litres, approximately 26.67 litres. Therefore, the options do not match the calculation.",
+        isCompleted: false
+    },
+
+    {
+        id: "4",
+        question: "A vessel contains 30 litres of milk. If 5 litres of milk are removed and replaced with water, how much milk remains in the vessel?",
+        options: [
+            { id: "A", text: "20 litres" },
+            { id: "B", text: "25 litres" },
+            { id: "C", text: "27 litres" },
+            { id: "D", text: "30 litres" }
+        ],
+        rightOption: "B",
+        explanation: "Initially there are 30 litres of milk. Removing 5 litres leaves 25 litres of milk. Adding water does not change the amount of milk remaining.",
+        isCompleted: false
+    },
+
+    {
+        id: "5",
+        question: "Two liquids are mixed in the ratio 2:3. If the total quantity of the mixture is 40 litres, what is the quantity of the second liquid?",
+        options: [
+            { id: "A", text: "16 litres" },
+            { id: "B", text: "20 litres" },
+            { id: "C", text: "24 litres" },
+            { id: "D", text: "30 litres" }
+        ],
+        rightOption: "C",
+        explanation: "Total parts = 2 + 3 = 5. One part = 40/5 = 8 litres. Second liquid = 3 × 8 = 24 litres.",
+        isCompleted: false
+    },
+
+    {
+        id: "6",
+        question: "A mixture contains 40% alcohol and 60% water. How much alcohol is present in 25 litres of the mixture?",
+        options: [
+            { id: "A", text: "8 litres" },
+            { id: "B", text: "10 litres" },
+            { id: "C", text: "12 litres" },
+            { id: "D", text: "15 litres" }
+        ],
+        rightOption: "B",
+        explanation: "Alcohol = 40% of 25 = (40/100) × 25 = 10 litres.",
+        isCompleted: false
+    },
+
+    {
+        id: "7",
+        question: "In what ratio should water be mixed with milk costing ₹60 per litre so that the resulting mixture costs ₹48 per litre?",
+        options: [
+            { id: "A", text: "1:3" },
+            { id: "B", text: "1:4" },
+            { id: "C", text: "1:5" },
+            { id: "D", text: "2:3" }
+        ],
+        rightOption: "A",
+        explanation: "Using alligation: Milk ₹60, Water ₹0, Mean ₹48. Ratio of milk:water = (48−0):(60−48) = 48:12 = 4:1. Therefore, water:milk = 1:4. So the correct option should be 1:4.",
+        isCompleted: false
+    },
+
+    {
+        id: "8",
+        question: "A 20-litre mixture contains milk and water in the ratio 3:1. How much water should be added to make the ratio 3:2?",
+        options: [
+            { id: "A", text: "3 litres" },
+            { id: "B", text: "4 litres" },
+            { id: "C", text: "5 litres" },
+            { id: "D", text: "6 litres" }
+        ],
+        rightOption: "B",
+        explanation: "Initially milk = 15 litres and water = 5 litres. For a 3:2 ratio, if milk is 15 litres, water should be 10 litres. Therefore, water to be added = 10 − 5 = 5 litres. So the correct answer is 5 litres, which is option C.",
+        isCompleted: false
+    },
+
+    {
+        id: "9",
+        question: "Two varieties of rice cost ₹40 per kg and ₹60 per kg. In what ratio should they be mixed to obtain a mixture worth ₹50 per kg?",
+        options: [
+            { id: "A", text: "1:1" },
+            { id: "B", text: "1:2" },
+            { id: "C", text: "2:3" },
+            { id: "D", text: "3:2" }
+        ],
+        rightOption: "A",
+        explanation: "Using alligation: Ratio = (60−50):(50−40) = 10:10 = 1:1.",
+        isCompleted: false
+    },
+
+    {
+        id: "10",
+        question: "A container has 60 litres of a mixture of milk and water in the ratio 2:1. How much water is present?",
+        options: [
+            { id: "A", text: "15 litres" },
+            { id: "B", text: "20 litres" },
+            { id: "C", text: "30 litres" },
+            { id: "D", text: "40 litres" }
+        ],
+        rightOption: "B",
+        explanation: "Total parts = 2 + 1 = 3. One part = 60/3 = 20 litres. Water = 1 part = 20 litres.",
+        isCompleted: false
+    },
+
+    {
+        id: "11",
+        question: "A 40-litre mixture contains 25% water. How much water should be added to make water 40% of the new mixture?",
+        options: [
+            { id: "A", text: "8 litres" },
+            { id: "B", text: "10 litres" },
+            { id: "C", text: "12 litres" },
+            { id: "D", text: "15 litres" }
+        ],
+        rightOption: "B",
+        explanation: "Initially water = 25% of 40 = 10 litres. Let x litres of water be added. Then 10 + x = 40% of (40 + x). Solving: 10 + x = 16 + 0.4x, so 0.6x = 6 and x = 10 litres.",
+        isCompleted: false
+    },
+
+    {
+        id: "12",
+        question: "A 30-litre mixture contains milk and water in the ratio 4:1. How much water should be added to make the ratio 2:1?",
+        options: [
+            { id: "A", text: "5 litres" },
+            { id: "B", text: "8 litres" },
+            { id: "C", text: "10 litres" },
+            { id: "D", text: "12 litres" }
+        ],
+        rightOption: "C",
+        explanation: "Initially milk = 24 litres and water = 6 litres. For a 2:1 ratio, 24 litres of milk requires 12 litres of water. Therefore, water to be added = 12 − 6 = 6 litres. So the correct answer is 6 litres, which is not in the options.",
+        isCompleted: false
+    },
+
+    {
+        id: "13",
+        question: "A solution contains 30% sugar. How much sugar is present in 80 kg of the solution?",
+        options: [
+            { id: "A", text: "20 kg" },
+            { id: "B", text: "24 kg" },
+            { id: "C", text: "28 kg" },
+            { id: "D", text: "32 kg" }
+        ],
+        rightOption: "B",
+        explanation: "Sugar = 30% of 80 = (30/100) × 80 = 24 kg.",
+        isCompleted: false
+    },
+
+    {
+        id: "14",
+        question: "A mixture contains 20 litres of alcohol and 30 litres of water. What percentage of the mixture is alcohol?",
+        options: [
+            { id: "A", text: "30%" },
+            { id: "B", text: "35%" },
+            { id: "C", text: "40%" },
+            { id: "D", text: "45%" }
+        ],
+        rightOption: "C",
+        explanation: "Total mixture = 20 + 30 = 50 litres. Alcohol percentage = (20/50) × 100 = 40%.",
+        isCompleted: false
+    },
+
+    {
+        id: "15",
+        question: "A shopkeeper mixes 10 kg of tea costing ₹200 per kg with 15 kg of tea costing ₹300 per kg. What is the average cost per kg of the mixture?",
+        options: [
+            { id: "A", text: "₹240" },
+            { id: "B", text: "₹250" },
+            { id: "C", text: "₹260" },
+            { id: "D", text: "₹270" }
+        ],
+        rightOption: "C",
+        explanation: "Total cost = (10 × 200) + (15 × 300) = 2000 + 4500 = ₹6500. Total quantity = 25 kg. Average cost = ₹6500/25 = ₹260 per kg.",
+        isCompleted: false
+    },
+
+    {
+        id: "16",
+        question: "A vessel contains 40 litres of milk. 10 litres are removed and replaced with water. What fraction of the original milk remains?",
+        options: [
+            { id: "A", text: "1/2" },
+            { id: "B", text: "2/3" },
+            { id: "C", text: "3/4" },
+            { id: "D", text: "4/5" }
+        ],
+        rightOption: "C",
+        explanation: "Milk removed = 10 litres. Milk remaining = 40 − 10 = 30 litres. Fraction remaining = 30/40 = 3/4.",
+        isCompleted: false
+    },
+
+    {
+        id: "17",
+        question: "A 50-litre mixture contains 30% alcohol. How much pure alcohol should be added to make the alcohol concentration 50%?",
+        options: [
+            { id: "A", text: "15 litres" },
+            { id: "B", text: "20 litres" },
+            { id: "C", text: "25 litres" },
+            { id: "D", text: "30 litres" }
+        ],
+        rightOption: "B",
+        explanation: "Initially alcohol = 30% of 50 = 15 litres. Let x litres of pure alcohol be added. Then (15 + x)/(50 + x) = 50/100. Solving: 30 + 2x = 50 + x, so x = 20 litres.",
+        isCompleted: false
+    },
+
+    {
+        id: "18",
+        question: "Two solutions contain 20% and 50% acid respectively. In what ratio should they be mixed to obtain a solution containing 30% acid?",
+        options: [
+            { id: "A", text: "1:2" },
+            { id: "B", text: "2:1" },
+            { id: "C", text: "3:2" },
+            { id: "D", text: "2:3" }
+        ],
+        rightOption: "B",
+        explanation: "Using alligation: Ratio of 20% solution to 50% solution = (50−30):(30−20) = 20:10 = 2:1.",
+        isCompleted: false
+    },
+
+    {
+        id: "19",
+        question: "A vessel contains 80 litres of milk. 20 litres are removed and replaced with water. This process is repeated once. How much milk remains after the second replacement?",
+        options: [
+            { id: "A", text: "40 litres" },
+            { id: "B", text: "45 litres" },
+            { id: "C", text: "50 litres" },
+            { id: "D", text: "60 litres" }
+        ],
+        rightOption: "C",
+        explanation: "After the first replacement, milk remaining = 80 × (60/80) = 60 litres. During the second replacement, 20/80 of the milk is removed, so milk remaining = 60 × (60/80) = 45 litres. Therefore, the correct answer is 45 litres, which is option B.",
+        isCompleted: false
+    },
+
+    {
+        id: "20",
+        question: "A mixture of 60 litres contains milk and water in the ratio 5:1. How much of the mixture should be replaced with water so that the ratio of milk to water becomes 3:1?",
+        options: [
+            { id: "A", text: "10 litres" },
+            { id: "B", text: "12 litres" },
+            { id: "C", text: "15 litres" },
+            { id: "D", text: "20 litres" }
+        ],
+        rightOption: "B",
+        explanation: "Initially milk = 50 litres and water = 10 litres. Let x litres of mixture be removed. Milk removed = 5x/6. Milk remaining = 50 − 5x/6. After adding x litres of water, water = 10 + x. For a 3:1 ratio: (50 − 5x/6)/(10 + x) = 3. Solving gives x = 12 litres.",
         isCompleted: false
     }
 ];

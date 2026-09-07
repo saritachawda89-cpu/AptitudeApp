@@ -9,7 +9,7 @@ import { CoinBadge } from '@/components/coin-badge';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
-import { addCoins, averageQuestions, numberSystemQuestions, parentData, percentageQuestions, timeAndWorkQuestions, trainQuestions, UNLOCK_COST, unlockTopic } from '@/data/data';
+import { addCoins, averageQuestions, mixtureAndAlligationQuestions, numberSystemQuestions, parentData, percentageQuestions, permutationAndCombinationQuestions, profitAndLossQuestions, ratioAndProportionQuestions, timeAndWorkQuestions, trainQuestions, UNLOCK_COST, unlockTopic } from '@/data/data';
 import { useTheme } from '@/hooks/use-theme';
 
 const topicIconMap = {
@@ -18,6 +18,10 @@ const topicIconMap = {
     trainQuestions: require('../../../assets/images/trainQuestions.svg'),
     averageQuestions: require('../../../assets/images/averageQuestions.svg'),
     percentageQuestions: require('../../../assets/images/percentageQuestions.svg'),
+    ratioAndProportionQuestions: require('../../../assets/images/ratioAndProportionQuestions.svg'),
+    mixtureAndAlligationQuestions: require('../../../assets/images/mixtureAndAlligationQuestions.svg'),
+    profitAndLossQuestions: require('../../../assets/images/profitAndLossQuestions.svg'),
+    permutationAndCombinationQuestions: require('../../../assets/images/permutationAndCombinationQuestions.svg'),
 } as const;
 
 const questionCountMap = {
@@ -26,6 +30,10 @@ const questionCountMap = {
     trainQuestions,
     averageQuestions,
     percentageQuestions,
+    ratioAndProportionQuestions,
+    mixtureAndAlligationQuestions,
+    profitAndLossQuestions,
+    permutationAndCombinationQuestions,
 } as const;
 
 export default function TopicsScreen() {
