@@ -143,7 +143,7 @@ export default function RewardScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: colors.background,
+        backgroundColor: '#090a1c',
         alignItems: 'center',
     },
     contentWrap: {
