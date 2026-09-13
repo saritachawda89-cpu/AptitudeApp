@@ -2,6 +2,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const UNLOCK_COST = 200;
 
+export const topicCategories = ['Quantitative', 'Reasoning', 'Verbal'] as const;
+export type TopicCategory = (typeof topicCategories)[number];
+
 export const rewardConfig = {
     dailyBonus: 20,
     videoReward: 50,
@@ -14,18 +17,18 @@ export const rewardConfig = {
 
 export const parentData = {
     topics: [
-        { id: "numberSystemQuestions", name: "Number System" },
-        { id: "timeAndWorkQuestions", name: "Time and Work" },
-        { id: "trainQuestions", name: "Problems on Trains" },
-        { id: "averageQuestions", name: "Average" },
-        { id: "percentageQuestions", name: "Percentage" },
-        { id: "profitAndLossQuestions", name: "Profit and Loss" },
-        { id: 'permutationAndCombinationQuestions', name: 'Permutation and Combination' },
-        { id: 'ratioAndProportionQuestions', name: 'Ratio and Proportion' },
-        { id: 'mixtureAndAlligationQuestions', name: 'Mixture and Alligation' },
+        { id: 'numberSystemQuestions', name: 'Number System', category: 'Quantitative' as TopicCategory },
+        { id: 'timeAndWorkQuestions', name: 'Time and Work', category: 'Quantitative' as TopicCategory },
+        { id: 'trainQuestions', name: 'Problems on Trains', category: 'Quantitative' as TopicCategory },
+        { id: 'averageQuestions', name: 'Average', category: 'Quantitative' as TopicCategory },
+        { id: 'percentageQuestions', name: 'Percentage', category: 'Quantitative' as TopicCategory },
+        { id: 'profitAndLossQuestions', name: 'Profit and Loss', category: 'Quantitative' as TopicCategory },
+        { id: 'permutationAndCombinationQuestions', name: 'Permutation and Combination', category: 'Quantitative' as TopicCategory },
+        { id: 'ratioAndProportionQuestions', name: 'Ratio and Proportion', category: 'Quantitative' as TopicCategory },
+        { id: 'mixtureAndAlligationQuestions', name: 'Mixture and Alligation', category: 'Quantitative' as TopicCategory },
     ],
     coins: 500,
-    unlockedTopics: ["numberSystemQuestions", "timeAndWorkQuestions"],
+    unlockedTopics: ['numberSystemQuestions', 'timeAndWorkQuestions'],
     lastDailyBonusDate: null as string | null,
 };
 

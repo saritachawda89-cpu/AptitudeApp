@@ -1,7 +1,7 @@
 import { router } from 'expo-router';
 import { ArrowRight, Coins, Lock, Sparkles } from 'lucide-react-native';
 import { FlatList, Image, Modal, Pressable, StyleSheet, View } from 'react-native';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Svg, { Circle } from 'react-native-svg';
 
@@ -10,7 +10,23 @@ import { CoinBadge } from '@/components/coin-badge';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
-import { addCoins, averageQuestions, mixtureAndAlligationQuestions, numberSystemQuestions, parentData, percentageQuestions, permutationAndCombinationQuestions, profitAndLossQuestions, ratioAndProportionQuestions, timeAndWorkQuestions, trainQuestions, UNLOCK_COST, unlockTopic } from '@/data/data';
+import {
+    addCoins,
+    averageQuestions,
+    mixtureAndAlligationQuestions,
+    numberSystemQuestions,
+    parentData,
+    percentageQuestions,
+    permutationAndCombinationQuestions,
+    profitAndLossQuestions,
+    ratioAndProportionQuestions,
+    timeAndWorkQuestions,
+    trainQuestions,
+    topicCategories,
+    type TopicCategory,
+    UNLOCK_COST,
+    unlockTopic,
+} from '@/data/data';
 import { useTheme } from '@/hooks/use-theme';
 
 const topicIconMap = {
@@ -43,7 +59,16 @@ export default function TopicsScreen() {
     const [unlockedTopics, setUnlockedTopics] = useState<string[]>(parentData.unlockedTopics);
     const [pendingUnlockTopic, setPendingUnlockTopic] = useState<{ id: string; name: string } | null>(null);
     const [isCoinsInfoOpen, setIsCoinsInfoOpen] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState<'All' | TopicCategory>('All');
     const [feedback, setFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+
+    const filteredTopics = useMemo(() => {
+        if (selectedCategory === 'All') {
+            return parentData.topics;
+        }
+
+        return parentData.topics.filter((topic) => topic.category === selectedCategory);
+    }, [selectedCategory]);
 
     useEffect(() => {
         if (!feedback) {
@@ -147,11 +172,31 @@ export default function TopicsScreen() {
                     </View>
                 )}
 
+                <View style={styles.filterRow}>
+                    {(['All', ...topicCategories] as const).map((filter) => (
+                        <Pressable
+                            key={filter}
+                            onPress={() => setSelectedCategory(filter)}
+                            style={[styles.filterChip, selectedCategory === filter && styles.filterChipActive]}>
+                            <ThemedText type="default" style={[styles.filterChipText, selectedCategory === filter && styles.filterChipTextActive]}>
+                                {filter}
+                            </ThemedText>
+                        </Pressable>
+                    ))}
+                </View>
+
                 <FlatList
-                    data={parentData.topics}
+                    data={filteredTopics}
                     keyExtractor={(item) => item.id}
                     contentContainerStyle={styles.listContent}
                     showsVerticalScrollIndicator={false}
+                    ListEmptyComponent={() => (
+                        <View style={styles.emptyState}>
+                            <ThemedText type="default" style={styles.emptyStateText}>
+                                No topics available in this category yet.
+                            </ThemedText>
+                        </View>
+                    )}
                     renderItem={({ item }) => {
                         const questions = questionCountMap[item.id as keyof typeof questionCountMap] ?? [];
                         const totalQuestions = questions.length;
@@ -381,6 +426,31 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginBottom: Spacing.three,
     },
+    filterRow: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        gap: Spacing.one,
+        marginBottom: Spacing.three,
+    },
+    filterChip: {
+        paddingHorizontal: Spacing.two,
+        paddingVertical: Spacing.one,
+        borderRadius: 999,
+        borderWidth: 1,
+        borderColor: '#4B3A78',
+        backgroundColor: '#14162d',
+    },
+    filterChipActive: {
+        backgroundColor: '#22c55f',
+        borderColor: '#22c55f',
+    },
+    filterChipText: {
+        color: '#F5EEFF',
+        fontSize: 12,
+    },
+    filterChipTextActive: {
+        color: '#17143A',
+    },
     coinsModalActions: {
         width: '100%',
         gap: Spacing.two,
@@ -409,7 +479,15 @@ const styles = StyleSheet.create({
     },
     listContent: {
         gap: Spacing.two,
-        paddingBottom: Spacing.three,
+        paddingBottom: BottomTabInset + Spacing.five,
+    },
+    emptyState: {
+        paddingVertical: Spacing.five,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    emptyStateText: {
+        color: '#CFC4F8',
     },
     topicItem: {
         paddingHorizontal: Spacing.two,
