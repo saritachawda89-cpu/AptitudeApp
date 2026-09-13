@@ -15,6 +15,10 @@ import {
     saveQuestionProgress,
     timeAndWorkQuestions,
     trainQuestions,
+    mixtureAndAlligationQuestions,
+    ratioAndProportionQuestions,
+    permutationAndCombinationQuestions,
+    profitAndLossQuestions
 } from '@/data/data';
 
 const questionMap = {
@@ -23,6 +27,10 @@ const questionMap = {
     trainQuestions,
     averageQuestions,
     percentageQuestions,
+    mixtureAndAlligationQuestions,
+    ratioAndProportionQuestions,
+    profitAndLossQuestions,
+    permutationAndCombinationQuestions
 } as const;
 
 const markQuestionCompleted = (topicId: string, questionId: string) => {
