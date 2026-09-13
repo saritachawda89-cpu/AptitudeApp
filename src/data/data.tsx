@@ -2,6 +2,16 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const UNLOCK_COST = 200;
 
+export const rewardConfig = {
+    dailyBonus: 20,
+    videoReward: 50,
+    questionReward: 10,
+    title: 'Rewards',
+    dailyBonusText: 'Come back tomorrow and earn bonus coins.',
+    videoText: 'Watch a short video',
+    questionText: 'Solve a question',
+};
+
 export const parentData = {
     topics: [
         { id: "numberSystemQuestions", name: "Number System" },
@@ -15,7 +25,8 @@ export const parentData = {
         { id: 'mixtureAndAlligationQuestions', name: 'Mixture and Alligation' },
     ],
     coins: 500,
-    unlockedTopics: ["numberSystemQuestions", "timeAndWorkQuestions"]
+    unlockedTopics: ["numberSystemQuestions", "timeAndWorkQuestions"],
+    lastDailyBonusDate: null as string | null,
 };
 
 export const numberSystemQuestions = [
@@ -1859,6 +1870,16 @@ export const mixtureAndAlligationQuestions = [
 const PROGRESS_KEY = 'aptitude-question-progress-v1';
 const COINS_KEY = 'aptitude-coins-v1';
 const UNLOCKED_TOPICS_KEY = 'aptitude-unlocked-topics-v1';
+const DAILY_BONUS_KEY = 'aptitude-daily-bonus-v1';
+
+export const getTodayDateKey = () => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
+};
 
 export const questionMap: Record<string, Array<{ id: string; isCompleted: boolean }>> = {
     numberSystemQuestions,
@@ -1872,6 +1893,7 @@ export const hydrateAppState = async () => {
     await hydrateQuestionProgress();
     await hydrateCoins();
     await hydrateUnlockedTopics();
+    await hydrateDailyBonus();
 };
 
 export const hydrateQuestionProgress = async () => {
@@ -1972,6 +1994,47 @@ export const unlockTopic = async (topicId: string) => {
         return true;
     } catch (error) {
         console.warn('Failed to unlock topic', error);
+        return false;
+    }
+};
+
+export const hydrateDailyBonus = async () => {
+    try {
+        const storedValue = await AsyncStorage.getItem(DAILY_BONUS_KEY);
+        parentData.lastDailyBonusDate = storedValue ?? null;
+    } catch (error) {
+        console.warn('Failed to hydrate daily bonus', error);
+    }
+};
+
+export const saveDailyBonus = async () => {
+    try {
+        const todayKey = getTodayDateKey();
+        parentData.lastDailyBonusDate = todayKey;
+        await AsyncStorage.setItem(DAILY_BONUS_KEY, todayKey);
+    } catch (error) {
+        console.warn('Failed to save daily bonus', error);
+    }
+};
+
+export const claimDailyBonus = async () => {
+    const todayKey = getTodayDateKey();
+
+    if (parentData.lastDailyBonusDate === todayKey) {
+        return false;
+    }
+
+    parentData.coins = parentData.coins + rewardConfig.dailyBonus;
+
+    try {
+        await Promise.all([
+            AsyncStorage.setItem(COINS_KEY, String(parentData.coins)),
+            saveDailyBonus(),
+        ]);
+
+        return true;
+    } catch (error) {
+        console.warn('Failed to claim daily bonus', error);
         return false;
     }
 };
