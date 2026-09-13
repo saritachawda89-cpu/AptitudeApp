@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Svg, { Circle } from 'react-native-svg';
 
+import { BottomTabBar } from '@/components/bottom-tab-bar';
 import { CoinBadge } from '@/components/coin-badge';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
@@ -255,6 +256,8 @@ export default function TopicsScreen() {
                         );
                     }}
                 />
+
+                <BottomTabBar />
 
                 <Modal
                     transparent
