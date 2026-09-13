@@ -21,7 +21,7 @@ export const parentData = {
         { id: 'timeAndWorkQuestions', name: 'Time and Work', category: 'Quantitative' as TopicCategory },
         { id: 'trainQuestions', name: 'Problems on Trains', category: 'Quantitative' as TopicCategory },
         { id: 'averageQuestions', name: 'Average', category: 'Quantitative' as TopicCategory },
-        { id: 'percentageQuestions', name: 'Percentage', category: 'Quantitative' as TopicCategory },
+        { id: 'percentageQuestions', name: 'Percentage', category: 'Reasoning' as TopicCategory },
         { id: 'profitAndLossQuestions', name: 'Profit and Loss', category: 'Quantitative' as TopicCategory },
         { id: 'permutationAndCombinationQuestions', name: 'Permutation and Combination', category: 'Quantitative' as TopicCategory },
         { id: 'ratioAndProportionQuestions', name: 'Ratio and Proportion', category: 'Quantitative' as TopicCategory },
