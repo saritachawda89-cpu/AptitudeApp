@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingHorizontal: Spacing.four,
     paddingVertical: Spacing.two,
-    borderRadius: Spacing.five,
+    borderRadius: Spacing.two,
     justifyContent: 'center',
     gap: Spacing.one,
     alignItems: 'center',

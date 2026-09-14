@@ -118,7 +118,7 @@ export default function TopicsScreen() {
                     <View style={styles.titleWrap}>
                         <ThemedText type="subtitle" style={styles.title}>
                             <ThemedText type="title" style={styles.titleGradient}>Aptitude</ThemedText>
-                            App
+                            Adda
                         </ThemedText>
                         <ThemedText type="small" style={styles.subtitle}>
                             Practice smarter with quick topic-based aptitude drills.
@@ -380,7 +380,7 @@ const styles = StyleSheet.create({
         minWidth: 54,
         paddingHorizontal: Spacing.two,
         paddingVertical: Spacing.one,
-        borderRadius: 999,
+        borderRadius: 8,
         alignItems: 'center',
         flexDirection: 'row',
         gap: 4,
@@ -409,7 +409,7 @@ const styles = StyleSheet.create({
         width: '100%',
         maxWidth: 320,
         backgroundColor: '#18162f',
-        borderRadius: 20,
+        borderRadius: 8,
         borderWidth: 1,
         borderColor: '#4B3A78',
         padding: Spacing.three,
@@ -435,7 +435,7 @@ const styles = StyleSheet.create({
     filterChip: {
         paddingHorizontal: Spacing.two,
         paddingVertical: Spacing.one,
-        borderRadius: 999,
+        borderRadius: 8,
         borderWidth: 1,
         borderColor: '#4B3A78',
         backgroundColor: '#14162d',
@@ -458,7 +458,7 @@ const styles = StyleSheet.create({
     closeCoinsButton: {
         width: '100%',
         backgroundColor: '#221f3c',
-        borderRadius: 12,
+        borderRadius: 8,
         paddingVertical: Spacing.two,
         alignItems: 'center',
         borderWidth: 1,
@@ -470,7 +470,7 @@ const styles = StyleSheet.create({
     watchVideoButton: {
         width: '100%',
         backgroundColor: '#F8D66C',
-        borderRadius: 12,
+        borderRadius: 8,
         paddingVertical: Spacing.two,
         alignItems: 'center',
     },
@@ -492,7 +492,7 @@ const styles = StyleSheet.create({
     topicItem: {
         paddingHorizontal: Spacing.two,
         paddingVertical: Spacing.two,
-        borderRadius: 20,
+        borderRadius: 8,
         borderWidth: 1,
         borderColor: '#4B3A78',
         backgroundColor: '#121230',
@@ -517,7 +517,7 @@ const styles = StyleSheet.create({
     topicIconWrap: {
         width: 48,
         height: 48,
-        borderRadius: 10,
+        borderRadius: 8,
         // backgroundColor: 'rgba(94, 234, 212, 0.12)',
         alignItems: 'center',
         justifyContent: 'center',
@@ -540,7 +540,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         width: 26,
         height: 26,
-        borderRadius: 13,
+        borderRadius: 8,
         // backgroundColor: '#090a1c',
         alignItems: 'center',
         justifyContent: 'center',
@@ -554,7 +554,7 @@ const styles = StyleSheet.create({
     lockBadge: {
         width: 42,
         height: 42,
-        borderRadius: 21,
+        borderRadius: 999,
         backgroundColor: '#1D1C35',
         borderWidth: 1,
         borderColor: '#4B3A78',
@@ -601,7 +601,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         paddingHorizontal: Spacing.two,
         paddingVertical: Spacing.two,
-        borderRadius: 16,
+        borderRadius: 8,
         borderWidth: 1,
         gap: Spacing.one,
         marginBottom: Spacing.two,
@@ -622,7 +622,7 @@ const styles = StyleSheet.create({
     feedbackIconWrap: {
         width: 24,
         height: 24,
-        borderRadius: 12,
+        borderRadius: 8,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'rgba(255,255,255,0.08)',
@@ -642,7 +642,7 @@ const styles = StyleSheet.create({
     feedbackCloseButton: {
         width: 24,
         height: 24,
-        borderRadius: 12,
+        borderRadius: 8,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'rgba(255,255,255,0.08)',
@@ -663,7 +663,7 @@ const styles = StyleSheet.create({
         width: '100%',
         maxWidth: 320,
         backgroundColor: '#18162f',
-        borderRadius: 22,
+        borderRadius: 8,
         borderWidth: 1,
         borderColor: '#4B3A78',
         padding: Spacing.three,
@@ -691,7 +691,7 @@ const styles = StyleSheet.create({
     cancelButton: {
         flex: 1,
         paddingVertical: Spacing.two,
-        borderRadius: 12,
+        borderRadius: 8,
         backgroundColor: '#221f3c',
         borderWidth: 1,
         borderColor: '#4B3A78',
@@ -703,7 +703,7 @@ const styles = StyleSheet.create({
     unlockButton: {
         flex: 1,
         paddingVertical: Spacing.two,
-        borderRadius: 12,
+        borderRadius: 8,
         backgroundColor: '#F8D66C',
         alignItems: 'center',
     },

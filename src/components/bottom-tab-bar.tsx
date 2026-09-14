@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
         right: 16,
         bottom: 18,
         backgroundColor: '#120F24',
-        borderRadius: 20,
+        borderRadius: 8,
         borderWidth: 1,
         borderColor: '#2A2245',
         paddingVertical: 8,
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingVertical: 8,
         gap: 4,
-        borderRadius: 12,
+        borderRadius: 8,
     },
     activeTabItem: {
         backgroundColor: 'rgba(248, 214, 108, 0.12)',

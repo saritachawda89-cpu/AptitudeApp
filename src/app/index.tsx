@@ -41,7 +41,7 @@ export default function HomeScreen() {
 
         <ThemedText type="title" style={styles.title}>
           <ThemedText type="title" style={styles.titleGradient}>Aptitude</ThemedText>
-          App
+          Adda
         </ThemedText>
 
         <ThemedText type="default" themeColor="textSecondary" style={styles.subtitle}>
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     height: 172,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 24,
+    borderRadius: 8,
     marginBottom: Spacing.three,
     backgroundColor: '#1d1f4a',
     shadowColor: '#6d65ff',
@@ -137,10 +137,9 @@ const styles = StyleSheet.create({
   },
   title: {
     textAlign: 'center',
-    fontSize: 62,
-    lineHeight: 68,
+    fontSize: 48,
     color: '#22c55f',
-    fontWeight: '800',
+    fontWeight: '600',
     marginBottom: 0,
   },
   titleGradient: {
@@ -165,7 +164,7 @@ const styles = StyleSheet.create({
     flex: 1,
     maxWidth: 200,
     backgroundColor: '#2c2256',
-    borderRadius: 999,
+    borderRadius: 8,
     paddingHorizontal: Spacing.three,
     paddingVertical: Spacing.two,
     borderWidth: 1,
@@ -211,7 +210,7 @@ const styles = StyleSheet.create({
   startButton: {
     width: '100%',
     paddingVertical: Spacing.three,
-    borderRadius: 22,
+    borderRadius: 8,
     backgroundColor: '#22c55f',
     alignItems: 'center',
     justifyContent: 'center',

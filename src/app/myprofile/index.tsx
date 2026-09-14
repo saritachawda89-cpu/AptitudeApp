@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     gearButton: {
         width: 34,
         height: 34,
-        borderRadius: 17,
+        borderRadius: 8,
         backgroundColor: '#11172E',
         alignItems: 'center',
         justifyContent: 'center',
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     avatarWrap: {
         width: 90,
         height: 90,
-        borderRadius: 45,
+        borderRadius: 999,
         backgroundColor: '#2C2D6B',
         borderWidth: 1,
         borderColor: '#4C5E9E',
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     },
     menuList: {
         backgroundColor: '#121833',
-        borderRadius: 28,
+        borderRadius: 8,
         overflow: 'hidden',
         borderWidth: 1,
         borderColor: '#1E294F',
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     iconCircle: {
         width: 28,
         height: 28,
-        borderRadius: 14,
+        borderRadius: 8,
         backgroundColor: '#1D2340',
         alignItems: 'center',
         justifyContent: 'center',

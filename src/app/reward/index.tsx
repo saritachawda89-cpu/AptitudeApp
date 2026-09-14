@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
     },
     sectionCard: {
         backgroundColor: '#17142E',
-        borderRadius: 22,
+        borderRadius: 8,
         borderWidth: 1,
         borderColor: colors.border,
         paddingHorizontal: Spacing.three,
@@ -271,7 +271,7 @@ const styles = StyleSheet.create({
     coinIconWrap: {
         width: 34,
         height: 34,
-        borderRadius: 17,
+        borderRadius: 8,
         backgroundColor: colors.warning,
         alignItems: 'center',
         justifyContent: 'center',
@@ -295,7 +295,7 @@ const styles = StyleSheet.create({
     },
     sectionBlock: {
         backgroundColor: '#121230',
-        borderRadius: 22,
+        borderRadius: 8,
         borderWidth: 1,
         borderColor: colors.border,
         paddingHorizontal: Spacing.three,
@@ -316,7 +316,7 @@ const styles = StyleSheet.create({
     dailyIconWrap: {
         width: 42,
         height: 42,
-        borderRadius: 14,
+        borderRadius: 8,
         backgroundColor: '#F8D66C',
         alignItems: 'center',
         justifyContent: 'center',
@@ -337,7 +337,7 @@ const styles = StyleSheet.create({
     },
     claimPill: {
         backgroundColor: '#F8D66C',
-        borderRadius: 999,
+        borderRadius: 8,
         paddingHorizontal: 10,
         paddingVertical: 6,
         alignItems: 'center',
@@ -349,7 +349,7 @@ const styles = StyleSheet.create({
     },
     claimButton: {
         backgroundColor: '#F8D66C',
-        borderRadius: 12,
+        borderRadius: 8,
         paddingVertical: 10,
         alignItems: 'center',
         justifyContent: 'center',
@@ -372,7 +372,7 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         paddingHorizontal: 4,
         gap: 12,
-        borderRadius: 12,
+        borderRadius: 8,
         borderWidth: 1,
         borderColor: 'rgba(112, 93, 170, 0.35)',
         marginTop: 8,
@@ -387,7 +387,7 @@ const styles = StyleSheet.create({
     earnIconWrap: {
         width: 34,
         height: 34,
-        borderRadius: 12,
+        borderRadius: 8,
         borderWidth: 1,
         alignItems: 'center',
         justifyContent: 'center',
@@ -398,7 +398,7 @@ const styles = StyleSheet.create({
     },
     rewardPill: {
         backgroundColor: '#F8D66C',
-        borderRadius: 999,
+        borderRadius: 8,
         paddingHorizontal: 8,
         paddingVertical: 5,
         alignItems: 'center',
@@ -420,7 +420,7 @@ const styles = StyleSheet.create({
         width: '100%',
         maxWidth: 320,
         backgroundColor: '#18162f',
-        borderRadius: 20,
+        borderRadius: 8,
         borderWidth: 1,
         borderColor: '#4B3A78',
         padding: Spacing.three,
@@ -434,7 +434,7 @@ const styles = StyleSheet.create({
     adPreview: {
         width: '100%',
         height: 120,
-        borderRadius: 16,
+        borderRadius: 8,
         backgroundColor: '#221f3c',
         borderWidth: 1,
         borderColor: '#4B3A78',
@@ -455,7 +455,7 @@ const styles = StyleSheet.create({
     cancelButton: {
         width: '100%',
         backgroundColor: '#221f3c',
-        borderRadius: 12,
+        borderRadius: 8,
         paddingVertical: Spacing.two,
         alignItems: 'center',
         borderWidth: 1,
@@ -467,7 +467,7 @@ const styles = StyleSheet.create({
     watchVideoButton: {
         width: '100%',
         backgroundColor: '#F8D66C',
-        borderRadius: 12,
+        borderRadius: 8,
         paddingVertical: Spacing.two,
         alignItems: 'center',
     },
