@@ -1,5 +1,5 @@
 import { router } from 'expo-router';
-import { ArrowRight, CalendarDays, Coins, ListFilter, Lock, Target } from 'lucide-react-native';
+import { ArrowRight, Boxes, Brain, CalendarDays, ClockCheck, Coins, ListFilter, Lock, Parasol, Target } from 'lucide-react-native';
 import { Image, Pressable, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { SvgUri } from 'react-native-svg';
@@ -39,31 +39,11 @@ export default function HomeScreen() {
           <SvgUri width={160} height={160} uri={logoUri} />
         </View> */}
 
+        <Boxes size={100} color="#22c55f" />
         <ThemedText type="title" style={styles.title}>
           <ThemedText type="title" style={styles.titleGradient}>Aptitude</ThemedText>
           Adda
         </ThemedText>
-
-        <ThemedText type="default" themeColor="textSecondary" style={styles.subtitle}>
-          Master aptitude, one topic at a time.
-        </ThemedText>
-
-        <View style={styles.badgeRow}>
-          <View style={styles.badge}>
-            <ListFilter size={18} color="#D8C8FF" />
-            <ThemedText type="smallBold" style={styles.badgeText}>
-              5 Topics
-            </ThemedText>
-          </View>
-
-          <View style={styles.badge}>
-            <CalendarDays size={18} color="#D8C8FF" />
-            <ThemedText type="smallBold" style={styles.badgeText}>
-              Daily Practice
-            </ThemedText>
-          </View>
-        </View>
-
         <View style={styles.metaRow}>
           <View style={styles.metaItem}>
             <Target size={22} color="#5EEAD4" />
@@ -90,6 +70,7 @@ export default function HomeScreen() {
             </ThemedText>
           </View>
         </View>
+
 
         <Pressable
           onPress={() => router.push('/topics')}
@@ -140,7 +121,8 @@ const styles = StyleSheet.create({
     fontSize: 48,
     color: '#22c55f',
     fontWeight: '600',
-    marginBottom: 0,
+    marginBottom: 15,
+    marginTop: 20,
   },
   titleGradient: {
     color: '#F5F5FF',
@@ -183,12 +165,13 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   metaRow: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: Spacing.four,
     gap: 14,
+    marginTop: 20,
   },
   metaItem: {
     flexDirection: 'row',
@@ -204,8 +187,7 @@ const styles = StyleSheet.create({
   metaDivider: {
     width: 1,
     height: 26,
-    backgroundColor: '#5B4CC3',
-    opacity: 0.7,
+    backgroundColor: '#fff',
   },
   startButton: {
     width: '100%',
