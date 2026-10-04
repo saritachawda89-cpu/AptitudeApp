@@ -7,17 +7,39 @@ import {
     ShieldCheck,
     UserRound,
 } from 'lucide-react-native';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Alert, Linking, Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { BottomTabBar } from '@/components/bottom-tab-bar';
+
+const privacyPolicyUrl = 'https://docs.google.com/document/d/1D6m3PPJORTaiovQErtyaNYzhfRro7X3tCv_Jp974IjI/edit?usp=sharing';
+const termsUrl = 'https://docs.google.com/document/d/1P-NLy6KEHOzxDvTDNHvqAavVpA_CAwEIXtOmtRXE9yo/edit?usp=sharing';
 
 const menuItems = [
     { label: 'Settings', icon: Settings },
     { label: 'Notifications', icon: Bell },
     { label: 'About', icon: Info },
-    { label: 'Privacy Policy', icon: ShieldCheck },
-    { label: 'Terms & Conditions', icon: FileText },
+    { label: 'Privacy Policy', icon: ShieldCheck, url: privacyPolicyUrl },
+    { label: 'Terms & Conditions', icon: FileText, url: termsUrl },
 ];
+
+async function handleOpenLink(url?: string) {
+    if (!url) {
+        return;
+    }
+
+    try {
+        const canOpen = await Linking.canOpenURL(url);
+
+        if (!canOpen) {
+            Alert.alert('Link unavailable', 'This document could not be opened right now.');
+            return;
+        }
+
+        await Linking.openURL(url);
+    } catch (error) {
+        Alert.alert('Unable to open link', 'Please try again later.');
+    }
+}
 
 export default function MyProfileScreen() {
     return (
@@ -37,8 +59,8 @@ export default function MyProfileScreen() {
             </View>
 
             <View style={styles.menuList}>
-                {menuItems.map(({ label, icon: Icon }) => (
-                    <Pressable key={label} style={styles.menuItem}>
+                {menuItems.map(({ label, icon: Icon, url }) => (
+                    <Pressable key={label} style={styles.menuItem} onPress={() => handleOpenLink(url)}>
                         <View style={styles.menuLeft}>
                             <View style={styles.iconCircle}>
                                 <Icon size={18} color="#F6F0FF" />
