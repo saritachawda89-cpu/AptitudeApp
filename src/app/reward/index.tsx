@@ -1,6 +1,6 @@
 import { Check, CirclePlay, Gift, WalletCards } from 'lucide-react-native';
 import { useEffect, useState } from 'react';
-import { Modal, Pressable, StyleSheet, View } from 'react-native';
+import { Modal, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { BottomTabBar } from '@/components/bottom-tab-bar';
@@ -56,113 +56,118 @@ export default function RewardScreen() {
     return (
         <ThemedView style={styles.container}>
             <SafeAreaView style={styles.safeArea}>
-                <View style={styles.contentWrap}>
-                    <View style={styles.topBar}>
-                        <View style={styles.titleWrap}>
-                            <ThemedText type="small" style={styles.eyebrow}>
-                                Earn rewards
-                            </ThemedText>
-                            <ThemedText type="subtitle" style={styles.pageTitle}>
-                                {rewardConfig.title}
-                            </ThemedText>
-                        </View>
-                        <CoinBadge value={coins} compact style={styles.coinBadge} />
-                    </View>
-
-                    <View style={styles.sectionCard}>
-                        <View style={styles.sectionHeader}>
-                            <View style={styles.coinIconWrap}>
-                                <WalletCards size={18} color="#17143A" />
-                            </View>
-                            <ThemedText type="smallBold" style={styles.sectionLabel}>
-                                Your Coins
-                            </ThemedText>
-                        </View>
-
-                        <ThemedText type="title" style={styles.bigCoinValue}>
-                            {coins}
-                        </ThemedText>
-
-                        <ThemedText type="small" style={styles.helperText}>
-                            Use coins to unlock topics and get extra help.
-                        </ThemedText>
-                    </View>
-
-                    <View style={styles.sectionBlock}>
-                        <ThemedText type="smallBold" style={styles.blockTitle}>
-                            Daily Bonus
-                        </ThemedText>
-
-                        <View style={styles.dailyBonusRow}>
-                            <View style={styles.dailyIconWrap}>
-                                <Gift size={20} color="#17143A" />
-                            </View>
-
-                            <View style={styles.dailyTextWrap}>
-                                <ThemedText type="smallBold" style={styles.dailyTitle}>
-                                    Daily Reward
+                <ScrollView
+                    style={styles.scrollView}
+                    showsVerticalScrollIndicator={false}
+                    contentContainerStyle={styles.scrollContent}>
+                    <View style={styles.contentWrap}>
+                        <View style={styles.topBar}>
+                            <View style={styles.titleWrap}>
+                                <ThemedText type="small" style={styles.eyebrow}>
+                                    Earn rewards
                                 </ThemedText>
-                                <ThemedText type="small" style={styles.dailySubtitle}>
-                                    Come back tomorrow and earn bonus coins.
+                                <ThemedText type="subtitle" style={styles.pageTitle}>
+                                    {rewardConfig.title}
+                                </ThemedText>
+                            </View>
+                            <CoinBadge value={coins} compact style={styles.coinBadge} />
+                        </View>
+
+                        <View style={styles.sectionCard}>
+                            <View style={styles.sectionHeader}>
+                                <View style={styles.coinIconWrap}>
+                                    <WalletCards size={18} color="#17143A" />
+                                </View>
+                                <ThemedText type="smallBold" style={styles.sectionLabel}>
+                                    Your Coins
                                 </ThemedText>
                             </View>
 
-                            <View style={styles.claimPill}>
-                                <ThemedText type="smallBold" style={styles.claimText}>
-                                    +{rewardConfig.dailyBonus}
-                                </ThemedText>
-                            </View>
+                            <ThemedText type="title" style={styles.bigCoinValue}>
+                                {coins}
+                            </ThemedText>
+
+                            <ThemedText type="small" style={styles.helperText}>
+                                Use coins to unlock topics and get extra help.
+                            </ThemedText>
                         </View>
 
-                        <Pressable
-                            disabled={hasClaimedToday}
-                            onPress={handleClaimDailyBonus}
-                            style={[styles.claimButton, hasClaimedToday && styles.claimButtonDisabled]}>
-                            <ThemedText type="smallBold" style={[styles.claimButtonText, hasClaimedToday && styles.claimButtonTextDisabled]}>
-                                {hasClaimedToday ? 'Claimed' : 'Claim'}
+                        <View style={styles.sectionBlock}>
+                            <ThemedText type="smallBold" style={styles.blockTitle}>
+                                Daily Bonus
                             </ThemedText>
-                        </Pressable>
-                    </View>
 
-                    <View style={styles.sectionBlock}>
-                        <ThemedText type="smallBold" style={styles.blockTitle}>
-                            Earn More
-                        </ThemedText>
+                            <View style={styles.dailyBonusRow}>
+                                <View style={styles.dailyIconWrap}>
+                                    <Gift size={20} color="#17143A" />
+                                </View>
 
-                        {rewardActions.map(({ id, icon: Icon, label, reward, color }) => {
-                            const isVideoReward = id === 'video';
-
-                            return (
-                                <Pressable
-                                    key={id}
-                                    onPress={() => {
-                                        if (isVideoReward) {
-                                            setIsVideoAdOpen(true);
-                                        }
-                                    }}
-                                    style={({ pressed }) => [
-                                        styles.earnRow,
-                                        isVideoReward && styles.earnRowAction,
-                                        pressed && isVideoReward && styles.earnRowPressed,
-                                    ]}>
-                                    <View style={[styles.earnIconWrap, { backgroundColor: `${color}22`, borderColor: `${color}66` }]}>
-                                        <Icon size={18} color={color} />
-                                    </View>
-
-                                    <ThemedText type="default" style={styles.earnLabel}>
-                                        {label}
+                                <View style={styles.dailyTextWrap}>
+                                    <ThemedText type="smallBold" style={styles.dailyTitle}>
+                                        Daily Reward
                                     </ThemedText>
+                                    <ThemedText type="small" style={styles.dailySubtitle}>
+                                        Come back tomorrow and earn bonus coins.
+                                    </ThemedText>
+                                </View>
 
-                                    <View style={styles.rewardPill}>
-                                        <ThemedText type="smallBold" style={styles.rewardPillText}>
-                                            +{reward}
+                                <View style={styles.claimPill}>
+                                    <ThemedText type="smallBold" style={styles.claimText}>
+                                        +{rewardConfig.dailyBonus}
+                                    </ThemedText>
+                                </View>
+                            </View>
+
+                            <Pressable
+                                disabled={hasClaimedToday}
+                                onPress={handleClaimDailyBonus}
+                                style={[styles.claimButton, hasClaimedToday && styles.claimButtonDisabled]}>
+                                <ThemedText type="smallBold" style={[styles.claimButtonText, hasClaimedToday && styles.claimButtonTextDisabled]}>
+                                    {hasClaimedToday ? 'Claimed' : 'Claim'}
+                                </ThemedText>
+                            </Pressable>
+                        </View>
+
+                        <View style={styles.sectionBlock}>
+                            <ThemedText type="smallBold" style={styles.blockTitle}>
+                                Earn More
+                            </ThemedText>
+
+                            {rewardActions.map(({ id, icon: Icon, label, reward, color }) => {
+                                const isVideoReward = id === 'video';
+
+                                return (
+                                    <Pressable
+                                        key={id}
+                                        onPress={() => {
+                                            if (isVideoReward) {
+                                                setIsVideoAdOpen(true);
+                                            }
+                                        }}
+                                        style={({ pressed }) => [
+                                            styles.earnRow,
+                                            isVideoReward && styles.earnRowAction,
+                                            pressed && isVideoReward && styles.earnRowPressed,
+                                        ]}>
+                                        <View style={[styles.earnIconWrap, { backgroundColor: `${color}22`, borderColor: `${color}66` }]}>
+                                            <Icon size={18} color={color} />
+                                        </View>
+
+                                        <ThemedText type="default" style={styles.earnLabel}>
+                                            {label}
                                         </ThemedText>
-                                    </View>
-                                </Pressable>
-                            );
-                        })}
+
+                                        <View style={styles.rewardPill}>
+                                            <ThemedText type="smallBold" style={styles.rewardPillText}>
+                                                +{reward}
+                                            </ThemedText>
+                                        </View>
+                                    </Pressable>
+                                );
+                            })}
+                        </View>
                     </View>
-                </View>
+                </ScrollView>
 
                 <Modal transparent visible={isVideoAdOpen} animationType="fade" onRequestClose={() => setIsVideoAdOpen(false)}>
                     <View style={styles.modalOverlay}>
@@ -212,12 +217,17 @@ const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
     },
+    scrollView: {
+        flex: 1,
+    },
+    scrollContent: {
+        paddingBottom: 120,
+    },
     contentWrap: {
         width: '100%',
         maxWidth: MaxContentWidth,
         paddingHorizontal: Spacing.three,
         paddingTop: Spacing.three,
-        paddingBottom: 96,
         alignSelf: 'center',
     },
     topBar: {
