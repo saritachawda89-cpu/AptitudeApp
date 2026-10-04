@@ -1,7 +1,7 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import { ArrowLeft, CheckCircle2, ChevronRight, Coins, Lightbulb, RotateCcw } from 'lucide-react-native';
 import { useEffect, useMemo, useState } from 'react';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
@@ -168,81 +168,84 @@ export default function PracticeScreen() {
                     </View>
                 </View>
 
-                <ThemedView style={styles.questionCard}>
-                    <View style={styles.questionCardHeader}>
-                        <ThemedText type="subtitle" style={styles.questionHeading}>
-                            Question {currentIndex + 1}
-                        </ThemedText>
+                <ScrollView
+                    showsVerticalScrollIndicator={false}
+                    contentContainerStyle={styles.scrollContent}>
+                    <ThemedView style={styles.questionCard}>
+                        <View style={styles.questionCardHeader}>
+                            <ThemedText type="subtitle" style={styles.questionHeading}>
+                                Question {currentIndex + 1}
+                            </ThemedText>
 
-                        {isAlreadyCompleted && (
-                            <View style={styles.completedBadge}>
-                                <ThemedText type="smallBold" style={styles.completedBadgeText}>
-                                    Completed
-                                </ThemedText>
-                            </View>
-                        )}
-                    </View>
-
-                    <ThemedText type="default" style={styles.questionText}>
-                        {currentQuestion.question}
-                    </ThemedText>
-
-                    <View style={styles.optionsWrap}>
-                        {currentQuestion.options.map((option) => {
-                            const isSelected = selectedOption === option.id;
-                            const isRight = option.id === currentQuestion.rightOption;
-
-                            const optionStyle = [
-                                styles.optionButton,
-                                !showFeedback && isSelected && styles.selectedOption,
-                                showFeedback && isRight && styles.correctOption,
-                                showFeedback && isSelected && !isRight && styles.wrongOption,
-                            ];
-
-                            return (
-                                <Pressable
-                                    key={option.id}
-                                    onPress={() => {
-                                        if (showFeedback) {
-                                            return;
-                                        }
-
-                                        setSelectedOption(option.id);
-                                    }}
-                                    style={optionStyle}>
-                                    <ThemedText type="default" style={styles.optionLabel}>
-                                        {option.id}. {option.text}
+                            {isAlreadyCompleted && (
+                                <View style={styles.completedBadge}>
+                                    <ThemedText type="smallBold" style={styles.completedBadgeText}>
+                                        Completed
                                     </ThemedText>
-                                </Pressable>
-                            );
-                        })}
-                    </View>
+                                </View>
+                            )}
+                        </View>
 
-                </ThemedView>
-
-                <View style={styles.actionsRow}>
-                    <Pressable
-                        onPress={handleHintPress}
-                        style={({ pressed }) => [
-                            styles.hintButton,
-                            pressed && styles.hintButtonPressed,
-                        ]}>
-                        <Lightbulb size={20} color="#17143A" />
-                    </Pressable>
-
-                    <Pressable
-                        disabled={isSubmitDisabled}
-                        onPress={handleSubmit}
-                        style={({ pressed }) => [
-                            styles.primaryButton,
-                            isSubmitDisabled && styles.disabledButton,
-                            pressed && !isSubmitDisabled && styles.primaryButtonPressed,
-                        ]}>
-                        <ThemedText type="default" style={styles.primaryText}>
-                            Submit
+                        <ThemedText type="default" style={styles.questionText}>
+                            {currentQuestion.question}
                         </ThemedText>
-                    </Pressable>
-                </View>
+
+                        <View style={styles.optionsWrap}>
+                            {currentQuestion.options.map((option) => {
+                                const isSelected = selectedOption === option.id;
+                                const isRight = option.id === currentQuestion.rightOption;
+
+                                const optionStyle = [
+                                    styles.optionButton,
+                                    !showFeedback && isSelected && styles.selectedOption,
+                                    showFeedback && isRight && styles.correctOption,
+                                    showFeedback && isSelected && !isRight && styles.wrongOption,
+                                ];
+
+                                return (
+                                    <Pressable
+                                        key={option.id}
+                                        onPress={() => {
+                                            if (showFeedback) {
+                                                return;
+                                            }
+
+                                            setSelectedOption(option.id);
+                                        }}
+                                        style={optionStyle}>
+                                        <ThemedText type="default" style={styles.optionLabel}>
+                                            {option.id}. {option.text}
+                                        </ThemedText>
+                                    </Pressable>
+                                );
+                            })}
+                        </View>
+                    </ThemedView>
+
+                    <View style={styles.actionsRow}>
+                        <Pressable
+                            onPress={handleHintPress}
+                            style={({ pressed }) => [
+                                styles.hintButton,
+                                pressed && styles.hintButtonPressed,
+                            ]}>
+                            <Lightbulb size={20} color="#17143A" />
+                        </Pressable>
+
+                        <Pressable
+                            disabled={isSubmitDisabled}
+                            onPress={handleSubmit}
+                            style={({ pressed }) => [
+                                styles.primaryButton,
+                                isSubmitDisabled && styles.disabledButton,
+                                pressed && !isSubmitDisabled && styles.primaryButtonPressed,
+                            ]}>
+                            <ThemedText type="default" style={styles.primaryText}>
+                                Submit
+                            </ThemedText>
+                        </Pressable>
+                    </View>
+                </ScrollView>
 
                 {isHintModalOpen && (
                     <View style={styles.modalOverlay} pointerEvents="auto">
@@ -344,6 +347,7 @@ const styles = StyleSheet.create({
     screenShell: {
         width: '100%',
         maxWidth: MaxContentWidth,
+        flex: 1,
         paddingHorizontal: Spacing.four,
         paddingTop: Spacing.four,
         paddingBottom: Spacing.five,
@@ -354,7 +358,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         marginBottom: Spacing.three,
-        // paddingVertical: Spacing.two,
+        backgroundColor: '#090a1c',
+        zIndex: 10,
+    },
+    scrollContent: {
+        paddingBottom: Spacing.five,
     },
     backButton: {
         width: 40,
