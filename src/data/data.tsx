@@ -12,7 +12,7 @@ export const rewardConfig = {
     title: 'Rewards',
     dailyBonusText: 'Come back tomorrow and earn bonus coins.',
     videoText: 'Watch a short video',
-    questionText: 'Solve a question',
+    questionText: 'Solve a practice question',
 };
 
 export const parentData = {

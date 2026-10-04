@@ -28,6 +28,8 @@ export default function RewardScreen() {
             reward: rewardConfig.videoReward,
             color: colors.warning,
             isPrimary: true,
+            description: 'Earn from a short video ad.',
+            isReadOnly: false,
         },
         {
             id: 'question',
@@ -35,6 +37,8 @@ export default function RewardScreen() {
             label: rewardConfig.questionText,
             reward: rewardConfig.questionReward,
             color: colors.success,
+            description: 'Open any topic and solve 1 practice question.',
+            isReadOnly: true,
         },
     ] as const;
 
@@ -133,8 +137,33 @@ export default function RewardScreen() {
                                 Earn More
                             </ThemedText>
 
-                            {rewardActions.map(({ id, icon: Icon, label, reward, color }) => {
+                            {rewardActions.map(({ id, icon: Icon, label, reward, color, description, isReadOnly }) => {
                                 const isVideoReward = id === 'video';
+
+                                if (isReadOnly) {
+                                    return (
+                                        <View key={id} style={styles.readOnlyRow}>
+                                            <View style={[styles.earnIconWrap, { backgroundColor: `${color}22`, borderColor: `${color}66` }]}>
+                                                <Icon size={18} color={color} />
+                                            </View>
+
+                                            <View style={styles.earnTextWrap}>
+                                                <ThemedText type="default" style={styles.earnLabel}>
+                                                    {label}
+                                                </ThemedText>
+                                                <ThemedText type="small" style={styles.earnDescription}>
+                                                    {description}
+                                                </ThemedText>
+                                            </View>
+
+                                            <View style={[styles.rewardPill, styles.readOnlyRewardPill]}>
+                                                <ThemedText type="smallBold" style={[styles.rewardPillText, styles.readOnlyRewardPillText]}>
+                                                    +{reward}
+                                                </ThemedText>
+                                            </View>
+                                        </View>
+                                    );
+                                }
 
                                 return (
                                     <Pressable
@@ -153,9 +182,14 @@ export default function RewardScreen() {
                                             <Icon size={18} color={color} />
                                         </View>
 
-                                        <ThemedText type="default" style={styles.earnLabel}>
-                                            {label}
-                                        </ThemedText>
+                                        <View style={styles.earnTextWrap}>
+                                            <ThemedText type="default" style={styles.earnLabel}>
+                                                {label}
+                                            </ThemedText>
+                                            <ThemedText type="small" style={styles.earnDescription}>
+                                                {description}
+                                            </ThemedText>
+                                        </View>
 
                                         <View style={styles.rewardPill}>
                                             <ThemedText type="smallBold" style={styles.rewardPillText}>
@@ -394,6 +428,18 @@ const styles = StyleSheet.create({
     earnRowPressed: {
         opacity: 0.9,
     },
+    readOnlyRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingVertical: 10,
+        paddingHorizontal: 4,
+        gap: 12,
+        borderRadius: 8,
+        borderWidth: 1,
+        borderColor: 'rgba(146, 136, 181, 0.26)',
+        backgroundColor: 'rgba(255, 255, 255, 0.02)',
+        marginTop: 8,
+    },
     earnIconWrap: {
         width: 34,
         height: 34,
@@ -402,9 +448,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    earnLabel: {
+    earnTextWrap: {
         flex: 1,
+    },
+    earnLabel: {
         color: colors.text,
+    },
+    earnDescription: {
+        color: colors.textSecondary,
+        marginTop: 2,
+        lineHeight: 16,
     },
     rewardPill: {
         backgroundColor: '#F8D66C',
@@ -414,6 +467,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         minWidth: 52,
+    },
+    readOnlyRewardPill: {
+        backgroundColor: '#2A2744',
+    },
+    readOnlyRewardPillText: {
+        color: '#F5EEFF',
     },
     rewardPillText: {
         color: '#17143A',
