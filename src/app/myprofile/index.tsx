@@ -8,6 +8,7 @@ import {
     UserRound,
 } from 'lucide-react-native';
 import { Alert, Linking, Pressable, StyleSheet, Text, View } from 'react-native';
+import { router } from 'expo-router';
 
 import { BottomTabBar } from '@/components/bottom-tab-bar';
 
@@ -17,7 +18,7 @@ const termsUrl = 'https://docs.google.com/document/d/1P-NLy6KEHOzxDvTDNHvqAavVpA
 const menuItems = [
     { label: 'Settings', icon: Settings },
     { label: 'Notifications', icon: Bell },
-    { label: 'About', icon: Info },
+    { label: 'About', icon: Info, route: '/about' },
     { label: 'Privacy Policy', icon: ShieldCheck, url: privacyPolicyUrl },
     { label: 'Terms & Conditions', icon: FileText, url: termsUrl },
 ];
@@ -59,8 +60,18 @@ export default function MyProfileScreen() {
             </View>
 
             <View style={styles.menuList}>
-                {menuItems.map(({ label, icon: Icon, url }) => (
-                    <Pressable key={label} style={styles.menuItem} onPress={() => handleOpenLink(url)}>
+                {menuItems.map(({ label, icon: Icon, url, route }) => (
+                    <Pressable
+                        key={label}
+                        style={styles.menuItem}
+                        onPress={() => {
+                            if (route) {
+                                router.push(route as any);
+                                return;
+                            }
+
+                            handleOpenLink(url);
+                        }}>
                         <View style={styles.menuLeft}>
                             <View style={styles.iconCircle}>
                                 <Icon size={18} color="#F6F0FF" />
