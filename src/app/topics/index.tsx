@@ -367,7 +367,7 @@ const styles = StyleSheet.create({
         marginBottom: 0,
         color: '#22c55f',
         fontSize: 24,
-        fontWeight: '800',
+        fontWeight: '600',
         lineHeight: 32,
     },
     titleGradient: {
