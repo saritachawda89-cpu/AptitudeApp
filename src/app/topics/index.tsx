@@ -479,7 +479,7 @@ const styles = StyleSheet.create({
     },
     listContent: {
         gap: Spacing.two,
-        paddingBottom: BottomTabInset + Spacing.five,
+        paddingBottom: BottomTabInset + Spacing.five + 56,
     },
     emptyState: {
         paddingVertical: Spacing.five,
