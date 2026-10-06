@@ -351,8 +351,8 @@ const styles = StyleSheet.create({
         width: '100%',
         maxWidth: MaxContentWidth,
         paddingHorizontal: Spacing.four,
-        paddingTop: Spacing.five,
-        paddingBottom: BottomTabInset + Spacing.three,
+        paddingTop: Spacing.four,
+        paddingBottom: BottomTabInset + Spacing.four,
     },
     headerCard: {
         flexDirection: 'row',
