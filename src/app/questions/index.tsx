@@ -54,10 +54,7 @@ export default function QuestionsScreen() {
     return (
         <ThemedView style={styles.container}>
             <ThemedView style={styles.screenShell}>
-                <ScrollView
-                    showsVerticalScrollIndicator={false}
-                    contentContainerStyle={styles.scrollContent}
-                    style={styles.scrollView}>
+                <View style={styles.headerArea}>
                     <View style={styles.topBar}>
                         <Pressable onPress={() => router.push('/topics')} style={styles.backButton}>
                             <ArrowLeft size={16} color="#F0F4F8" />
@@ -114,7 +111,12 @@ export default function QuestionsScreen() {
                             </ThemedText>
                         </View>
                     </View>
+                </View>
 
+                <ScrollView
+                    showsVerticalScrollIndicator={false}
+                    contentContainerStyle={styles.scrollContent}
+                    style={styles.scrollView}>
                     <View style={styles.grid}>
                         {questions.map((question, index) => {
                             const isDone = question.isCompleted;
@@ -169,6 +171,10 @@ const styles = StyleSheet.create({
         paddingTop: Spacing.four,
         paddingBottom: Spacing.five,
         backgroundColor: '#090a1c',
+        position: 'relative',
+    },
+    headerArea: {
+        flexShrink: 0,
     },
     scrollView: {
         flex: 1,
