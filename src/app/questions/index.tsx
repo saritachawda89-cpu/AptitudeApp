@@ -33,17 +33,39 @@ const questionMap = {
     mixtureAndAlligationQuestions
 } as const;
 
+const levelOrder = ['basic', 'medium', 'hard'] as const;
+type LevelKey = (typeof levelOrder)[number];
+
+const getLevelGroups = (allQuestions: typeof numberSystemQuestions) => {
+    const total = allQuestions.length;
+    const basicEnd = Math.ceil(total / 3);
+    const mediumEnd = Math.ceil((total * 2) / 3);
+
+    return [
+        { key: 'basic' as const, label: 'Basic', questions: allQuestions.slice(0, basicEnd) },
+        { key: 'medium' as const, label: 'Medium', questions: allQuestions.slice(basicEnd, mediumEnd) },
+        { key: 'hard' as const, label: 'Hard', questions: allQuestions.slice(mediumEnd) },
+    ];
+};
+
 export default function QuestionsScreen() {
     const { topic } = useLocalSearchParams<{ topic?: string }>();
     const selectedTopic = parentData.topics.find((item) => item.id === topic) ?? parentData.topics[0];
     const questions = questionMap[selectedTopic.id as keyof typeof questionMap] ?? [];
     const completedCount = questions.filter((question) => question.isCompleted).length;
+    const levelGroups = getLevelGroups(questions);
+    const [activeLevel, setActiveLevel] = useState<LevelKey>('basic');
     const [coins, setCoins] = useState(parentData.coins);
     const [isCoinsInfoOpen, setIsCoinsInfoOpen] = useState(false);
 
     useEffect(() => {
         setCoins(parentData.coins);
+        setActiveLevel('basic');
     }, [topic]);
+
+    const selectedLevelGroup = levelGroups.find((group) => group.key === activeLevel) ?? levelGroups[0];
+    const activeLevelQuestions = selectedLevelGroup.questions;
+    const activeCompletedCount = activeLevelQuestions.filter((question) => question.isCompleted).length;
 
     const handleWatchVideoReward = async () => {
         await addCoins(50);
@@ -102,14 +124,35 @@ export default function QuestionsScreen() {
                                 <View
                                     style={[
                                         styles.progressFill,
-                                        { width: `${questions.length ? (completedCount / questions.length) * 100 : 0}%` },
+                                        {
+                                            width: `${activeLevelQuestions.length ? (activeCompletedCount / activeLevelQuestions.length) * 100 : 0}%`,
+                                        },
                                     ]}
                                 />
                             </View>
                             <ThemedText type="smallBold" style={styles.progressValue}>
-                                {completedCount}/{questions.length}
+                                {activeCompletedCount}/{activeLevelQuestions.length}
                             </ThemedText>
                         </View>
+                    </View>
+
+                    <View style={styles.levelSelector}>
+                        {levelGroups.map((group) => {
+                            const isActive = activeLevel === group.key;
+                            return (
+                                <Pressable
+                                    key={group.key}
+                                    onPress={() => setActiveLevel(group.key)}
+                                    style={[styles.levelButton, isActive && styles.levelButtonActive]}>
+                                    <ThemedText type="smallBold" style={[styles.levelButtonText, isActive && styles.levelButtonTextActive]}>
+                                        {group.label}
+                                    </ThemedText>
+                                    <ThemedText type="smallBold" style={[styles.levelButtonCount, isActive && styles.levelButtonCountActive]}>
+                                        {group.questions.length}
+                                    </ThemedText>
+                                </Pressable>
+                            );
+                        })}
                     </View>
                 </View>
 
@@ -118,8 +161,11 @@ export default function QuestionsScreen() {
                     contentContainerStyle={styles.scrollContent}
                     style={styles.scrollView}>
                     <View style={styles.grid}>
-                        {questions.map((question, index) => {
+                        {activeLevelQuestions.map((question, index) => {
                             const isDone = question.isCompleted;
+                            const displayNumber = levelGroups
+                                .slice(0, levelOrder.indexOf(activeLevel) + 1)
+                                .reduce((sum, group) => sum + (group.key === activeLevel ? 0 : group.questions.length), 0) + index + 1;
 
                             return (
                                 <Pressable
@@ -140,7 +186,7 @@ export default function QuestionsScreen() {
                                         pressed && styles.questionTilePressed,
                                     ]}>
                                     <ThemedText type="smallBold" style={styles.tileNumber}>
-                                        {index + 1}
+                                        {displayNumber}
                                     </ThemedText>
                                     {isDone ? (
                                         <CheckCheck size={12} color="#22c55f" style={styles.checkMark} />
@@ -301,6 +347,41 @@ const styles = StyleSheet.create({
         minWidth: 56,
         textAlign: 'right',
         color: '#F5EEFF',
+    },
+    levelSelector: {
+        flexDirection: 'row',
+        gap: Spacing.two,
+        marginBottom: Spacing.three,
+    },
+    levelButton: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 6,
+        borderRadius: 10,
+        paddingVertical: Spacing.two,
+        backgroundColor: '#1B1A30',
+        borderWidth: 1,
+        borderColor: '#4B3A78',
+    },
+    levelButtonActive: {
+        backgroundColor: '#2D2857',
+        borderColor: '#8C7FE6',
+    },
+    levelButtonText: {
+        color: '#F5EEFF',
+        textTransform: 'capitalize',
+    },
+    levelButtonTextActive: {
+        color: '#F8D66C',
+    },
+    levelButtonCount: {
+        color: '#A9B6D4',
+        fontSize: 12,
+    },
+    levelButtonCountActive: {
+        color: '#F8D66C',
     },
     grid: {
         flexDirection: 'row',
