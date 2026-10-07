@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { BottomTabBar } from '@/components/bottom-tab-bar';
 import { CoinBadge } from '@/components/coin-badge';
+import { MathBackground } from '@/components/math-background';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { colors, MaxContentWidth, Spacing } from '@/constants/theme';
@@ -59,6 +60,7 @@ export default function RewardScreen() {
 
     return (
         <ThemedView style={styles.container}>
+            <MathBackground />
             <SafeAreaView style={styles.safeArea}>
                 <ScrollView
                     style={styles.scrollView}

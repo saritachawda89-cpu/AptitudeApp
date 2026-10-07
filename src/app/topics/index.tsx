@@ -7,6 +7,7 @@ import Svg, { Circle } from 'react-native-svg';
 
 import { BottomTabBar } from '@/components/bottom-tab-bar';
 import { CoinBadge } from '@/components/coin-badge';
+import { MathBackground } from '@/components/math-background';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
@@ -113,6 +114,7 @@ export default function TopicsScreen() {
 
     return (
         <ThemedView style={styles.container}>
+            <MathBackground />
             <SafeAreaView style={styles.safeArea}>
                 <View style={styles.headerCard}>
                     <View style={styles.titleWrap}>

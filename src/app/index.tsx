@@ -4,6 +4,7 @@ import { Image, Pressable, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { SvgUri } from 'react-native-svg';
 
+import { MathBackground } from '@/components/math-background';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
@@ -34,6 +35,7 @@ export default function HomeScreen() {
 
   return (
     <ThemedView style={styles.container}>
+      <MathBackground />
       <SafeAreaView style={styles.safeArea}>
         {/* <View style={styles.logoShell}>
           <SvgUri width={160} height={160} uri={logoUri} />

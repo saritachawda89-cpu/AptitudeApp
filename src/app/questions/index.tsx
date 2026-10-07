@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Modal, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 
 import { CoinBadge } from '@/components/coin-badge';
+import { MathBackground } from '@/components/math-background';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { MaxContentWidth, Spacing, colors } from '@/constants/theme';
@@ -75,6 +76,7 @@ export default function QuestionsScreen() {
 
     return (
         <ThemedView style={styles.container}>
+            <MathBackground />
             <ThemedView style={styles.screenShell}>
                 <View style={styles.headerArea}>
                     <View style={styles.topBar}>
@@ -216,7 +218,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: Spacing.four,
         paddingTop: Spacing.four,
         paddingBottom: Spacing.five,
-        backgroundColor: '#090a1c',
+        backgroundColor: 'rgba(9, 10, 28, 0.72)',
         position: 'relative',
     },
     headerArea: {
