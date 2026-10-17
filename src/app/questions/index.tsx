@@ -10,7 +10,15 @@ import { ThemedView } from '@/components/themed-view';
 import { MaxContentWidth, Spacing, colors } from '@/constants/theme';
 import {
     addCoins,
+    alphanumericSeriesQuestions,
+    alphabetSeriesQuestions,
+    analogyQuestions,
     averageQuestions,
+    bloodRelationsQuestions,
+    classificationQuestions,
+    codingDecodingQuestions,
+    directionSenseQuestions,
+    numberSeriesQuestions,
     numberSystemQuestions,
     parentData,
     percentageQuestions,
@@ -31,7 +39,15 @@ const questionMap = {
     profitAndLossQuestions,
     permutationAndCombinationQuestions,
     ratioAndProportionQuestions,
-    mixtureAndAlligationQuestions
+    mixtureAndAlligationQuestions,
+    analogyQuestions,
+    classificationQuestions,
+    codingDecodingQuestions,
+    numberSeriesQuestions,
+    alphabetSeriesQuestions,
+    alphanumericSeriesQuestions,
+    bloodRelationsQuestions,
+    directionSenseQuestions,
 } as const;
 
 const levelOrder = ['basic', 'medium', 'hard'] as const;

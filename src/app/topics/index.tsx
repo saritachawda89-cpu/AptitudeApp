@@ -13,8 +13,16 @@ import { ThemedView } from '@/components/themed-view';
 import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
 import {
     addCoins,
+    alphanumericSeriesQuestions,
+    alphabetSeriesQuestions,
+    analogyQuestions,
     averageQuestions,
+    bloodRelationsQuestions,
+    classificationQuestions,
+    codingDecodingQuestions,
+    directionSenseQuestions,
     mixtureAndAlligationQuestions,
+    numberSeriesQuestions,
     numberSystemQuestions,
     parentData,
     percentageQuestions,
@@ -40,6 +48,14 @@ const topicIconMap = {
     mixtureAndAlligationQuestions: require('../../../assets/images/mixtureAndAlligationQuestions.svg'),
     profitAndLossQuestions: require('../../../assets/images/profitAndLossQuestions.svg'),
     permutationAndCombinationQuestions: require('../../../assets/images/permutationAndCombinationQuestions.svg'),
+    analogyQuestions: undefined,
+    classificationQuestions: undefined,
+    codingDecodingQuestions: undefined,
+    numberSeriesQuestions: undefined,
+    alphabetSeriesQuestions: undefined,
+    alphanumericSeriesQuestions: undefined,
+    bloodRelationsQuestions: undefined,
+    directionSenseQuestions: undefined,
 } as const;
 
 const questionCountMap = {
@@ -52,6 +68,14 @@ const questionCountMap = {
     mixtureAndAlligationQuestions,
     profitAndLossQuestions,
     permutationAndCombinationQuestions,
+    analogyQuestions,
+    classificationQuestions,
+    codingDecodingQuestions,
+    numberSeriesQuestions,
+    alphabetSeriesQuestions,
+    alphanumericSeriesQuestions,
+    bloodRelationsQuestions,
+    directionSenseQuestions,
 } as const;
 
 export default function TopicsScreen() {

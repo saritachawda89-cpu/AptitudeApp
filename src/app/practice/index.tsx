@@ -8,7 +8,15 @@ import { ThemedView } from '@/components/themed-view';
 import { MaxContentWidth, Spacing, colors as appColors } from '@/constants/theme';
 import {
     addCoins,
+    alphanumericSeriesQuestions,
+    alphabetSeriesQuestions,
+    analogyQuestions,
     averageQuestions,
+    bloodRelationsQuestions,
+    classificationQuestions,
+    codingDecodingQuestions,
+    directionSenseQuestions,
+    numberSeriesQuestions,
     numberSystemQuestions,
     parentData,
     percentageQuestions,
@@ -30,7 +38,15 @@ const questionMap = {
     mixtureAndAlligationQuestions,
     ratioAndProportionQuestions,
     profitAndLossQuestions,
-    permutationAndCombinationQuestions
+    permutationAndCombinationQuestions,
+    analogyQuestions,
+    classificationQuestions,
+    codingDecodingQuestions,
+    numberSeriesQuestions,
+    alphabetSeriesQuestions,
+    alphanumericSeriesQuestions,
+    bloodRelationsQuestions,
+    directionSenseQuestions,
 } as const;
 
 const markQuestionCompleted = (topicId: string, questionId: string) => {
