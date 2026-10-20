@@ -13680,6 +13680,23 @@ export const questionMap: Record<string, Array<{ id: string; isCompleted: boolea
     trainQuestions,
     averageQuestions,
     percentageQuestions,
+    profitAndLossQuestions,
+    permutationAndCombinationQuestions,
+    ratioAndProportionQuestions,
+    mixtureAndAlligationQuestions,
+    analogyQuestions,
+    classificationQuestions,
+    codingDecodingQuestions,
+    numberSeriesQuestions,
+    alphabetSeriesQuestions,
+    alphanumericSeriesQuestions,
+    bloodRelationsQuestions,
+    directionSenseQuestions,
+    synonymsQuestions,
+    antonymsQuestions,
+    oneWordSubstitutionQuestions,
+    idiomsAndPhrasesQuestions,
+    spellingCorrectionQuestions,
 };
 
 export const hydrateAppState = async () => {
