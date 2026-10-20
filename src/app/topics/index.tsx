@@ -16,19 +16,24 @@ import {
     alphanumericSeriesQuestions,
     alphabetSeriesQuestions,
     analogyQuestions,
+    antonymsQuestions,
     averageQuestions,
     bloodRelationsQuestions,
     classificationQuestions,
     codingDecodingQuestions,
     directionSenseQuestions,
+    idiomsAndPhrasesQuestions,
     mixtureAndAlligationQuestions,
     numberSeriesQuestions,
     numberSystemQuestions,
+    oneWordSubstitutionQuestions,
     parentData,
     percentageQuestions,
     permutationAndCombinationQuestions,
     profitAndLossQuestions,
     ratioAndProportionQuestions,
+    spellingCorrectionQuestions,
+    synonymsQuestions,
     timeAndWorkQuestions,
     trainQuestions,
     topicCategories,
@@ -56,6 +61,11 @@ const topicIconMap = {
     alphanumericSeriesQuestions: undefined,
     bloodRelationsQuestions: undefined,
     directionSenseQuestions: undefined,
+    synonymsQuestions: undefined,
+    antonymsQuestions: undefined,
+    oneWordSubstitutionQuestions: undefined,
+    idiomsAndPhrasesQuestions: undefined,
+    spellingCorrectionQuestions: undefined,
 } as const;
 
 const questionCountMap = {
@@ -76,6 +86,11 @@ const questionCountMap = {
     alphanumericSeriesQuestions,
     bloodRelationsQuestions,
     directionSenseQuestions,
+    synonymsQuestions,
+    antonymsQuestions,
+    oneWordSubstitutionQuestions,
+    idiomsAndPhrasesQuestions,
+    spellingCorrectionQuestions,
 } as const;
 
 export default function TopicsScreen() {

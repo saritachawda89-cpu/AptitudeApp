@@ -34,6 +34,11 @@ export const parentData = {
         { id: 'alphanumericSeriesQuestions', name: 'Alphanumeric Series', category: 'Reasoning' as TopicCategory },
         { id: 'bloodRelationsQuestions', name: 'Blood Relation', category: 'Reasoning' as TopicCategory },
         { id: 'directionSenseQuestions', name: 'Direction Sense', category: 'Reasoning' as TopicCategory },
+        { id: 'synonymsQuestions', name: 'Synonyms', category: 'Verbal' as TopicCategory },
+        { id: 'antonymsQuestions', name: 'Antonyms', category: 'Verbal' as TopicCategory },
+        { id: 'oneWordSubstitutionQuestions', name: 'One Word Substitution', category: 'Verbal' as TopicCategory },
+        { id: 'idiomsAndPhrasesQuestions', name: 'Idioms and Phrases', category: 'Verbal' as TopicCategory },
+        { id: 'spellingCorrectionQuestions', name: 'Spelling Correction', category: 'Verbal' as TopicCategory },
     ],
     coins: 500,
     unlockedTopics: ['numberSystemQuestions', 'timeAndWorkQuestions'],
@@ -10061,6 +10066,3596 @@ export const directionSenseQuestions = [
         ],
         rightOption: "A",
         explanation: "From south, a 90-degree counterclockwise turn points west. Turning 180 degrees from west points east.",
+        isCompleted: false
+    }
+];
+
+export const synonymsQuestions = [
+    {
+        id: "1",
+        question: "Choose the synonym of 'Abundant'.",
+        options: [
+            { id: "A", text: "Scarce" },
+            { id: "B", text: "Plentiful" },
+            { id: "C", text: "Limited" },
+            { id: "D", text: "Empty" }
+        ],
+        rightOption: "B",
+        explanation: "'Plentiful' means existing in large quantities, which is the same as 'abundant'.",
+        isCompleted: false
+    },
+    {
+        id: "2",
+        question: "Choose the synonym of 'Benevolent'.",
+        options: [
+            { id: "A", text: "Cruel" },
+            { id: "B", text: "Selfish" },
+            { id: "C", text: "Kind" },
+            { id: "D", text: "Rude" }
+        ],
+        rightOption: "C",
+        explanation: "'Benevolent' means kind and well-meaning.",
+        isCompleted: false
+    },
+    {
+        id: "3",
+        question: "Choose the synonym of 'Candid'.",
+        options: [
+            { id: "A", text: "Frank" },
+            { id: "B", text: "Secretive" },
+            { id: "C", text: "Dishonest" },
+            { id: "D", text: "Uncertain" }
+        ],
+        rightOption: "A",
+        explanation: "'Candid' means honest and straightforward.",
+        isCompleted: false
+    },
+    {
+        id: "4",
+        question: "Choose the synonym of 'Diligent'.",
+        options: [
+            { id: "A", text: "Lazy" },
+            { id: "B", text: "Careless" },
+            { id: "C", text: "Weak" },
+            { id: "D", text: "Hardworking" }
+        ],
+        rightOption: "D",
+        explanation: "'Diligent' means showing careful and persistent effort.",
+        isCompleted: false
+    },
+    {
+        id: "5",
+        question: "Choose the synonym of 'Enormous'.",
+        options: [
+            { id: "A", text: "Tiny" },
+            { id: "B", text: "Huge" },
+            { id: "C", text: "Narrow" },
+            { id: "D", text: "Short" }
+        ],
+        rightOption: "B",
+        explanation: "'Enormous' means extremely large.",
+        isCompleted: false
+    },
+    {
+        id: "6",
+        question: "Choose the synonym of 'Fragile'.",
+        options: [
+            { id: "A", text: "Strong" },
+            { id: "B", text: "Durable" },
+            { id: "C", text: "Delicate" },
+            { id: "D", text: "Heavy" }
+        ],
+        rightOption: "C",
+        explanation: "'Fragile' means easily broken or damaged; 'delicate' has a similar meaning.",
+        isCompleted: false
+    },
+    {
+        id: "7",
+        question: "Choose the synonym of 'Genuine'.",
+        options: [
+            { id: "A", text: "Authentic" },
+            { id: "B", text: "Fake" },
+            { id: "C", text: "False" },
+            { id: "D", text: "Artificial" }
+        ],
+        rightOption: "A",
+        explanation: "'Genuine' means real or authentic.",
+        isCompleted: false
+    },
+    {
+        id: "8",
+        question: "Choose the synonym of 'Hostile'.",
+        options: [
+            { id: "A", text: "Friendly" },
+            { id: "B", text: "Helpful" },
+            { id: "C", text: "Gentle" },
+            { id: "D", text: "Unfriendly" }
+        ],
+        rightOption: "D",
+        explanation: "'Hostile' means unfriendly or antagonistic.",
+        isCompleted: false
+    },
+    {
+        id: "9",
+        question: "Choose the synonym of 'Immaculate'.",
+        options: [
+            { id: "A", text: "Dirty" },
+            { id: "B", text: "Spotless" },
+            { id: "C", text: "Messy" },
+            { id: "D", text: "Broken" }
+        ],
+        rightOption: "B",
+        explanation: "'Immaculate' means perfectly clean or free from flaws.",
+        isCompleted: false
+    },
+    {
+        id: "10",
+        question: "Choose the synonym of 'Jubilant'.",
+        options: [
+            { id: "A", text: "Miserable" },
+            { id: "B", text: "Angry" },
+            { id: "C", text: "Joyful" },
+            { id: "D", text: "Afraid" }
+        ],
+        rightOption: "C",
+        explanation: "'Jubilant' means feeling or expressing great happiness.",
+        isCompleted: false
+    },
+    {
+        id: "11",
+        question: "Choose the synonym of 'Keen'.",
+        options: [
+            { id: "A", text: "Eager" },
+            { id: "B", text: "Indifferent" },
+            { id: "C", text: "Unwilling" },
+            { id: "D", text: "Dull" }
+        ],
+        rightOption: "A",
+        explanation: "'Keen' can mean eager or enthusiastic.",
+        isCompleted: false
+    },
+    {
+        id: "12",
+        question: "Choose the synonym of 'Lucid'.",
+        options: [
+            { id: "A", text: "Confusing" },
+            { id: "B", text: "Vague" },
+            { id: "C", text: "Unclear" },
+            { id: "D", text: "Clear" }
+        ],
+        rightOption: "D",
+        explanation: "'Lucid' means clear and easy to understand.",
+        isCompleted: false
+    },
+    {
+        id: "13",
+        question: "Choose the synonym of 'Magnify'.",
+        options: [
+            { id: "A", text: "Reduce" },
+            { id: "B", text: "Enlarge" },
+            { id: "C", text: "Hide" },
+            { id: "D", text: "Weaken" }
+        ],
+        rightOption: "B",
+        explanation: "'Magnify' means to make something appear larger.",
+        isCompleted: false
+    },
+    {
+        id: "14",
+        question: "Choose the synonym of 'Novice'.",
+        options: [
+            { id: "A", text: "Expert" },
+            { id: "B", text: "Veteran" },
+            { id: "C", text: "Beginner" },
+            { id: "D", text: "Master" }
+        ],
+        rightOption: "C",
+        explanation: "A 'novice' is a person who is new to an activity or subject.",
+        isCompleted: false
+    },
+    {
+        id: "15",
+        question: "Choose the synonym of 'Obsolete'.",
+        options: [
+            { id: "A", text: "Outdated" },
+            { id: "B", text: "Modern" },
+            { id: "C", text: "Current" },
+            { id: "D", text: "Latest" }
+        ],
+        rightOption: "A",
+        explanation: "'Obsolete' means no longer in use because something newer exists.",
+        isCompleted: false
+    },
+    {
+        id: "16",
+        question: "Choose the synonym of 'Peril'.",
+        options: [
+            { id: "A", text: "Comfort" },
+            { id: "B", text: "Safety" },
+            { id: "C", text: "Peace" },
+            { id: "D", text: "Danger" }
+        ],
+        rightOption: "D",
+        explanation: "'Peril' means serious danger or risk.",
+        isCompleted: false
+    },
+    {
+        id: "17",
+        question: "Choose the synonym of 'Quaint'.",
+        options: [
+            { id: "A", text: "Ordinary" },
+            { id: "B", text: "Charming and old-fashioned" },
+            { id: "C", text: "Modern" },
+            { id: "D", text: "Unpleasant" }
+        ],
+        rightOption: "B",
+        explanation: "'Quaint' describes something attractively old-fashioned or unusual.",
+        isCompleted: false
+    },
+    {
+        id: "18",
+        question: "Choose the synonym of 'Rapid'.",
+        options: [
+            { id: "A", text: "Slow" },
+            { id: "B", text: "Gradual" },
+            { id: "C", text: "Swift" },
+            { id: "D", text: "Late" }
+        ],
+        rightOption: "C",
+        explanation: "'Rapid' means happening or moving quickly.",
+        isCompleted: false
+    },
+    {
+        id: "19",
+        question: "Choose the synonym of 'Serene'.",
+        options: [
+            { id: "A", text: "Peaceful" },
+            { id: "B", text: "Noisy" },
+            { id: "C", text: "Agitated" },
+            { id: "D", text: "Furious" }
+        ],
+        rightOption: "A",
+        explanation: "'Serene' means calm, peaceful, and untroubled.",
+        isCompleted: false
+    },
+    {
+        id: "20",
+        question: "Choose the synonym of 'Tedious'.",
+        options: [
+            { id: "A", text: "Exciting" },
+            { id: "B", text: "Brief" },
+            { id: "C", text: "Enjoyable" },
+            { id: "D", text: "Boring" }
+        ],
+        rightOption: "D",
+        explanation: "'Tedious' means long, slow, or dull and tiring.",
+        isCompleted: false
+    },
+    {
+        id: "21",
+        question: "Choose the synonym of 'Urbane'.",
+        options: [
+            { id: "A", text: "Rude" },
+            { id: "B", text: "Polished" },
+            { id: "C", text: "Awkward" },
+            { id: "D", text: "Uncultured" }
+        ],
+        rightOption: "B",
+        explanation: "'Urbane' means courteous, refined, and sophisticated.",
+        isCompleted: false
+    },
+    {
+        id: "22",
+        question: "Choose the synonym of 'Vigilant'.",
+        options: [
+            { id: "A", text: "Careless" },
+            { id: "B", text: "Sleepy" },
+            { id: "C", text: "Watchful" },
+            { id: "D", text: "Distracted" }
+        ],
+        rightOption: "C",
+        explanation: "'Vigilant' means keeping careful watch for possible danger or problems.",
+        isCompleted: false
+    },
+    {
+        id: "23",
+        question: "Choose the synonym of 'Wary'.",
+        options: [
+            { id: "A", text: "Cautious" },
+            { id: "B", text: "Reckless" },
+            { id: "C", text: "Carefree" },
+            { id: "D", text: "Trusting" }
+        ],
+        rightOption: "A",
+        explanation: "'Wary' means cautious because of possible danger or risk.",
+        isCompleted: false
+    },
+    {
+        id: "24",
+        question: "Choose the synonym of 'Yearn'.",
+        options: [
+            { id: "A", text: "Reject" },
+            { id: "B", text: "Forget" },
+            { id: "C", text: "Dislike" },
+            { id: "D", text: "Long for" }
+        ],
+        rightOption: "D",
+        explanation: "'Yearn' means to have a strong desire or longing for something.",
+        isCompleted: false
+    },
+    {
+        id: "25",
+        question: "Choose the synonym of 'Zeal'.",
+        options: [
+            { id: "A", text: "Apathy" },
+            { id: "B", text: "Enthusiasm" },
+            { id: "C", text: "Boredom" },
+            { id: "D", text: "Fear" }
+        ],
+        rightOption: "B",
+        explanation: "'Zeal' means great energy or enthusiasm for a cause or activity.",
+        isCompleted: false
+    },
+    {
+        id: "26",
+        question: "Choose the synonym of 'Alleviate'.",
+        options: [
+            { id: "A", text: "Worsen" },
+            { id: "B", text: "Increase" },
+            { id: "C", text: "Ease" },
+            { id: "D", text: "Complicate" }
+        ],
+        rightOption: "C",
+        explanation: "'Alleviate' means to make pain or difficulty less severe.",
+        isCompleted: false
+    },
+    {
+        id: "27",
+        question: "Choose the synonym of 'Belligerent'.",
+        options: [
+            { id: "A", text: "Aggressive" },
+            { id: "B", text: "Peaceful" },
+            { id: "C", text: "Gentle" },
+            { id: "D", text: "Friendly" }
+        ],
+        rightOption: "A",
+        explanation: "'Belligerent' means hostile and eager to fight.",
+        isCompleted: false
+    },
+    {
+        id: "28",
+        question: "Choose the synonym of 'Commence'.",
+        options: [
+            { id: "A", text: "Finish" },
+            { id: "B", text: "Delay" },
+            { id: "C", text: "Stop" },
+            { id: "D", text: "Begin" }
+        ],
+        rightOption: "D",
+        explanation: "'Commence' means to begin or start.",
+        isCompleted: false
+    },
+    {
+        id: "29",
+        question: "Choose the synonym of 'Deplete'.",
+        options: [
+            { id: "A", text: "Refill" },
+            { id: "B", text: "Exhaust" },
+            { id: "C", text: "Restore" },
+            { id: "D", text: "Increase" }
+        ],
+        rightOption: "B",
+        explanation: "'Deplete' means to use up or greatly reduce a supply.",
+        isCompleted: false
+    },
+    {
+        id: "30",
+        question: "Choose the synonym of 'Eloquent'.",
+        options: [
+            { id: "A", text: "Silent" },
+            { id: "B", text: "Inarticulate" },
+            { id: "C", text: "Expressive" },
+            { id: "D", text: "Confused" }
+        ],
+        rightOption: "C",
+        explanation: "'Eloquent' means fluent and persuasive in speaking or writing.",
+        isCompleted: false
+    },
+    {
+        id: "31",
+        question: "Choose the synonym of 'Futile'.",
+        options: [
+            { id: "A", text: "Useless" },
+            { id: "B", text: "Effective" },
+            { id: "C", text: "Successful" },
+            { id: "D", text: "Productive" }
+        ],
+        rightOption: "A",
+        explanation: "'Futile' means incapable of producing a useful result.",
+        isCompleted: false
+    },
+    {
+        id: "32",
+        question: "Choose the synonym of 'Grim'.",
+        options: [
+            { id: "A", text: "Cheerful" },
+            { id: "B", text: "Pleasant" },
+            { id: "C", text: "Playful" },
+            { id: "D", text: "Sombre" }
+        ],
+        rightOption: "D",
+        explanation: "'Grim' means serious, gloomy, or forbidding.",
+        isCompleted: false
+    },
+    {
+        id: "33",
+        question: "Choose the synonym of 'Hinder'.",
+        options: [
+            { id: "A", text: "Assist" },
+            { id: "B", text: "Obstruct" },
+            { id: "C", text: "Encourage" },
+            { id: "D", text: "Promote" }
+        ],
+        rightOption: "B",
+        explanation: "'Hinder' means to create difficulties or obstacles for someone or something.",
+        isCompleted: false
+    },
+    {
+        id: "34",
+        question: "Choose the synonym of 'Impartial'.",
+        options: [
+            { id: "A", text: "Biased" },
+            { id: "B", text: "Prejudiced" },
+            { id: "C", text: "Unbiased" },
+            { id: "D", text: "Unfair" }
+        ],
+        rightOption: "C",
+        explanation: "'Impartial' means treating all sides fairly without favouring one.",
+        isCompleted: false
+    },
+    {
+        id: "35",
+        question: "Choose the synonym of 'Jeopardy'.",
+        options: [
+            { id: "A", text: "Risk" },
+            { id: "B", text: "Security" },
+            { id: "C", text: "Protection" },
+            { id: "D", text: "Comfort" }
+        ],
+        rightOption: "A",
+        explanation: "'Jeopardy' means danger or risk of loss or harm.",
+        isCompleted: false
+    },
+    {
+        id: "36",
+        question: "Choose the synonym of 'Lethargic'.",
+        options: [
+            { id: "A", text: "Energetic" },
+            { id: "B", text: "Active" },
+            { id: "C", text: "Alert" },
+            { id: "D", text: "Sluggish" }
+        ],
+        rightOption: "D",
+        explanation: "'Lethargic' means lacking energy or feeling sluggish.",
+        isCompleted: false
+    },
+    {
+        id: "37",
+        question: "Choose the synonym of 'Meticulous'.",
+        options: [
+            { id: "A", text: "Careless" },
+            { id: "B", text: "Thorough" },
+            { id: "C", text: "Hasty" },
+            { id: "D", text: "Negligent" }
+        ],
+        rightOption: "B",
+        explanation: "'Meticulous' means showing great attention to detail.",
+        isCompleted: false
+    },
+    {
+        id: "38",
+        question: "Choose the synonym of 'Notorious'.",
+        options: [
+            { id: "A", text: "Respected" },
+            { id: "B", text: "Honourable" },
+            { id: "C", text: "Infamous" },
+            { id: "D", text: "Admired" }
+        ],
+        rightOption: "C",
+        explanation: "'Notorious' means famous for something bad; 'infamous' has the same sense.",
+        isCompleted: false
+    },
+    {
+        id: "39",
+        question: "Choose the synonym of 'Omit'.",
+        options: [
+            { id: "A", text: "Exclude" },
+            { id: "B", text: "Include" },
+            { id: "C", text: "Add" },
+            { id: "D", text: "Insert" }
+        ],
+        rightOption: "A",
+        explanation: "'Omit' means to leave something out or exclude it.",
+        isCompleted: false
+    },
+    {
+        id: "40",
+        question: "Choose the synonym of 'Plausible'.",
+        options: [
+            { id: "A", text: "Impossible" },
+            { id: "B", text: "Absurd" },
+            { id: "C", text: "Unbelievable" },
+            { id: "D", text: "Believable" }
+        ],
+        rightOption: "D",
+        explanation: "'Plausible' means seeming reasonable or likely to be true.",
+        isCompleted: false
+    },
+    {
+        id: "41",
+        question: "Choose the synonym of 'Reluctant'.",
+        options: [
+            { id: "A", text: "Willing" },
+            { id: "B", text: "Unwilling" },
+            { id: "C", text: "Eager" },
+            { id: "D", text: "Enthusiastic" }
+        ],
+        rightOption: "B",
+        explanation: "'Reluctant' means unwilling or hesitant to do something.",
+        isCompleted: false
+    },
+    {
+        id: "42",
+        question: "Choose the synonym of 'Substantial'.",
+        options: [
+            { id: "A", text: "Insignificant" },
+            { id: "B", text: "Tiny" },
+            { id: "C", text: "Considerable" },
+            { id: "D", text: "Trivial" }
+        ],
+        rightOption: "C",
+        explanation: "'Substantial' means large in amount, value, or importance.",
+        isCompleted: false
+    },
+    {
+        id: "43",
+        question: "Choose the synonym of 'Transient'.",
+        options: [
+            { id: "A", text: "Temporary" },
+            { id: "B", text: "Permanent" },
+            { id: "C", text: "Enduring" },
+            { id: "D", text: "Lasting" }
+        ],
+        rightOption: "A",
+        explanation: "'Transient' means lasting only for a short time.",
+        isCompleted: false
+    },
+    {
+        id: "44",
+        question: "Choose the synonym of 'Unanimous'.",
+        options: [
+            { id: "A", text: "Divided" },
+            { id: "B", text: "Conflicted" },
+            { id: "C", text: "Disputed" },
+            { id: "D", text: "In agreement" }
+        ],
+        rightOption: "D",
+        explanation: "'Unanimous' means fully agreed upon by everyone involved.",
+        isCompleted: false
+    },
+    {
+        id: "45",
+        question: "Choose the synonym of 'Venerate'.",
+        options: [
+            { id: "A", text: "Despise" },
+            { id: "B", text: "Revere" },
+            { id: "C", text: "Mock" },
+            { id: "D", text: "Ignore" }
+        ],
+        rightOption: "B",
+        explanation: "'Venerate' means to regard someone with deep respect.",
+        isCompleted: false
+    },
+    {
+        id: "46",
+        question: "Choose the synonym of 'Wither'.",
+        options: [
+            { id: "A", text: "Bloom" },
+            { id: "B", text: "Flourish" },
+            { id: "C", text: "Wilt" },
+            { id: "D", text: "Grow" }
+        ],
+        rightOption: "C",
+        explanation: "'Wither' means to dry up or become weak and shrivelled.",
+        isCompleted: false
+    },
+    {
+        id: "47",
+        question: "Choose the synonym of 'Amiable'.",
+        options: [
+            { id: "A", text: "Friendly" },
+            { id: "B", text: "Hostile" },
+            { id: "C", text: "Unkind" },
+            { id: "D", text: "Aggressive" }
+        ],
+        rightOption: "A",
+        explanation: "'Amiable' means friendly and pleasant.",
+        isCompleted: false
+    },
+    {
+        id: "48",
+        question: "Choose the synonym of 'Concise'.",
+        options: [
+            { id: "A", text: "Lengthy" },
+            { id: "B", text: "Wordy" },
+            { id: "C", text: "Detailed" },
+            { id: "D", text: "Brief" }
+        ],
+        rightOption: "D",
+        explanation: "'Concise' means expressing much in few words.",
+        isCompleted: false
+    },
+    {
+        id: "49",
+        question: "Choose the synonym of 'Discrepancy'.",
+        options: [
+            { id: "A", text: "Agreement" },
+            { id: "B", text: "Difference" },
+            { id: "C", text: "Similarity" },
+            { id: "D", text: "Harmony" }
+        ],
+        rightOption: "B",
+        explanation: "'Discrepancy' means a difference or inconsistency between things.",
+        isCompleted: false
+    },
+    {
+        id: "50",
+        question: "Choose the synonym of 'Exonerate'.",
+        options: [
+            { id: "A", text: "Blame" },
+            { id: "B", text: "Accuse" },
+            { id: "C", text: "Acquit" },
+            { id: "D", text: "Punish" }
+        ],
+        rightOption: "C",
+        explanation: "'Exonerate' means to clear someone from blame or responsibility.",
+        isCompleted: false
+    },
+    {
+        id: "51",
+        question: "Choose the synonym of 'Fervent'.",
+        options: [
+            { id: "A", text: "Passionate" },
+            { id: "B", text: "Indifferent" },
+            { id: "C", text: "Unconcerned" },
+            { id: "D", text: "Apathetic" }
+        ],
+        rightOption: "A",
+        explanation: "'Fervent' means showing intense passion or enthusiasm.",
+        isCompleted: false
+    },
+    {
+        id: "52",
+        question: "Choose the synonym of 'Haughty'.",
+        options: [
+            { id: "A", text: "Humble" },
+            { id: "B", text: "Modest" },
+            { id: "C", text: "Respectful" },
+            { id: "D", text: "Arrogant" }
+        ],
+        rightOption: "D",
+        explanation: "'Haughty' means arrogantly superior or disdainful.",
+        isCompleted: false
+    },
+    {
+        id: "53",
+        question: "Choose the synonym of 'Imminent'.",
+        options: [
+            { id: "A", text: "Distant" },
+            { id: "B", text: "Impending" },
+            { id: "C", text: "Unlikely" },
+            { id: "D", text: "Past" }
+        ],
+        rightOption: "B",
+        explanation: "'Imminent' means about to happen very soon.",
+        isCompleted: false
+    },
+    {
+        id: "54",
+        question: "Choose the synonym of 'Prudent'.",
+        options: [
+            { id: "A", text: "Reckless" },
+            { id: "B", text: "Careless" },
+            { id: "C", text: "Wise" },
+            { id: "D", text: "Impulsive" }
+        ],
+        rightOption: "C",
+        explanation: "'Prudent' means acting with care and good judgment.",
+        isCompleted: false
+    },
+    {
+        id: "55",
+        question: "Choose the synonym of 'Resilient'.",
+        options: [
+            { id: "A", text: "Able to recover quickly" },
+            { id: "B", text: "Easily defeated" },
+            { id: "C", text: "Weak" },
+            { id: "D", text: "Fragile" }
+        ],
+        rightOption: "A",
+        explanation: "'Resilient' means able to recover quickly after difficulty or change.",
+        isCompleted: false
+    }
+];
+
+export const antonymsQuestions = [
+    {
+        id: "1",
+        question: "Choose the antonym of 'Abundant'.",
+        options: [
+            { id: "A", text: "Plentiful" },
+            { id: "B", text: "Scarce" },
+            { id: "C", text: "Ample" },
+            { id: "D", text: "Sufficient" }
+        ],
+        rightOption: "B",
+        explanation: "'Abundant' means plentiful, while 'scarce' means available in very small quantities.",
+        isCompleted: false
+    },
+    {
+        id: "2",
+        question: "Choose the antonym of 'Benevolent'.",
+        options: [
+            { id: "A", text: "Kind" },
+            { id: "B", text: "Generous" },
+            { id: "C", text: "Compassionate" },
+            { id: "D", text: "Malevolent" }
+        ],
+        rightOption: "D",
+        explanation: "'Benevolent' means kind and well-meaning, while 'malevolent' means wishing harm to others.",
+        isCompleted: false
+    },
+    {
+        id: "3",
+        question: "Choose the antonym of 'Candid'.",
+        options: [
+            { id: "A", text: "Deceitful" },
+            { id: "B", text: "Frank" },
+            { id: "C", text: "Honest" },
+            { id: "D", text: "Open" }
+        ],
+        rightOption: "A",
+        explanation: "'Candid' means honest and straightforward, while 'deceitful' means dishonest.",
+        isCompleted: false
+    },
+    {
+        id: "4",
+        question: "Choose the antonym of 'Diligent'.",
+        options: [
+            { id: "A", text: "Hardworking" },
+            { id: "B", text: "Conscientious" },
+            { id: "C", text: "Lazy" },
+            { id: "D", text: "Industrious" }
+        ],
+        rightOption: "C",
+        explanation: "'Diligent' means hardworking and careful, while 'lazy' means unwilling to work.",
+        isCompleted: false
+    },
+    {
+        id: "5",
+        question: "Choose the antonym of 'Enormous'.",
+        options: [
+            { id: "A", text: "Gigantic" },
+            { id: "B", text: "Tiny" },
+            { id: "C", text: "Immense" },
+            { id: "D", text: "Massive" }
+        ],
+        rightOption: "B",
+        explanation: "'Enormous' means extremely large, while 'tiny' means extremely small.",
+        isCompleted: false
+    },
+    {
+        id: "6",
+        question: "Choose the antonym of 'Fragile'.",
+        options: [
+            { id: "A", text: "Delicate" },
+            { id: "B", text: "Brittle" },
+            { id: "C", text: "Breakable" },
+            { id: "D", text: "Sturdy" }
+        ],
+        rightOption: "D",
+        explanation: "'Fragile' means easily broken, while 'sturdy' means strong and durable.",
+        isCompleted: false
+    },
+    {
+        id: "7",
+        question: "Choose the antonym of 'Genuine'.",
+        options: [
+            { id: "A", text: "Authentic" },
+            { id: "B", text: "Real" },
+            { id: "C", text: "Counterfeit" },
+            { id: "D", text: "Sincere" }
+        ],
+        rightOption: "C",
+        explanation: "'Genuine' means real or authentic, while 'counterfeit' means fake.",
+        isCompleted: false
+    },
+    {
+        id: "8",
+        question: "Choose the antonym of 'Hostile'.",
+        options: [
+            { id: "A", text: "Friendly" },
+            { id: "B", text: "Aggressive" },
+            { id: "C", text: "Unfriendly" },
+            { id: "D", text: "Antagonistic" }
+        ],
+        rightOption: "A",
+        explanation: "'Hostile' means unfriendly or antagonistic, while 'friendly' means kind and welcoming.",
+        isCompleted: false
+    },
+    {
+        id: "9",
+        question: "Choose the antonym of 'Immaculate'.",
+        options: [
+            { id: "A", text: "Spotless" },
+            { id: "B", text: "Flawless" },
+            { id: "C", text: "Pristine" },
+            { id: "D", text: "Filthy" }
+        ],
+        rightOption: "D",
+        explanation: "'Immaculate' means perfectly clean, while 'filthy' means extremely dirty.",
+        isCompleted: false
+    },
+    {
+        id: "10",
+        question: "Choose the antonym of 'Jubilant'.",
+        options: [
+            { id: "A", text: "Joyful" },
+            { id: "B", text: "Miserable" },
+            { id: "C", text: "Elated" },
+            { id: "D", text: "Cheerful" }
+        ],
+        rightOption: "B",
+        explanation: "'Jubilant' means extremely happy, while 'miserable' means extremely unhappy.",
+        isCompleted: false
+    },
+    {
+        id: "11",
+        question: "Choose the antonym of 'Keen'.",
+        options: [
+            { id: "A", text: "Eager" },
+            { id: "B", text: "Enthusiastic" },
+            { id: "C", text: "Indifferent" },
+            { id: "D", text: "Interested" }
+        ],
+        rightOption: "C",
+        explanation: "'Keen' can mean eager or enthusiastic, while 'indifferent' means showing little interest.",
+        isCompleted: false
+    },
+    {
+        id: "12",
+        question: "Choose the antonym of 'Lucid'.",
+        options: [
+            { id: "A", text: "Confusing" },
+            { id: "B", text: "Clear" },
+            { id: "C", text: "Understandable" },
+            { id: "D", text: "Intelligible" }
+        ],
+        rightOption: "A",
+        explanation: "'Lucid' means clear and easy to understand, while 'confusing' means difficult to understand.",
+        isCompleted: false
+    },
+    {
+        id: "13",
+        question: "Choose the antonym of 'Magnify'.",
+        options: [
+            { id: "A", text: "Enlarge" },
+            { id: "B", text: "Expand" },
+            { id: "C", text: "Amplify" },
+            { id: "D", text: "Diminish" }
+        ],
+        rightOption: "D",
+        explanation: "'Magnify' means to make larger, while 'diminish' means to make smaller or less.",
+        isCompleted: false
+    },
+    {
+        id: "14",
+        question: "Choose the antonym of 'Novice'.",
+        options: [
+            { id: "A", text: "Beginner" },
+            { id: "B", text: "Expert" },
+            { id: "C", text: "Learner" },
+            { id: "D", text: "Amateur" }
+        ],
+        rightOption: "B",
+        explanation: "A 'novice' is a beginner, while an 'expert' has extensive knowledge or skill.",
+        isCompleted: false
+    },
+    {
+        id: "15",
+        question: "Choose the antonym of 'Obsolete'.",
+        options: [
+            { id: "A", text: "Outdated" },
+            { id: "B", text: "Archaic" },
+            { id: "C", text: "Modern" },
+            { id: "D", text: "Antiquated" }
+        ],
+        rightOption: "C",
+        explanation: "'Obsolete' means outdated or no longer in use, while 'modern' means current or contemporary.",
+        isCompleted: false
+    },
+    {
+        id: "16",
+        question: "Choose the antonym of 'Peril'.",
+        options: [
+            { id: "A", text: "Safety" },
+            { id: "B", text: "Hazard" },
+            { id: "C", text: "Danger" },
+            { id: "D", text: "Risk" }
+        ],
+        rightOption: "A",
+        explanation: "'Peril' means serious danger, while 'safety' means freedom from danger.",
+        isCompleted: false
+    },
+    {
+        id: "17",
+        question: "Choose the antonym of 'Quaint'.",
+        options: [
+            { id: "A", text: "Charming" },
+            { id: "B", text: "Old-fashioned" },
+            { id: "C", text: "Picturesque" },
+            { id: "D", text: "Contemporary" }
+        ],
+        rightOption: "D",
+        explanation: "'Quaint' often describes something attractively old-fashioned, while 'contemporary' means modern or current.",
+        isCompleted: false
+    },
+    {
+        id: "18",
+        question: "Choose the antonym of 'Rapid'.",
+        options: [
+            { id: "A", text: "Swift" },
+            { id: "B", text: "Slow" },
+            { id: "C", text: "Quick" },
+            { id: "D", text: "Speedy" }
+        ],
+        rightOption: "B",
+        explanation: "'Rapid' means fast, while 'slow' means moving or happening at a low speed.",
+        isCompleted: false
+    },
+    {
+        id: "19",
+        question: "Choose the antonym of 'Serene'.",
+        options: [
+            { id: "A", text: "Calm" },
+            { id: "B", text: "Peaceful" },
+            { id: "C", text: "Agitated" },
+            { id: "D", text: "Tranquil" }
+        ],
+        rightOption: "C",
+        explanation: "'Serene' means calm and peaceful, while 'agitated' means disturbed or upset.",
+        isCompleted: false
+    },
+    {
+        id: "20",
+        question: "Choose the antonym of 'Tedious'.",
+        options: [
+            { id: "A", text: "Exciting" },
+            { id: "B", text: "Monotonous" },
+            { id: "C", text: "Wearisome" },
+            { id: "D", text: "Boring" }
+        ],
+        rightOption: "A",
+        explanation: "'Tedious' means boring and tiring, while 'exciting' means stimulating or interesting.",
+        isCompleted: false
+    },
+    {
+        id: "21",
+        question: "Choose the antonym of 'Urbane'.",
+        options: [
+            { id: "A", text: "Refined" },
+            { id: "B", text: "Sophisticated" },
+            { id: "C", text: "Polished" },
+            { id: "D", text: "Crude" }
+        ],
+        rightOption: "D",
+        explanation: "'Urbane' means polished and sophisticated, while 'crude' means lacking refinement.",
+        isCompleted: false
+    },
+    {
+        id: "22",
+        question: "Choose the antonym of 'Vigilant'.",
+        options: [
+            { id: "A", text: "Watchful" },
+            { id: "B", text: "Negligent" },
+            { id: "C", text: "Alert" },
+            { id: "D", text: "Attentive" }
+        ],
+        rightOption: "B",
+        explanation: "'Vigilant' means watchful and alert, while 'negligent' means failing to take proper care.",
+        isCompleted: false
+    },
+    {
+        id: "23",
+        question: "Choose the antonym of 'Wary'.",
+        options: [
+            { id: "A", text: "Cautious" },
+            { id: "B", text: "Watchful" },
+            { id: "C", text: "Trusting" },
+            { id: "D", text: "Careful" }
+        ],
+        rightOption: "C",
+        explanation: "'Wary' means cautious about possible danger, while 'trusting' means inclined to believe in others.",
+        isCompleted: false
+    },
+    {
+        id: "24",
+        question: "Choose the antonym of 'Yearn'.",
+        options: [
+            { id: "A", text: "Abhor" },
+            { id: "B", text: "Desire" },
+            { id: "C", text: "Long for" },
+            { id: "D", text: "Crave" }
+        ],
+        rightOption: "A",
+        explanation: "'Yearn' means to long strongly for something, while 'abhor' means to hate something intensely.",
+        isCompleted: false
+    },
+    {
+        id: "25",
+        question: "Choose the antonym of 'Zeal'.",
+        options: [
+            { id: "A", text: "Passion" },
+            { id: "B", text: "Enthusiasm" },
+            { id: "C", text: "Fervour" },
+            { id: "D", text: "Apathy" }
+        ],
+        rightOption: "D",
+        explanation: "'Zeal' means great enthusiasm, while 'apathy' means a lack of interest or enthusiasm.",
+        isCompleted: false
+    },
+    {
+        id: "26",
+        question: "Choose the antonym of 'Alleviate'.",
+        options: [
+            { id: "A", text: "Ease" },
+            { id: "B", text: "Aggravate" },
+            { id: "C", text: "Relieve" },
+            { id: "D", text: "Reduce" }
+        ],
+        rightOption: "B",
+        explanation: "'Alleviate' means to make a problem less severe, while 'aggravate' means to make it worse.",
+        isCompleted: false
+    },
+    {
+        id: "27",
+        question: "Choose the antonym of 'Belligerent'.",
+        options: [
+            { id: "A", text: "Aggressive" },
+            { id: "B", text: "Combative" },
+            { id: "C", text: "Peaceful" },
+            { id: "D", text: "Hostile" }
+        ],
+        rightOption: "C",
+        explanation: "'Belligerent' means aggressive or eager to fight, while 'peaceful' means calm and non-aggressive.",
+        isCompleted: false
+    },
+    {
+        id: "28",
+        question: "Choose the antonym of 'Commence'.",
+        options: [
+            { id: "A", text: "Conclude" },
+            { id: "B", text: "Begin" },
+            { id: "C", text: "Initiate" },
+            { id: "D", text: "Start" }
+        ],
+        rightOption: "A",
+        explanation: "'Commence' means to begin, while 'conclude' means to bring something to an end.",
+        isCompleted: false
+    },
+    {
+        id: "29",
+        question: "Choose the antonym of 'Deplete'.",
+        options: [
+            { id: "A", text: "Exhaust" },
+            { id: "B", text: "Drain" },
+            { id: "C", text: "Use up" },
+            { id: "D", text: "Replenish" }
+        ],
+        rightOption: "D",
+        explanation: "'Deplete' means to use up a supply, while 'replenish' means to fill or restore it.",
+        isCompleted: false
+    },
+    {
+        id: "30",
+        question: "Choose the antonym of 'Eloquent'.",
+        options: [
+            { id: "A", text: "Fluent" },
+            { id: "B", text: "Inarticulate" },
+            { id: "C", text: "Articulate" },
+            { id: "D", text: "Expressive" }
+        ],
+        rightOption: "B",
+        explanation: "'Eloquent' means fluent and expressive, while 'inarticulate' means unable to express ideas clearly.",
+        isCompleted: false
+    },
+    {
+        id: "31",
+        question: "Choose the antonym of 'Futile'.",
+        options: [
+            { id: "A", text: "Useless" },
+            { id: "B", text: "Fruitless" },
+            { id: "C", text: "Effective" },
+            { id: "D", text: "Vain" }
+        ],
+        rightOption: "C",
+        explanation: "'Futile' means incapable of producing a useful result, while 'effective' means producing the intended result.",
+        isCompleted: false
+    },
+    {
+        id: "32",
+        question: "Choose the antonym of 'Grim'.",
+        options: [
+            { id: "A", text: "Cheerful" },
+            { id: "B", text: "Gloomy" },
+            { id: "C", text: "Sombre" },
+            { id: "D", text: "Dismal" }
+        ],
+        rightOption: "A",
+        explanation: "'Grim' means gloomy or serious, while 'cheerful' means noticeably happy and positive.",
+        isCompleted: false
+    },
+    {
+        id: "33",
+        question: "Choose the antonym of 'Hinder'.",
+        options: [
+            { id: "A", text: "Obstruct" },
+            { id: "B", text: "Impede" },
+            { id: "C", text: "Hamper" },
+            { id: "D", text: "Facilitate" }
+        ],
+        rightOption: "D",
+        explanation: "'Hinder' means to create obstacles, while 'facilitate' means to make an action easier.",
+        isCompleted: false
+    },
+    {
+        id: "34",
+        question: "Choose the antonym of 'Impartial'.",
+        options: [
+            { id: "A", text: "Fair" },
+            { id: "B", text: "Biased" },
+            { id: "C", text: "Neutral" },
+            { id: "D", text: "Objective" }
+        ],
+        rightOption: "B",
+        explanation: "'Impartial' means fair and unbiased, while 'biased' means favouring one side unfairly.",
+        isCompleted: false
+    },
+    {
+        id: "35",
+        question: "Choose the antonym of 'Jeopardy'.",
+        options: [
+            { id: "A", text: "Peril" },
+            { id: "B", text: "Hazard" },
+            { id: "C", text: "Security" },
+            { id: "D", text: "Risk" }
+        ],
+        rightOption: "C",
+        explanation: "'Jeopardy' means danger or risk, while 'security' means protection from danger.",
+        isCompleted: false
+    },
+    {
+        id: "36",
+        question: "Choose the antonym of 'Lethargic'.",
+        options: [
+            { id: "A", text: "Energetic" },
+            { id: "B", text: "Sluggish" },
+            { id: "C", text: "Inactive" },
+            { id: "D", text: "Listless" }
+        ],
+        rightOption: "A",
+        explanation: "'Lethargic' means lacking energy, while 'energetic' means active and full of energy.",
+        isCompleted: false
+    },
+    {
+        id: "37",
+        question: "Choose the antonym of 'Meticulous'.",
+        options: [
+            { id: "A", text: "Thorough" },
+            { id: "B", text: "Careful" },
+            { id: "C", text: "Precise" },
+            { id: "D", text: "Careless" }
+        ],
+        rightOption: "D",
+        explanation: "'Meticulous' means very careful and attentive to detail, while 'careless' means lacking attention.",
+        isCompleted: false
+    },
+    {
+        id: "38",
+        question: "Choose the antonym of 'Notorious'.",
+        options: [
+            { id: "A", text: "Infamous" },
+            { id: "B", text: "Respected" },
+            { id: "C", text: "Disreputable" },
+            { id: "D", text: "Ill-famed" }
+        ],
+        rightOption: "B",
+        explanation: "'Notorious' means famous for something bad, while 'respected' means regarded with esteem.",
+        isCompleted: false
+    },
+    {
+        id: "39",
+        question: "Choose the antonym of 'Omit'.",
+        options: [
+            { id: "A", text: "Include" },
+            { id: "B", text: "Exclude" },
+            { id: "C", text: "Leave out" },
+            { id: "D", text: "Skip" }
+        ],
+        rightOption: "A",
+        explanation: "'Omit' means to leave something out, while 'include' means to make it part of something.",
+        isCompleted: false
+    },
+    {
+        id: "40",
+        question: "Choose the antonym of 'Plausible'.",
+        options: [
+            { id: "A", text: "Reasonable" },
+            { id: "B", text: "Credible" },
+            { id: "C", text: "Unbelievable" },
+            { id: "D", text: "Believable" }
+        ],
+        rightOption: "C",
+        explanation: "'Plausible' means seeming reasonable or believable, while 'unbelievable' means difficult to accept as true.",
+        isCompleted: false
+    },
+    {
+        id: "41",
+        question: "Choose the antonym of 'Reluctant'.",
+        options: [
+            { id: "A", text: "Hesitant" },
+            { id: "B", text: "Unwilling" },
+            { id: "C", text: "Resistant" },
+            { id: "D", text: "Willing" }
+        ],
+        rightOption: "D",
+        explanation: "'Reluctant' means unwilling or hesitant, while 'willing' means ready to do something.",
+        isCompleted: false
+    },
+    {
+        id: "42",
+        question: "Choose the antonym of 'Substantial'.",
+        options: [
+            { id: "A", text: "Insignificant" },
+            { id: "B", text: "Considerable" },
+            { id: "C", text: "Significant" },
+            { id: "D", text: "Extensive" }
+        ],
+        rightOption: "A",
+        explanation: "'Substantial' means considerable in amount or importance, while 'insignificant' means too small or unimportant to matter.",
+        isCompleted: false
+    },
+    {
+        id: "43",
+        question: "Choose the antonym of 'Transient'.",
+        options: [
+            { id: "A", text: "Temporary" },
+            { id: "B", text: "Brief" },
+            { id: "C", text: "Permanent" },
+            { id: "D", text: "Short-lived" }
+        ],
+        rightOption: "C",
+        explanation: "'Transient' means lasting for a short time, while 'permanent' means lasting indefinitely.",
+        isCompleted: false
+    },
+    {
+        id: "44",
+        question: "Choose the antonym of 'Unanimous'.",
+        options: [
+            { id: "A", text: "United" },
+            { id: "B", text: "Divided" },
+            { id: "C", text: "Agreed" },
+            { id: "D", text: "Undivided" }
+        ],
+        rightOption: "B",
+        explanation: "'Unanimous' means everyone agrees, while 'divided' suggests disagreement among people.",
+        isCompleted: false
+    },
+    {
+        id: "45",
+        question: "Choose the antonym of 'Venerate'.",
+        options: [
+            { id: "A", text: "Despise" },
+            { id: "B", text: "Revere" },
+            { id: "C", text: "Respect" },
+            { id: "D", text: "Admire" }
+        ],
+        rightOption: "A",
+        explanation: "'Venerate' means to regard with deep respect, while 'despise' means to regard with contempt.",
+        isCompleted: false
+    },
+    {
+        id: "46",
+        question: "Choose the antonym of 'Wither'.",
+        options: [
+            { id: "A", text: "Wilt" },
+            { id: "B", text: "Shrivel" },
+            { id: "C", text: "Decay" },
+            { id: "D", text: "Flourish" }
+        ],
+        rightOption: "D",
+        explanation: "'Wither' means to dry up or shrivel, while 'flourish' means to grow or develop successfully.",
+        isCompleted: false
+    },
+    {
+        id: "47",
+        question: "Choose the antonym of 'Amiable'.",
+        options: [
+            { id: "A", text: "Pleasant" },
+            { id: "B", text: "Hostile" },
+            { id: "C", text: "Friendly" },
+            { id: "D", text: "Good-natured" }
+        ],
+        rightOption: "B",
+        explanation: "'Amiable' means friendly and pleasant, while 'hostile' means unfriendly or antagonistic.",
+        isCompleted: false
+    },
+    {
+        id: "48",
+        question: "Choose the antonym of 'Concise'.",
+        options: [
+            { id: "A", text: "Brief" },
+            { id: "B", text: "Succinct" },
+            { id: "C", text: "Verbose" },
+            { id: "D", text: "Compact" }
+        ],
+        rightOption: "C",
+        explanation: "'Concise' means expressing ideas in few words, while 'verbose' means using more words than necessary.",
+        isCompleted: false
+    },
+    {
+        id: "49",
+        question: "Choose the antonym of 'Discrepancy'.",
+        options: [
+            { id: "A", text: "Agreement" },
+            { id: "B", text: "Difference" },
+            { id: "C", text: "Inconsistency" },
+            { id: "D", text: "Variation" }
+        ],
+        rightOption: "A",
+        explanation: "'Discrepancy' means a difference or inconsistency, while 'agreement' means harmony or correspondence.",
+        isCompleted: false
+    },
+    {
+        id: "50",
+        question: "Choose the antonym of 'Exonerate'.",
+        options: [
+            { id: "A", text: "Acquit" },
+            { id: "B", text: "Clear" },
+            { id: "C", text: "Vindicate" },
+            { id: "D", text: "Incriminate" }
+        ],
+        rightOption: "D",
+        explanation: "'Exonerate' means to clear someone from blame, while 'incriminate' means to make someone appear guilty.",
+        isCompleted: false
+    },
+    {
+        id: "51",
+        question: "Choose the antonym of 'Fervent'.",
+        options: [
+            { id: "A", text: "Passionate" },
+            { id: "B", text: "Apathetic" },
+            { id: "C", text: "Ardent" },
+            { id: "D", text: "Intense" }
+        ],
+        rightOption: "B",
+        explanation: "'Fervent' means showing intense passion, while 'apathetic' means showing little or no interest.",
+        isCompleted: false
+    },
+    {
+        id: "52",
+        question: "Choose the antonym of 'Haughty'.",
+        options: [
+            { id: "A", text: "Arrogant" },
+            { id: "B", text: "Conceited" },
+            { id: "C", text: "Humble" },
+            { id: "D", text: "Proud" }
+        ],
+        rightOption: "C",
+        explanation: "'Haughty' means arrogantly superior, while 'humble' means modest and not proud.",
+        isCompleted: false
+    },
+    {
+        id: "53",
+        question: "Choose the antonym of 'Imminent'.",
+        options: [
+            { id: "A", text: "Remote" },
+            { id: "B", text: "Impending" },
+            { id: "C", text: "Approaching" },
+            { id: "D", text: "Upcoming" }
+        ],
+        rightOption: "A",
+        explanation: "'Imminent' means about to happen soon, while 'remote' can mean unlikely or far off in time.",
+        isCompleted: false
+    },
+    {
+        id: "54",
+        question: "Choose the antonym of 'Prudent'.",
+        options: [
+            { id: "A", text: "Wise" },
+            { id: "B", text: "Careful" },
+            { id: "C", text: "Sensible" },
+            { id: "D", text: "Reckless" }
+        ],
+        rightOption: "D",
+        explanation: "'Prudent' means acting with care and good judgment, while 'reckless' means acting without considering risks.",
+        isCompleted: false
+    },
+    {
+        id: "55",
+        question: "Choose the antonym of 'Resilient'.",
+        options: [
+            { id: "A", text: "Adaptable" },
+            { id: "B", text: "Fragile" },
+            { id: "C", text: "Hardy" },
+            { id: "D", text: "Tough" }
+        ],
+        rightOption: "B",
+        explanation: "'Resilient' means able to recover quickly from difficulty, while 'fragile' means easily damaged or broken.",
+        isCompleted: false
+    }
+];
+
+export const oneWordSubstitutionQuestions = [
+    {
+        id: "1",
+        question: "A person who knows many languages.",
+        options: [
+            { id: "A", text: "Linguist" },
+            { id: "B", text: "Polyglot" },
+            { id: "C", text: "Orator" },
+            { id: "D", text: "Novice" }
+        ],
+        rightOption: "B",
+        explanation: "A polyglot is a person who knows or speaks several languages.",
+        isCompleted: false
+    },
+    {
+        id: "2",
+        question: "A person who cannot read or write.",
+        options: [
+            { id: "A", text: "Scholar" },
+            { id: "B", text: "Graduate" },
+            { id: "C", text: "Illiterate" },
+            { id: "D", text: "Editor" }
+        ],
+        rightOption: "C",
+        explanation: "An illiterate person cannot read or write.",
+        isCompleted: false
+    },
+    {
+        id: "3",
+        question: "A person who loves mankind.",
+        options: [
+            { id: "A", text: "Philanthropist" },
+            { id: "B", text: "Misanthrope" },
+            { id: "C", text: "Pessimist" },
+            { id: "D", text: "Fanatic" }
+        ],
+        rightOption: "A",
+        explanation: "A philanthropist is someone who seeks to promote the welfare of others.",
+        isCompleted: false
+    },
+    {
+        id: "4",
+        question: "A person who hates mankind.",
+        options: [
+            { id: "A", text: "Optimist" },
+            { id: "B", text: "Altruist" },
+            { id: "C", text: "Humanitarian" },
+            { id: "D", text: "Misanthrope" }
+        ],
+        rightOption: "D",
+        explanation: "A misanthrope dislikes or distrusts humankind.",
+        isCompleted: false
+    },
+    {
+        id: "5",
+        question: "A person who looks at the bright side of things.",
+        options: [
+            { id: "A", text: "Pessimist" },
+            { id: "B", text: "Optimist" },
+            { id: "C", text: "Realist" },
+            { id: "D", text: "Cynic" }
+        ],
+        rightOption: "B",
+        explanation: "An optimist tends to expect favourable outcomes.",
+        isCompleted: false
+    },
+    {
+        id: "6",
+        question: "A person who expects the worst to happen.",
+        options: [
+            { id: "A", text: "Idealist" },
+            { id: "B", text: "Optimist" },
+            { id: "C", text: "Pessimist" },
+            { id: "D", text: "Humanist" }
+        ],
+        rightOption: "C",
+        explanation: "A pessimist tends to expect negative outcomes.",
+        isCompleted: false
+    },
+    {
+        id: "7",
+        question: "A person who studies stars, planets, and other celestial objects.",
+        options: [
+            { id: "A", text: "Astronomer" },
+            { id: "B", text: "Astrologer" },
+            { id: "C", text: "Geologist" },
+            { id: "D", text: "Biologist" }
+        ],
+        rightOption: "A",
+        explanation: "An astronomer scientifically studies celestial objects and the universe.",
+        isCompleted: false
+    },
+    {
+        id: "8",
+        question: "A person who studies the structure and history of the Earth.",
+        options: [
+            { id: "A", text: "Botanist" },
+            { id: "B", text: "Zoologist" },
+            { id: "C", text: "Meteorologist" },
+            { id: "D", text: "Geologist" }
+        ],
+        rightOption: "D",
+        explanation: "A geologist studies the Earth's structure, materials, and history.",
+        isCompleted: false
+    },
+    {
+        id: "9",
+        question: "A person who writes poems.",
+        options: [
+            { id: "A", text: "Novelist" },
+            { id: "B", text: "Poet" },
+            { id: "C", text: "Playwright" },
+            { id: "D", text: "Biographer" }
+        ],
+        rightOption: "B",
+        explanation: "A poet is a person who writes poetry.",
+        isCompleted: false
+    },
+    {
+        id: "10",
+        question: "A person who writes the life story of another person.",
+        options: [
+            { id: "A", text: "Autobiographer" },
+            { id: "B", text: "Cartographer" },
+            { id: "C", text: "Biographer" },
+            { id: "D", text: "Choreographer" }
+        ],
+        rightOption: "C",
+        explanation: "A biographer writes an account of another person's life.",
+        isCompleted: false
+    },
+    {
+        id: "11",
+        question: "A person who writes the story of their own life.",
+        options: [
+            { id: "A", text: "Autobiographer" },
+            { id: "B", text: "Biographer" },
+            { id: "C", text: "Editor" },
+            { id: "D", text: "Critic" }
+        ],
+        rightOption: "A",
+        explanation: "An autobiographer writes the story of their own life.",
+        isCompleted: false
+    },
+    {
+        id: "12",
+        question: "A person who speaks on behalf of others.",
+        options: [
+            { id: "A", text: "Spectator" },
+            { id: "B", text: "Hermit" },
+            { id: "C", text: "Novelist" },
+            { id: "D", text: "Spokesperson" }
+        ],
+        rightOption: "D",
+        explanation: "A spokesperson represents an individual or organisation and communicates on its behalf.",
+        isCompleted: false
+    },
+    {
+        id: "13",
+        question: "A person who delivers a formal speech to an audience.",
+        options: [
+            { id: "A", text: "Listener" },
+            { id: "B", text: "Orator" },
+            { id: "C", text: "Spectator" },
+            { id: "D", text: "Translator" }
+        ],
+        rightOption: "B",
+        explanation: "An orator is a person skilled in public speaking.",
+        isCompleted: false
+    },
+    {
+        id: "14",
+        question: "A person who walks in their sleep.",
+        options: [
+            { id: "A", text: "Insomniac" },
+            { id: "B", text: "Somnambulist" },
+            { id: "C", text: "Hypnotist" },
+            { id: "D", text: "Commuter" }
+        ],
+        rightOption: "B",
+        explanation: "A somnambulist is a person who walks while asleep.",
+        isCompleted: false
+    },
+    {
+        id: "15",
+        question: "A person who cannot sleep.",
+        options: [
+            { id: "A", text: "Somnambulist" },
+            { id: "B", text: "Narcoleptic" },
+            { id: "C", text: "Insomniac" },
+            { id: "D", text: "Sleepwalker" }
+        ],
+        rightOption: "C",
+        explanation: "An insomniac is a person who experiences difficulty sleeping.",
+        isCompleted: false
+    },
+    {
+        id: "16",
+        question: "A person who eats too much.",
+        options: [
+            { id: "A", text: "Glutton" },
+            { id: "B", text: "Gourmet" },
+            { id: "C", text: "Fasting person" },
+            { id: "D", text: "Vegetarian" }
+        ],
+        rightOption: "A",
+        explanation: "A glutton is someone who eats excessively.",
+        isCompleted: false
+    },
+    {
+        id: "17",
+        question: "A person who abstains from alcoholic drinks.",
+        options: [
+            { id: "A", text: "Gourmet" },
+            { id: "B", text: "Epicure" },
+            { id: "C", text: "Drunkard" },
+            { id: "D", text: "Teetotaller" }
+        ],
+        rightOption: "D",
+        explanation: "A teetotaller does not drink alcoholic beverages.",
+        isCompleted: false
+    },
+    {
+        id: "18",
+        question: "A person who believes in God.",
+        options: [
+            { id: "A", text: "Atheist" },
+            { id: "B", text: "Theist" },
+            { id: "C", text: "Agnostic" },
+            { id: "D", text: "Sceptic" }
+        ],
+        rightOption: "B",
+        explanation: "A theist believes in the existence of God or a god.",
+        isCompleted: false
+    },
+    {
+        id: "19",
+        question: "A person who does not believe in the existence of God.",
+        options: [
+            { id: "A", text: "Theist" },
+            { id: "B", text: "Deist" },
+            { id: "C", text: "Atheist" },
+            { id: "D", text: "Mystic" }
+        ],
+        rightOption: "C",
+        explanation: "An atheist does not believe in the existence of God or gods.",
+        isCompleted: false
+    },
+    {
+        id: "20",
+        question: "A person who doubts whether the existence of God can be known.",
+        options: [
+            { id: "A", text: "Agnostic" },
+            { id: "B", text: "Atheist" },
+            { id: "C", text: "Theist" },
+            { id: "D", text: "Believer" }
+        ],
+        rightOption: "A",
+        explanation: "An agnostic holds that the existence of God is unknown or unknowable.",
+        isCompleted: false
+    },
+    {
+        id: "21",
+        question: "A person who loves books.",
+        options: [
+            { id: "A", text: "Bibliophile" },
+            { id: "B", text: "Bibliophobe" },
+            { id: "C", text: "Calligrapher" },
+            { id: "D", text: "Librarian" }
+        ],
+        rightOption: "A",
+        explanation: "A bibliophile is a person who loves or collects books.",
+        isCompleted: false
+    },
+    {
+        id: "22",
+        question: "A place where books are kept for public use.",
+        options: [
+            { id: "A", text: "Laboratory" },
+            { id: "B", text: "Museum" },
+            { id: "C", text: "Auditorium" },
+            { id: "D", text: "Library" }
+        ],
+        rightOption: "D",
+        explanation: "A library is a place where books and other resources are organised for reading or borrowing.",
+        isCompleted: false
+    },
+    {
+        id: "23",
+        question: "A place where birds are kept.",
+        options: [
+            { id: "A", text: "Aquarium" },
+            { id: "B", text: "Aviary" },
+            { id: "C", text: "Apiary" },
+            { id: "D", text: "Sanctuary" }
+        ],
+        rightOption: "B",
+        explanation: "An aviary is an enclosure where birds are kept.",
+        isCompleted: false
+    },
+    {
+        id: "24",
+        question: "A place where bees are kept.",
+        options: [
+            { id: "A", text: "Apiary" },
+            { id: "B", text: "Aviary" },
+            { id: "C", text: "Aquarium" },
+            { id: "D", text: "Granary" }
+        ],
+        rightOption: "A",
+        explanation: "An apiary is a place where beehives are kept.",
+        isCompleted: false
+    },
+    {
+        id: "25",
+        question: "A place where fish are kept for display.",
+        options: [
+            { id: "A", text: "Aviary" },
+            { id: "B", text: "Apiary" },
+            { id: "C", text: "Aquarium" },
+            { id: "D", text: "Arboretum" }
+        ],
+        rightOption: "C",
+        explanation: "An aquarium is a tank or facility where aquatic animals are kept and displayed.",
+        isCompleted: false
+    },
+    {
+        id: "26",
+        question: "A place where weapons and military equipment are stored.",
+        options: [
+            { id: "A", text: "Monastery" },
+            { id: "B", text: "Dormitory" },
+            { id: "C", text: "Sanatorium" },
+            { id: "D", text: "Arsenal" }
+        ],
+        rightOption: "D",
+        explanation: "An arsenal is a place where weapons and military equipment are stored.",
+        isCompleted: false
+    },
+    {
+        id: "27",
+        question: "A place where dead bodies are kept before burial or cremation.",
+        options: [
+            { id: "A", text: "Observatory" },
+            { id: "B", text: "Mortuary" },
+            { id: "C", text: "Dispensary" },
+            { id: "D", text: "Monastery" }
+        ],
+        rightOption: "B",
+        explanation: "A mortuary is a place where dead bodies are kept temporarily.",
+        isCompleted: false
+    },
+    {
+        id: "28",
+        question: "A government ruled by the people.",
+        options: [
+            { id: "A", text: "Monarchy" },
+            { id: "B", text: "Oligarchy" },
+            { id: "C", text: "Democracy" },
+            { id: "D", text: "Autocracy" }
+        ],
+        rightOption: "C",
+        explanation: "Democracy is a system of government in which power rests with the people.",
+        isCompleted: false
+    },
+    {
+        id: "29",
+        question: "A government ruled by a king or queen.",
+        options: [
+            { id: "A", text: "Monarchy" },
+            { id: "B", text: "Democracy" },
+            { id: "C", text: "Republic" },
+            { id: "D", text: "Anarchy" }
+        ],
+        rightOption: "A",
+        explanation: "A monarchy is a form of government headed by a monarch, such as a king or queen.",
+        isCompleted: false
+    },
+    {
+        id: "30",
+        question: "A government ruled by one person with absolute power.",
+        options: [
+            { id: "A", text: "Democracy" },
+            { id: "B", text: "Oligarchy" },
+            { id: "C", text: "Republic" },
+            { id: "D", text: "Autocracy" }
+        ],
+        rightOption: "D",
+        explanation: "An autocracy is a system in which one person holds supreme governing power.",
+        isCompleted: false
+    },
+    {
+        id: "31",
+        question: "The absence of government or authority.",
+        options: [
+            { id: "A", text: "Democracy" },
+            { id: "B", text: "Anarchy" },
+            { id: "C", text: "Monarchy" },
+            { id: "D", text: "Bureaucracy" }
+        ],
+        rightOption: "B",
+        explanation: "Anarchy refers to a state of absence of government or effective authority.",
+        isCompleted: false
+    },
+    {
+        id: "32",
+        question: "A speech delivered without prior preparation.",
+        options: [
+            { id: "A", text: "Manuscript" },
+            { id: "B", text: "Dialogue" },
+            { id: "C", text: "Extempore" },
+            { id: "D", text: "Monologue" }
+        ],
+        rightOption: "C",
+        explanation: "An extempore speech is delivered without advance preparation.",
+        isCompleted: false
+    },
+    {
+        id: "33",
+        question: "Something that cannot be avoided.",
+        options: [
+            { id: "A", text: "Inevitable" },
+            { id: "B", text: "Optional" },
+            { id: "C", text: "Preventable" },
+            { id: "D", text: "Uncertain" }
+        ],
+        rightOption: "A",
+        explanation: "Inevitable describes something that cannot be avoided or prevented.",
+        isCompleted: false
+    },
+    {
+        id: "34",
+        question: "Something that cannot be corrected.",
+        options: [
+            { id: "A", text: "Curable" },
+            { id: "B", text: "Reversible" },
+            { id: "C", text: "Remediable" },
+            { id: "D", text: "Irremediable" }
+        ],
+        rightOption: "D",
+        explanation: "Irremediable means impossible to remedy, correct, or repair.",
+        isCompleted: false
+    },
+    {
+        id: "35",
+        question: "Something that cannot be explained.",
+        options: [
+            { id: "A", text: "Obvious" },
+            { id: "B", text: "Inexplicable" },
+            { id: "C", text: "Understandable" },
+            { id: "D", text: "Predictable" }
+        ],
+        rightOption: "B",
+        explanation: "Inexplicable describes something that cannot be explained or understood.",
+        isCompleted: false
+    },
+    {
+        id: "36",
+        question: "Something that cannot be read.",
+        options: [
+            { id: "A", text: "Legible" },
+            { id: "B", text: "Readable" },
+            { id: "C", text: "Illegible" },
+            { id: "D", text: "Visible" }
+        ],
+        rightOption: "C",
+        explanation: "Illegible means impossible or very difficult to read.",
+        isCompleted: false
+    },
+    {
+        id: "37",
+        question: "Something that cannot be heard.",
+        options: [
+            { id: "A", text: "Inaudible" },
+            { id: "B", text: "Audible" },
+            { id: "C", text: "Resonant" },
+            { id: "D", text: "Loud" }
+        ],
+        rightOption: "A",
+        explanation: "Inaudible means unable to be heard.",
+        isCompleted: false
+    },
+    {
+        id: "38",
+        question: "Something that cannot be seen.",
+        options: [
+            { id: "A", text: "Visible" },
+            { id: "B", text: "Noticeable" },
+            { id: "C", text: "Apparent" },
+            { id: "D", text: "Invisible" }
+        ],
+        rightOption: "D",
+        explanation: "Invisible means unable to be seen.",
+        isCompleted: false
+    },
+    {
+        id: "39",
+        question: "Something that happens once every year.",
+        options: [
+            { id: "A", text: "Monthly" },
+            { id: "B", text: "Annual" },
+            { id: "C", text: "Weekly" },
+            { id: "D", text: "Daily" }
+        ],
+        rightOption: "B",
+        explanation: "An annual event happens once a year or relates to a year.",
+        isCompleted: false
+    },
+    {
+        id: "40",
+        question: "Something that happens every two years.",
+        options: [
+            { id: "A", text: "Biennial" },
+            { id: "B", text: "Biannual" },
+            { id: "C", text: "Annual" },
+            { id: "D", text: "Decennial" }
+        ],
+        rightOption: "A",
+        explanation: "Biennial means occurring once every two years. Biannual means occurring twice a year.",
+        isCompleted: false
+    },
+    {
+        id: "41",
+        question: "Something that happens twice a year.",
+        options: [
+            { id: "A", text: "Biennial" },
+            { id: "B", text: "Decennial" },
+            { id: "C", text: "Biannual" },
+            { id: "D", text: "Centennial" }
+        ],
+        rightOption: "C",
+        explanation: "Biannual means occurring twice each year.",
+        isCompleted: false
+    },
+    {
+        id: "42",
+        question: "A period of ten years.",
+        options: [
+            { id: "A", text: "Century" },
+            { id: "B", text: "Millennium" },
+            { id: "C", text: "Biennium" },
+            { id: "D", text: "Decade" }
+        ],
+        rightOption: "D",
+        explanation: "A decade is a period of ten years.",
+        isCompleted: false
+    },
+    {
+        id: "43",
+        question: "A period of one hundred years.",
+        options: [
+            { id: "A", text: "Decade" },
+            { id: "B", text: "Century" },
+            { id: "C", text: "Millennium" },
+            { id: "D", text: "Biennium" }
+        ],
+        rightOption: "B",
+        explanation: "A century is a period of one hundred years.",
+        isCompleted: false
+    },
+    {
+        id: "44",
+        question: "A period of one thousand years.",
+        options: [
+            { id: "A", text: "Decade" },
+            { id: "B", text: "Century" },
+            { id: "C", text: "Millennium" },
+            { id: "D", text: "Biennium" }
+        ],
+        rightOption: "C",
+        explanation: "A millennium is a period of one thousand years.",
+        isCompleted: false
+    },
+    {
+        id: "45",
+        question: "A person who compiles a dictionary.",
+        options: [
+            { id: "A", text: "Lexicographer" },
+            { id: "B", text: "Calligrapher" },
+            { id: "C", text: "Photographer" },
+            { id: "D", text: "Choreographer" }
+        ],
+        rightOption: "A",
+        explanation: "A lexicographer writes, edits, or compiles dictionaries.",
+        isCompleted: false
+    },
+    {
+        id: "46",
+        question: "A person who makes maps.",
+        options: [
+            { id: "A", text: "Geographer" },
+            { id: "B", text: "Biographer" },
+            { id: "C", text: "Calligrapher" },
+            { id: "D", text: "Cartographer" }
+        ],
+        rightOption: "D",
+        explanation: "A cartographer creates maps.",
+        isCompleted: false
+    },
+    {
+        id: "47",
+        question: "A person who studies plants.",
+        options: [
+            { id: "A", text: "Zoologist" },
+            { id: "B", text: "Botanist" },
+            { id: "C", text: "Geologist" },
+            { id: "D", text: "Astronomer" }
+        ],
+        rightOption: "B",
+        explanation: "A botanist studies plants.",
+        isCompleted: false
+    },
+    {
+        id: "48",
+        question: "A person who studies animals.",
+        options: [
+            { id: "A", text: "Botanist" },
+            { id: "B", text: "Ecologist" },
+            { id: "C", text: "Zoologist" },
+            { id: "D", text: "Physicist" }
+        ],
+        rightOption: "C",
+        explanation: "A zoologist studies animals and their behaviour, structure, and classification.",
+        isCompleted: false
+    },
+    {
+        id: "49",
+        question: "A person who studies insects.",
+        options: [
+            { id: "A", text: "Entomologist" },
+            { id: "B", text: "Ornithologist" },
+            { id: "C", text: "Herpetologist" },
+            { id: "D", text: "Ichthyologist" }
+        ],
+        rightOption: "A",
+        explanation: "An entomologist specialises in the study of insects.",
+        isCompleted: false
+    },
+    {
+        id: "50",
+        question: "A person who studies birds.",
+        options: [
+            { id: "A", text: "Entomologist" },
+            { id: "B", text: "Ichthyologist" },
+            { id: "C", text: "Herpetologist" },
+            { id: "D", text: "Ornithologist" }
+        ],
+        rightOption: "D",
+        explanation: "An ornithologist studies birds.",
+        isCompleted: false
+    },
+    {
+        id: "51",
+        question: "A person who is skilled at using both hands equally well.",
+        options: [
+            { id: "A", text: "Ambivalent" },
+            { id: "B", text: "Ambidextrous" },
+            { id: "C", text: "Ambiguous" },
+            { id: "D", text: "Ambitious" }
+        ],
+        rightOption: "B",
+        explanation: "An ambidextrous person can use both hands with similar skill.",
+        isCompleted: false
+    },
+    {
+        id: "52",
+        question: "A person who lives alone and avoids other people.",
+        options: [
+            { id: "A", text: "Extrovert" },
+            { id: "B", text: "Socialite" },
+            { id: "C", text: "Recluse" },
+            { id: "D", text: "Host" }
+        ],
+        rightOption: "C",
+        explanation: "A recluse lives in seclusion and avoids social contact.",
+        isCompleted: false
+    },
+    {
+        id: "53",
+        question: "A person who offers their services without payment.",
+        options: [
+            { id: "A", text: "Volunteer" },
+            { id: "B", text: "Contractor" },
+            { id: "C", text: "Employee" },
+            { id: "D", text: "Employer" }
+        ],
+        rightOption: "A",
+        explanation: "A volunteer offers their time or services willingly without expecting payment.",
+        isCompleted: false
+    },
+    {
+        id: "54",
+        question: "A person who is new to a profession or activity.",
+        options: [
+            { id: "A", text: "Veteran" },
+            { id: "B", text: "Specialist" },
+            { id: "C", text: "Authority" },
+            { id: "D", text: "Novice" }
+        ],
+        rightOption: "D",
+        explanation: "A novice is a beginner who has little experience in an activity.",
+        isCompleted: false
+    },
+    {
+        id: "55",
+        question: "A person who can predict the future.",
+        options: [
+            { id: "A", text: "Historian" },
+            { id: "B", text: "Soothsayer" },
+            { id: "C", text: "Archaeologist" },
+            { id: "D", text: "Linguist" }
+        ],
+        rightOption: "B",
+        explanation: "A soothsayer is someone who claims to predict future events.",
+        isCompleted: false
+    }
+];
+
+export const idiomsAndPhrasesQuestions = [
+    {
+        id: "1",
+        question: "What is the meaning of the idiom 'A blessing in disguise'?",
+        options: [
+            { id: "A", text: "A hidden danger" },
+            { id: "B", text: "Something that seems bad but turns out to be good" },
+            { id: "C", text: "An unexpected punishment" },
+            { id: "D", text: "A gift received from someone" }
+        ],
+        rightOption: "B",
+        explanation: "A blessing in disguise is something that initially seems unfortunate but eventually has a positive result.",
+        isCompleted: false
+    },
+    {
+        id: "2",
+        question: "What does the idiom 'Once in a blue moon' mean?",
+        options: [
+            { id: "A", text: "Every night" },
+            { id: "B", text: "Very quickly" },
+            { id: "C", text: "Very rarely" },
+            { id: "D", text: "At the right time" }
+        ],
+        rightOption: "C",
+        explanation: "'Once in a blue moon' means something happens very rarely.",
+        isCompleted: false
+    },
+    {
+        id: "3",
+        question: "What does 'Break the ice' mean?",
+        options: [
+            { id: "A", text: "Start a friendly conversation in an awkward situation" },
+            { id: "B", text: "End a friendship" },
+            { id: "C", text: "Create a serious problem" },
+            { id: "D", text: "Destroy something valuable" }
+        ],
+        rightOption: "A",
+        explanation: "'Break the ice' means to reduce awkwardness and help people feel comfortable.",
+        isCompleted: false
+    },
+    {
+        id: "4",
+        question: "What does the idiom 'Hit the nail on the head' mean?",
+        options: [
+            { id: "A", text: "Make a careless mistake" },
+            { id: "B", text: "Work very hard" },
+            { id: "C", text: "Avoid a difficult question" },
+            { id: "D", text: "Describe exactly what is causing a situation" }
+        ],
+        rightOption: "D",
+        explanation: "'Hit the nail on the head' means to identify or describe something exactly.",
+        isCompleted: false
+    },
+    {
+        id: "5",
+        question: "What does 'Spill the beans' mean?",
+        options: [
+            { id: "A", text: "Waste food" },
+            { id: "B", text: "Reveal a secret" },
+            { id: "C", text: "Make a mess" },
+            { id: "D", text: "Prepare a meal" }
+        ],
+        rightOption: "B",
+        explanation: "'Spill the beans' means to reveal secret information.",
+        isCompleted: false
+    },
+    {
+        id: "6",
+        question: "What does 'Cost an arm and a leg' mean?",
+        options: [
+            { id: "A", text: "Be very expensive" },
+            { id: "B", text: "Be completely free" },
+            { id: "C", text: "Cause physical injury" },
+            { id: "D", text: "Require little effort" }
+        ],
+        rightOption: "A",
+        explanation: "This idiom describes something that costs an extremely large amount of money.",
+        isCompleted: false
+    },
+    {
+        id: "7",
+        question: "What does 'Under the weather' mean?",
+        options: [
+            { id: "A", text: "Feeling excited" },
+            { id: "B", text: "Standing outdoors" },
+            { id: "C", text: "Feeling unwell" },
+            { id: "D", text: "Feeling very confident" }
+        ],
+        rightOption: "C",
+        explanation: "'Under the weather' means feeling ill or physically unwell.",
+        isCompleted: false
+    },
+    {
+        id: "8",
+        question: "What does 'Burn the midnight oil' mean?",
+        options: [
+            { id: "A", text: "Waste electricity" },
+            { id: "B", text: "Go to bed early" },
+            { id: "C", text: "Wake up at sunrise" },
+            { id: "D", text: "Work or study late into the night" }
+        ],
+        rightOption: "D",
+        explanation: "'Burn the midnight oil' means to work or study late at night.",
+        isCompleted: false
+    },
+    {
+        id: "9",
+        question: "What does 'A piece of cake' mean?",
+        options: [
+            { id: "A", text: "A difficult challenge" },
+            { id: "B", text: "Something very easy" },
+            { id: "C", text: "An expensive purchase" },
+            { id: "D", text: "An unexpected problem" }
+        ],
+        rightOption: "B",
+        explanation: "'A piece of cake' refers to a task that is very easy to complete.",
+        isCompleted: false
+    },
+    {
+        id: "10",
+        question: "What does 'Beat around the bush' mean?",
+        options: [
+            { id: "A", text: "Avoid talking about the main point" },
+            { id: "B", text: "Speak honestly and directly" },
+            { id: "C", text: "Finish work quickly" },
+            { id: "D", text: "Argue loudly with someone" }
+        ],
+        rightOption: "A",
+        explanation: "'Beat around the bush' means to avoid discussing the main subject directly.",
+        isCompleted: false
+    },
+    {
+        id: "11",
+        question: "What does 'Bite the bullet' mean?",
+        options: [
+            { id: "A", text: "Celebrate a victory" },
+            { id: "B", text: "Escape from responsibility" },
+            { id: "C", text: "Face a difficult or unpleasant situation bravely" },
+            { id: "D", text: "Make an unreasonable demand" }
+        ],
+        rightOption: "C",
+        explanation: "'Bite the bullet' means to face a difficult or unpleasant situation with courage.",
+        isCompleted: false
+    },
+    {
+        id: "12",
+        question: "What does 'Call it a day' mean?",
+        options: [
+            { id: "A", text: "Plan tomorrow's activities" },
+            { id: "B", text: "Celebrate an occasion" },
+            { id: "C", text: "Start a new project" },
+            { id: "D", text: "Stop working for the day" }
+        ],
+        rightOption: "D",
+        explanation: "'Call it a day' means to stop working on something for the time being, usually at the end of the day.",
+        isCompleted: false
+    },
+    {
+        id: "13",
+        question: "What does 'Cry over spilt milk' mean?",
+        options: [
+            { id: "A", text: "Complain about other people" },
+            { id: "B", text: "Be upset about something that cannot be undone" },
+            { id: "C", text: "Regret a future decision" },
+            { id: "D", text: "Celebrate a small success" }
+        ],
+        rightOption: "B",
+        explanation: "'Cry over spilt milk' means to be upset about something that has already happened and cannot be changed.",
+        isCompleted: false
+    },
+    {
+        id: "14",
+        question: "What does 'Get cold feet' mean?",
+        options: [
+            { id: "A", text: "Become nervous and lose courage" },
+            { id: "B", text: "Feel physically cold" },
+            { id: "C", text: "Become extremely angry" },
+            { id: "D", text: "Make a quick decision" }
+        ],
+        rightOption: "A",
+        explanation: "'Get cold feet' means to become nervous or lose confidence before doing something.",
+        isCompleted: false
+    },
+    {
+        id: "15",
+        question: "What does 'Keep an eye on' mean?",
+        options: [
+            { id: "A", text: "Ignore completely" },
+            { id: "B", text: "Look away from something" },
+            { id: "C", text: "Watch or monitor carefully" },
+            { id: "D", text: "Memorise every detail" }
+        ],
+        rightOption: "C",
+        explanation: "'Keep an eye on' means to watch someone or something carefully.",
+        isCompleted: false
+    },
+    {
+        id: "16",
+        question: "What does 'Let the cat out of the bag' mean?",
+        options: [
+            { id: "A", text: "Lose something valuable" },
+            { id: "B", text: "Escape from a difficult situation" },
+            { id: "C", text: "Make a careless purchase" },
+            { id: "D", text: "Reveal a secret accidentally" }
+        ],
+        rightOption: "D",
+        explanation: "'Let the cat out of the bag' means to reveal a secret, often unintentionally.",
+        isCompleted: false
+    },
+    {
+        id: "17",
+        question: "What does 'Make both ends meet' mean?",
+        options: [
+            { id: "A", text: "Spend money freely" },
+            { id: "B", text: "Manage expenses within one's income" },
+            { id: "C", text: "Borrow money for luxury items" },
+            { id: "D", text: "Earn money without working" }
+        ],
+        rightOption: "B",
+        explanation: "'Make both ends meet' means to manage one's income so that it covers necessary expenses.",
+        isCompleted: false
+    },
+    {
+        id: "18",
+        question: "What does 'Miss the boat' mean?",
+        options: [
+            { id: "A", text: "Lose an opportunity" },
+            { id: "B", text: "Arrive early for an event" },
+            { id: "C", text: "Travel by the wrong route" },
+            { id: "D", text: "Change a plan successfully" }
+        ],
+        rightOption: "A",
+        explanation: "'Miss the boat' means to fail to take advantage of an opportunity.",
+        isCompleted: false
+    },
+    {
+        id: "19",
+        question: "What does 'On cloud nine' mean?",
+        options: [
+            { id: "A", text: "Feeling confused" },
+            { id: "B", text: "Feeling disappointed" },
+            { id: "C", text: "Extremely happy" },
+            { id: "D", text: "Feeling exhausted" }
+        ],
+        rightOption: "C",
+        explanation: "'On cloud nine' means feeling extremely happy or delighted.",
+        isCompleted: false
+    },
+    {
+        id: "20",
+        question: "What does 'Pull someone's leg' mean?",
+        options: [
+            { id: "A", text: "Help someone walk" },
+            { id: "B", text: "Criticise someone harshly" },
+            { id: "C", text: "Ask someone for help" },
+            { id: "D", text: "Tease or joke with someone" }
+        ],
+        rightOption: "D",
+        explanation: "'Pull someone's leg' means to tease someone or trick them playfully.",
+        isCompleted: false
+    },
+    {
+        id: "21",
+        question: "What does 'Through thick and thin' mean?",
+        options: [
+            { id: "A", text: "During good times only" },
+            { id: "B", text: "In all circumstances, good or bad" },
+            { id: "C", text: "Without making a decision" },
+            { id: "D", text: "After a long delay" }
+        ],
+        rightOption: "B",
+        explanation: "'Through thick and thin' means remaining loyal or continuing despite difficulties.",
+        isCompleted: false
+    },
+    {
+        id: "22",
+        question: "What does 'Add fuel to the fire' mean?",
+        options: [
+            { id: "A", text: "Make a bad situation worse" },
+            { id: "B", text: "Resolve a disagreement peacefully" },
+            { id: "C", text: "Prevent a conflict" },
+            { id: "D", text: "Help someone relax" }
+        ],
+        rightOption: "A",
+        explanation: "'Add fuel to the fire' means to make an already bad or tense situation worse.",
+        isCompleted: false
+    },
+    {
+        id: "23",
+        question: "What does 'At the eleventh hour' mean?",
+        options: [
+            { id: "A", text: "At the beginning of a task" },
+            { id: "B", text: "Exactly at eleven o'clock" },
+            { id: "C", text: "At the last possible moment" },
+            { id: "D", text: "After a long period of waiting" }
+        ],
+        rightOption: "C",
+        explanation: "'At the eleventh hour' means at the very last moment before it is too late.",
+        isCompleted: false
+    },
+    {
+        id: "24",
+        question: "What does 'A storm in a teacup' mean?",
+        options: [
+            { id: "A", text: "A serious natural disaster" },
+            { id: "B", text: "An unexpected success" },
+            { id: "C", text: "A difficult journey" },
+            { id: "D", text: "A great deal of fuss over a small matter" }
+        ],
+        rightOption: "D",
+        explanation: "'A storm in a teacup' describes excessive excitement or anger over a trivial issue.",
+        isCompleted: false
+    },
+    {
+        id: "25",
+        question: "What does 'The ball is in your court' mean?",
+        options: [
+            { id: "A", text: "You have lost the competition" },
+            { id: "B", text: "It is your turn to act or make a decision" },
+            { id: "C", text: "You must follow someone else's decision" },
+            { id: "D", text: "You should stop participating" }
+        ],
+        rightOption: "B",
+        explanation: "'The ball is in your court' means that it is now your responsibility to take the next step.",
+        isCompleted: false
+    },
+    {
+        id: "26",
+        question: "What does 'Barking up the wrong tree' mean?",
+        options: [
+            { id: "A", text: "Following the wrong idea or accusing the wrong person" },
+            { id: "B", text: "Making a sensible decision" },
+            { id: "C", text: "Working with great care" },
+            { id: "D", text: "Finding the correct answer" }
+        ],
+        rightOption: "A",
+        explanation: "'Barking up the wrong tree' means pursuing a mistaken course or blaming the wrong person.",
+        isCompleted: false
+    },
+    {
+        id: "27",
+        question: "What does 'Bury the hatchet' mean?",
+        options: [
+            { id: "A", text: "Hide valuable objects" },
+            { id: "B", text: "Prepare for a fight" },
+            { id: "C", text: "End a quarrel and make peace" },
+            { id: "D", text: "Forget an important duty" }
+        ],
+        rightOption: "C",
+        explanation: "'Bury the hatchet' means to end a disagreement and become friendly again.",
+        isCompleted: false
+    },
+    {
+        id: "28",
+        question: "What does 'By leaps and bounds' mean?",
+        options: [
+            { id: "A", text: "Very slowly" },
+            { id: "B", text: "Without any progress" },
+            { id: "C", text: "In an uncertain way" },
+            { id: "D", text: "Very rapidly and significantly" }
+        ],
+        rightOption: "D",
+        explanation: "'By leaps and bounds' means making progress very quickly.",
+        isCompleted: false
+    },
+    {
+        id: "29",
+        question: "What does 'Face the music' mean?",
+        options: [
+            { id: "A", text: "Enjoy a musical performance" },
+            { id: "B", text: "Accept the consequences of one's actions" },
+            { id: "C", text: "Avoid being blamed" },
+            { id: "D", text: "Celebrate an achievement" }
+        ],
+        rightOption: "B",
+        explanation: "'Face the music' means to accept the unpleasant consequences of one's actions.",
+        isCompleted: false
+    },
+    {
+        id: "30",
+        question: "What does 'Get out of hand' mean?",
+        options: [
+            { id: "A", text: "Become difficult to control" },
+            { id: "B", text: "Become well organised" },
+            { id: "C", text: "Finish earlier than expected" },
+            { id: "D", text: "Be handled carefully" }
+        ],
+        rightOption: "A",
+        explanation: "'Get out of hand' means to become uncontrollable.",
+        isCompleted: false
+    },
+    {
+        id: "31",
+        question: "What does 'Give someone the cold shoulder' mean?",
+        options: [
+            { id: "A", text: "Offer someone a warm welcome" },
+            { id: "B", text: "Give someone medical treatment" },
+            { id: "C", text: "Ignore someone deliberately" },
+            { id: "D", text: "Help someone in trouble" }
+        ],
+        rightOption: "C",
+        explanation: "'Give someone the cold shoulder' means to deliberately ignore or show unfriendliness toward them.",
+        isCompleted: false
+    },
+    {
+        id: "32",
+        question: "What does 'In hot water' mean?",
+        options: [
+            { id: "A", text: "Feeling relaxed" },
+            { id: "B", text: "Enjoying a holiday" },
+            { id: "C", text: "Being in a comfortable position" },
+            { id: "D", text: "Being in trouble" }
+        ],
+        rightOption: "D",
+        explanation: "'In hot water' means being in difficulty or trouble.",
+        isCompleted: false
+    },
+    {
+        id: "33",
+        question: "What does 'Keep one's fingers crossed' mean?",
+        options: [
+            { id: "A", text: "Hope for a good outcome" },
+            { id: "B", text: "Express anger openly" },
+            { id: "C", text: "Refuse to cooperate" },
+            { id: "D", text: "Make a promise" }
+        ],
+        rightOption: "A",
+        explanation: "'Keep one's fingers crossed' means to hope that something will happen favourably.",
+        isCompleted: false
+    },
+    {
+        id: "34",
+        question: "What does 'Leave no stone unturned' mean?",
+        options: [
+            { id: "A", text: "Give up after one attempt" },
+            { id: "B", text: "Try every possible method" },
+            { id: "C", text: "Avoid taking responsibility" },
+            { id: "D", text: "Make a problem more complicated" }
+        ],
+        rightOption: "B",
+        explanation: "'Leave no stone unturned' means to make every possible effort to achieve something.",
+        isCompleted: false
+    },
+    {
+        id: "35",
+        question: "What does 'Make a mountain out of a molehill' mean?",
+        options: [
+            { id: "A", text: "Complete a difficult task easily" },
+            { id: "B", text: "Ignore a serious problem" },
+            { id: "C", text: "Exaggerate a small problem" },
+            { id: "D", text: "Turn a failure into success" }
+        ],
+        rightOption: "C",
+        explanation: "This idiom means to make a minor issue seem much more serious than it is.",
+        isCompleted: false
+    },
+    {
+        id: "36",
+        question: "What does 'Put all your eggs in one basket' mean?",
+        options: [
+            { id: "A", text: "Prepare carefully for every possibility" },
+            { id: "B", text: "Share resources equally" },
+            { id: "C", text: "Avoid making any plans" },
+            { id: "D", text: "Risk everything on a single plan or choice" }
+        ],
+        rightOption: "D",
+        explanation: "This idiom warns against risking everything on one option or course of action.",
+        isCompleted: false
+    },
+    {
+        id: "37",
+        question: "What does 'Rain cats and dogs' mean?",
+        options: [
+            { id: "A", text: "Rain very heavily" },
+            { id: "B", text: "Rain for a few minutes" },
+            { id: "C", text: "Experience a drought" },
+            { id: "D", text: "Have cloudy weather without rain" }
+        ],
+        rightOption: "A",
+        explanation: "'Rain cats and dogs' means to rain very heavily.",
+        isCompleted: false
+    },
+    {
+        id: "38",
+        question: "What does 'See eye to eye' mean?",
+        options: [
+            { id: "A", text: "Watch someone carefully" },
+            { id: "B", text: "Agree with someone" },
+            { id: "C", text: "Compete with someone" },
+            { id: "D", text: "Look at something closely" }
+        ],
+        rightOption: "B",
+        explanation: "'See eye to eye' means to agree with someone on an issue.",
+        isCompleted: false
+    },
+    {
+        id: "39",
+        question: "What does 'Sit on the fence' mean?",
+        options: [
+            { id: "A", text: "Defend one side strongly" },
+            { id: "B", text: "Make a final decision" },
+            { id: "C", text: "Remain neutral and avoid choosing a side" },
+            { id: "D", text: "Withdraw from a competition" }
+        ],
+        rightOption: "C",
+        explanation: "'Sit on the fence' means to avoid taking sides in a disagreement or decision.",
+        isCompleted: false
+    },
+    {
+        id: "40",
+        question: "What does 'Take with a grain of salt' mean?",
+        options: [
+            { id: "A", text: "Accept everything as completely true" },
+            { id: "B", text: "Remember every detail" },
+            { id: "C", text: "Repeat information exactly" },
+            { id: "D", text: "Treat something with some scepticism" }
+        ],
+        rightOption: "D",
+        explanation: "'Take with a grain of salt' means not to accept something as completely true without question.",
+        isCompleted: false
+    },
+    {
+        id: "41",
+        question: "What does 'The last straw' mean?",
+        options: [
+            { id: "A", text: "The first sign of success" },
+            { id: "B", text: "The final problem that makes a situation unbearable" },
+            { id: "C", text: "A minor inconvenience that is easily forgotten" },
+            { id: "D", text: "An unexpected reward" }
+        ],
+        rightOption: "B",
+        explanation: "'The last straw' is the final difficulty that makes someone lose patience or decide they cannot continue.",
+        isCompleted: false
+    },
+    {
+        id: "42",
+        question: "What does 'Throw in the towel' mean?",
+        options: [
+            { id: "A", text: "Admit defeat and give up" },
+            { id: "B", text: "Start a competition" },
+            { id: "C", text: "Work harder than before" },
+            { id: "D", text: "Celebrate a victory" }
+        ],
+        rightOption: "A",
+        explanation: "'Throw in the towel' means to admit defeat or stop trying.",
+        isCompleted: false
+    },
+    {
+        id: "43",
+        question: "What does 'Turn a blind eye' mean?",
+        options: [
+            { id: "A", text: "Observe everything carefully" },
+            { id: "B", text: "Help someone understand a problem" },
+            { id: "C", text: "Deliberately ignore something wrong" },
+            { id: "D", text: "Refuse to look at a photograph" }
+        ],
+        rightOption: "C",
+        explanation: "'Turn a blind eye' means to deliberately ignore something, especially something wrong.",
+        isCompleted: false
+    },
+    {
+        id: "44",
+        question: "What does 'Up in the air' mean?",
+        options: [
+            { id: "A", text: "Completely finished" },
+            { id: "B", text: "Clearly understood" },
+            { id: "C", text: "Certain to happen" },
+            { id: "D", text: "Still undecided or uncertain" }
+        ],
+        rightOption: "D",
+        explanation: "'Up in the air' means that a plan or decision has not yet been settled.",
+        isCompleted: false
+    },
+    {
+        id: "45",
+        question: "What does 'A hard nut to crack' mean?",
+        options: [
+            { id: "A", text: "A simple task" },
+            { id: "B", text: "A difficult problem or person to deal with" },
+            { id: "C", text: "An easy person to persuade" },
+            { id: "D", text: "A pleasant surprise" }
+        ],
+        rightOption: "B",
+        explanation: "'A hard nut to crack' refers to a difficult problem or someone difficult to understand or persuade.",
+        isCompleted: false
+    },
+    {
+        id: "46",
+        question: "What does 'A white elephant' mean?",
+        options: [
+            { id: "A", text: "A costly possession that is difficult to maintain and not very useful" },
+            { id: "B", text: "A valuable and profitable investment" },
+            { id: "C", text: "A rare opportunity for success" },
+            { id: "D", text: "A simple and inexpensive gift" }
+        ],
+        rightOption: "A",
+        explanation: "'A white elephant' is a possession or project that is expensive to maintain but has little practical value.",
+        isCompleted: false
+    },
+    {
+        id: "47",
+        question: "What does 'A bolt from the blue' mean?",
+        options: [
+            { id: "A", text: "A carefully planned event" },
+            { id: "B", text: "A predictable outcome" },
+            { id: "C", text: "A sudden and unexpected event" },
+            { id: "D", text: "A minor daily inconvenience" }
+        ],
+        rightOption: "C",
+        explanation: "'A bolt from the blue' means a sudden and completely unexpected event.",
+        isCompleted: false
+    },
+    {
+        id: "48",
+        question: "What does 'Apple of one's eye' mean?",
+        options: [
+            { id: "A", text: "A person who causes trouble" },
+            { id: "B", text: "Someone who is easily fooled" },
+            { id: "C", text: "A person who is widely disliked" },
+            { id: "D", text: "Someone who is loved and cherished greatly" }
+        ],
+        rightOption: "D",
+        explanation: "'Apple of one's eye' refers to someone who is especially loved or treasured.",
+        isCompleted: false
+    },
+    {
+        id: "49",
+        question: "What does 'Beggars cannot be choosers' mean?",
+        options: [
+            { id: "A", text: "Everyone should demand the best option" },
+            { id: "B", text: "People who depend on others should not be overly demanding" },
+            { id: "C", text: "Asking for help is always wrong" },
+            { id: "D", text: "People should never accept assistance" }
+        ],
+        rightOption: "B",
+        explanation: "The idiom means that people who need help or have few options may have to accept what is offered.",
+        isCompleted: false
+    },
+    {
+        id: "50",
+        question: "What does 'Birds of a feather flock together' mean?",
+        options: [
+            { id: "A", text: "People with similar interests or qualities tend to associate with each other" },
+            { id: "B", text: "People with different views always become friends" },
+            { id: "C", text: "Friends should always live together" },
+            { id: "D", text: "Success depends entirely on luck" }
+        ],
+        rightOption: "A",
+        explanation: "This idiom means that people who share similar characteristics tend to spend time together.",
+        isCompleted: false
+    },
+    {
+        id: "51",
+        question: "What does 'Every cloud has a silver lining' mean?",
+        options: [
+            { id: "A", text: "Bad weather always ends quickly" },
+            { id: "B", text: "Success comes without effort" },
+            { id: "C", text: "Every difficult situation has some positive aspect" },
+            { id: "D", text: "Problems should always be ignored" }
+        ],
+        rightOption: "C",
+        explanation: "This idiom expresses the idea that even a difficult situation may have something positive in it.",
+        isCompleted: false
+    },
+    {
+        id: "52",
+        question: "What does 'Fortune favours the brave' mean?",
+        options: [
+            { id: "A", text: "Only wealthy people become successful" },
+            { id: "B", text: "Luck never affects success" },
+            { id: "C", text: "Caution always leads to failure" },
+            { id: "D", text: "Courageous people are more likely to seize opportunities" }
+        ],
+        rightOption: "D",
+        explanation: "The saying suggests that people who act courageously are more likely to take advantage of opportunities.",
+        isCompleted: false
+    },
+    {
+        id: "53",
+        question: "What does 'Kill two birds with one stone' mean?",
+        options: [
+            { id: "A", text: "Create two problems at once" },
+            { id: "B", text: "Achieve two objectives with a single action" },
+            { id: "C", text: "Waste time on unnecessary tasks" },
+            { id: "D", text: "Complete one task twice" }
+        ],
+        rightOption: "B",
+        explanation: "This idiom means to accomplish two purposes with one action.",
+        isCompleted: false
+    },
+    {
+        id: "54",
+        question: "What does 'Actions speak louder than words' mean?",
+        options: [
+            { id: "A", text: "What people do matters more than what they say" },
+            { id: "B", text: "Speaking loudly wins every argument" },
+            { id: "C", text: "Promises are always reliable" },
+            { id: "D", text: "Words are more important than deeds" }
+        ],
+        rightOption: "A",
+        explanation: "The saying means that a person's actions reveal their intentions more clearly than their words.",
+        isCompleted: false
+    },
+    {
+        id: "55",
+        question: "What does 'Rome was not built in a day' mean?",
+        options: [
+            { id: "A", text: "Large cities should be built quickly" },
+            { id: "B", text: "Every plan succeeds immediately" },
+            { id: "C", text: "Important achievements require time and patience" },
+            { id: "D", text: "History should never be studied" }
+        ],
+        rightOption: "C",
+        explanation: "This saying means that significant achievements take time, effort, and patience.",
+        isCompleted: false
+    }
+];
+
+export const spellingCorrectionQuestions = [
+    {
+        id: "1",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Accomodation" },
+            { id: "B", text: "Accommodation" },
+            { id: "C", text: "Acommodation" },
+            { id: "D", text: "Accommadation" }
+        ],
+        rightOption: "B",
+        explanation: "Accommodation is the correct spelling, with double 'c' and double 'm'.",
+        isCompleted: false
+    },
+    {
+        id: "2",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Acquaintance" },
+            { id: "B", text: "Aquaintance" },
+            { id: "C", text: "Acquaintence" },
+            { id: "D", text: "Aqcuaintance" }
+        ],
+        rightOption: "A",
+        explanation: "Acquaintance is the correct spelling.",
+        isCompleted: false
+    },
+    {
+        id: "3",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Apparant" },
+            { id: "B", text: "Aparent" },
+            { id: "C", text: "Apparent" },
+            { id: "D", text: "Apparrent" }
+        ],
+        rightOption: "C",
+        explanation: "Apparent is spelled with double 'p' and one 'r'.",
+        isCompleted: false
+    },
+    {
+        id: "4",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Arguement" },
+            { id: "B", text: "Arrgument" },
+            { id: "C", text: "Argument" },
+            { id: "D", text: "Argumant" }
+        ],
+        rightOption: "C",
+        explanation: "Argument is the correct spelling; there is no 'e' after 'u'.",
+        isCompleted: false
+    },
+    {
+        id: "5",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Begining" },
+            { id: "B", text: "Begginning" },
+            { id: "C", text: "Begininng" },
+            { id: "D", text: "Beginning" }
+        ],
+        rightOption: "D",
+        explanation: "Beginning is spelled with one 'g' followed by double 'n'.",
+        isCompleted: false
+    },
+    {
+        id: "6",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Believe" },
+            { id: "B", text: "Beleive" },
+            { id: "C", text: "Belive" },
+            { id: "D", text: "Beleave" }
+        ],
+        rightOption: "A",
+        explanation: "Believe follows the 'i before e' pattern.",
+        isCompleted: false
+    },
+    {
+        id: "7",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Calender" },
+            { id: "B", text: "Callendar" },
+            { id: "C", text: "Calendar" },
+            { id: "D", text: "Calandar" }
+        ],
+        rightOption: "C",
+        explanation: "Calendar is the correct spelling, with 'a' in the second syllable.",
+        isCompleted: false
+    },
+    {
+        id: "8",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Cemetary" },
+            { id: "B", text: "Cemetery" },
+            { id: "C", text: "Semetery" },
+            { id: "D", text: "Cemetry" }
+        ],
+        rightOption: "B",
+        explanation: "Cemetery is the correct spelling.",
+        isCompleted: false
+    },
+    {
+        id: "9",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Conscience" },
+            { id: "B", text: "Consciense" },
+            { id: "C", text: "Conscince" },
+            { id: "D", text: "Conshience" }
+        ],
+        rightOption: "A",
+        explanation: "Conscience is spelled with 'sc' followed by 'ience'.",
+        isCompleted: false
+    },
+    {
+        id: "10",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Concious" },
+            { id: "B", text: "Conscous" },
+            { id: "C", text: "Consious" },
+            { id: "D", text: "Conscious" }
+        ],
+        rightOption: "D",
+        explanation: "Conscious is the correct spelling, containing 'sci'.",
+        isCompleted: false
+    },
+    {
+        id: "11",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Definately" },
+            { id: "B", text: "Definitely" },
+            { id: "C", text: "Definitly" },
+            { id: "D", text: "Definetely" }
+        ],
+        rightOption: "B",
+        explanation: "Definitely is spelled with 'ite' in the middle.",
+        isCompleted: false
+    },
+    {
+        id: "12",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Embarass" },
+            { id: "B", text: "Embarrass" },
+            { id: "C", text: "Embaras" },
+            { id: "D", text: "Embarras" }
+        ],
+        rightOption: "B",
+        explanation: "Embarrass has double 'r' and double 's'.",
+        isCompleted: false
+    },
+    {
+        id: "13",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Enviroment" },
+            { id: "B", text: "Environmant" },
+            { id: "C", text: "Environment" },
+            { id: "D", text: "Envirnoment" }
+        ],
+        rightOption: "C",
+        explanation: "Environment is the correct spelling, with 'n' after 'o'.",
+        isCompleted: false
+    },
+    {
+        id: "14",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Exagerate" },
+            { id: "B", text: "Exaggerrate" },
+            { id: "C", text: "Exagerrate" },
+            { id: "D", text: "Exaggerate" }
+        ],
+        rightOption: "D",
+        explanation: "Exaggerate is spelled with double 'g' and one 'r'.",
+        isCompleted: false
+    },
+    {
+        id: "15",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Existence" },
+            { id: "B", text: "Existance" },
+            { id: "C", text: "Exsistence" },
+            { id: "D", text: "Existancee" }
+        ],
+        rightOption: "A",
+        explanation: "Existence is the correct spelling, ending in 'ence'.",
+        isCompleted: false
+    },
+    {
+        id: "16",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Foriegn" },
+            { id: "B", text: "Forein" },
+            { id: "C", text: "Foreign" },
+            { id: "D", text: "Foriegn" }
+        ],
+        rightOption: "C",
+        explanation: "Foreign is spelled with 'e' before 'i'.",
+        isCompleted: false
+    },
+    {
+        id: "17",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Goverment" },
+            { id: "B", text: "Government" },
+            { id: "C", text: "Governmant" },
+            { id: "D", text: "Goverenment" }
+        ],
+        rightOption: "B",
+        explanation: "Government is spelled with 'n' after 'r'.",
+        isCompleted: false
+    },
+    {
+        id: "18",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Gaurantee" },
+            { id: "B", text: "Guarentee" },
+            { id: "C", text: "Guaranty" },
+            { id: "D", text: "Guarantee" }
+        ],
+        rightOption: "D",
+        explanation: "Guarantee is the correct spelling.",
+        isCompleted: false
+    },
+    {
+        id: "19",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Independent" },
+            { id: "B", text: "Independant" },
+            { id: "C", text: "Independet" },
+            { id: "D", text: "Indepandent" }
+        ],
+        rightOption: "A",
+        explanation: "Independent is spelled with 'ent' at the end.",
+        isCompleted: false
+    },
+    {
+        id: "20",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Inteligent" },
+            { id: "B", text: "Intelligant" },
+            { id: "C", text: "Intelligent" },
+            { id: "D", text: "Intellegent" }
+        ],
+        rightOption: "C",
+        explanation: "Intelligent has double 'l' and ends in 'ent'.",
+        isCompleted: false
+    },
+    {
+        id: "21",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Maintainance" },
+            { id: "B", text: "Maintenance" },
+            { id: "C", text: "Maintenence" },
+            { id: "D", text: "Maintanance" }
+        ],
+        rightOption: "B",
+        explanation: "Maintenance is the correct spelling.",
+        isCompleted: false
+    },
+    {
+        id: "22",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Mischevious" },
+            { id: "B", text: "Mischievious" },
+            { id: "C", text: "Mischeivous" },
+            { id: "D", text: "Mischievous" }
+        ],
+        rightOption: "D",
+        explanation: "Mischievous is spelled without an extra 'i' before 'ous'.",
+        isCompleted: false
+    },
+    {
+        id: "23",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Necessary" },
+            { id: "B", text: "Neccessary" },
+            { id: "C", text: "Necesary" },
+            { id: "D", text: "Necassary" }
+        ],
+        rightOption: "A",
+        explanation: "Necessary has one 'c' and double 's'.",
+        isCompleted: false
+    },
+    {
+        id: "24",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Ocassion" },
+            { id: "B", text: "Occassion" },
+            { id: "C", text: "Occasion" },
+            { id: "D", text: "Occation" }
+        ],
+        rightOption: "C",
+        explanation: "Occasion has double 'c' and one 's'.",
+        isCompleted: false
+    },
+    {
+        id: "25",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Ocurrence" },
+            { id: "B", text: "Occurrence" },
+            { id: "C", text: "Occurence" },
+            { id: "D", text: "Occurrance" }
+        ],
+        rightOption: "B",
+        explanation: "Occurrence has double 'c' and double 'r'.",
+        isCompleted: false
+    },
+    {
+        id: "26",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Paralel" },
+            { id: "B", text: "Parrallel" },
+            { id: "C", text: "Parralel" },
+            { id: "D", text: "Parallel" }
+        ],
+        rightOption: "D",
+        explanation: "Parallel has one 'r' and double 'l'.",
+        isCompleted: false
+    },
+    {
+        id: "27",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Privilege" },
+            { id: "B", text: "Privelege" },
+            { id: "C", text: "Priviledge" },
+            { id: "D", text: "Privlege" }
+        ],
+        rightOption: "A",
+        explanation: "Privilege is the correct spelling; it does not contain a 'd'.",
+        isCompleted: false
+    },
+    {
+        id: "28",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Pronounciation" },
+            { id: "B", text: "Pronunciaton" },
+            { id: "C", text: "Pronunciation" },
+            { id: "D", text: "Pronuncation" }
+        ],
+        rightOption: "C",
+        explanation: "Pronunciation is the correct spelling, without an extra 'o'.",
+        isCompleted: false
+    },
+    {
+        id: "29",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Questionaire" },
+            { id: "B", text: "Questionnaire" },
+            { id: "C", text: "Questionnair" },
+            { id: "D", text: "Questionnare" }
+        ],
+        rightOption: "B",
+        explanation: "Questionnaire is spelled with double 'n' and ends in 'aire'.",
+        isCompleted: false
+    },
+    {
+        id: "30",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Recieve" },
+            { id: "B", text: "Receeve" },
+            { id: "C", text: "Receve" },
+            { id: "D", text: "Receive" }
+        ],
+        rightOption: "D",
+        explanation: "Receive follows the 'i before e except after c' spelling rule.",
+        isCompleted: false
+    },
+    {
+        id: "31",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Recommend" },
+            { id: "B", text: "Reccomend" },
+            { id: "C", text: "Recomend" },
+            { id: "D", text: "Recommmend" }
+        ],
+        rightOption: "A",
+        explanation: "Recommend has one 'c' and double 'm'.",
+        isCompleted: false
+    },
+    {
+        id: "32",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Seperate" },
+            { id: "B", text: "Seperete" },
+            { id: "C", text: "Separate" },
+            { id: "D", text: "Separrate" }
+        ],
+        rightOption: "C",
+        explanation: "Separate is spelled with 'a' in the middle syllable.",
+        isCompleted: false
+    },
+    {
+        id: "33",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Succesful" },
+            { id: "B", text: "Successful" },
+            { id: "C", text: "Successfull" },
+            { id: "D", text: "Sucessful" }
+        ],
+        rightOption: "B",
+        explanation: "Successful has double 'c' and double 's', but one 'l' at the end.",
+        isCompleted: false
+    },
+    {
+        id: "34",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Tommorow" },
+            { id: "B", text: "Tomorow" },
+            { id: "C", text: "Tommorrow" },
+            { id: "D", text: "Tomorrow" }
+        ],
+        rightOption: "D",
+        explanation: "Tomorrow has one 'm' and double 'r'.",
+        isCompleted: false
+    },
+    {
+        id: "35",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Vacuum" },
+            { id: "B", text: "Vaccum" },
+            { id: "C", text: "Vacume" },
+            { id: "D", text: "Vacuume" }
+        ],
+        rightOption: "A",
+        explanation: "Vacuum is spelled with double 'u'.",
+        isCompleted: false
+    },
+    {
+        id: "36",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Wierd" },
+            { id: "B", text: "Weard" },
+            { id: "C", text: "Weird" },
+            { id: "D", text: "Weired" }
+        ],
+        rightOption: "C",
+        explanation: "Weird is the correct spelling, with 'e' before 'i'.",
+        isCompleted: false
+    },
+    {
+        id: "37",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Resturant" },
+            { id: "B", text: "Restaurant" },
+            { id: "C", text: "Restaurent" },
+            { id: "D", text: "Resteraunt" }
+        ],
+        rightOption: "B",
+        explanation: "Restaurant is the correct spelling.",
+        isCompleted: false
+    },
+    {
+        id: "38",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Febuary" },
+            { id: "B", text: "Febraury" },
+            { id: "C", text: "Februrary" },
+            { id: "D", text: "February" }
+        ],
+        rightOption: "D",
+        explanation: "February is spelled with an 'r' after 'b' and another 'r' before 'y'.",
+        isCompleted: false
+    },
+    {
+        id: "39",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Discipline" },
+            { id: "B", text: "Disipline" },
+            { id: "C", text: "Dicipline" },
+            { id: "D", text: "Disciplene" }
+        ],
+        rightOption: "A",
+        explanation: "Discipline is the correct spelling.",
+        isCompleted: false
+    },
+    {
+        id: "40",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Enterpreneur" },
+            { id: "B", text: "Entreprenuer" },
+            { id: "C", text: "Entrepreneur" },
+            { id: "D", text: "Entreprenur" }
+        ],
+        rightOption: "C",
+        explanation: "Entrepreneur is the correct spelling.",
+        isCompleted: false
+    },
+    {
+        id: "41",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Harrassment" },
+            { id: "B", text: "Harassment" },
+            { id: "C", text: "Harasment" },
+            { id: "D", text: "Harrasment" }
+        ],
+        rightOption: "B",
+        explanation: "Harassment has one 'r' and double 's'.",
+        isCompleted: false
+    },
+    {
+        id: "42",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Liaision" },
+            { id: "B", text: "Liason" },
+            { id: "C", text: "Liasion" },
+            { id: "D", text: "Liaison" }
+        ],
+        rightOption: "D",
+        explanation: "Liaison is the correct spelling.",
+        isCompleted: false
+    },
+    {
+        id: "43",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Millennium" },
+            { id: "B", text: "Millenium" },
+            { id: "C", text: "Milennium" },
+            { id: "D", text: "Millennum" }
+        ],
+        rightOption: "A",
+        explanation: "Millennium has double 'l' and double 'n'.",
+        isCompleted: false
+    },
+    {
+        id: "44",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Perseverence" },
+            { id: "B", text: "Perserverance" },
+            { id: "C", text: "Perseverance" },
+            { id: "D", text: "Perseveranse" }
+        ],
+        rightOption: "C",
+        explanation: "Perseverance is the correct spelling.",
+        isCompleted: false
+    },
+    {
+        id: "45",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Relevent" },
+            { id: "B", text: "Relevant" },
+            { id: "C", text: "Relavent" },
+            { id: "D", text: "Relevunt" }
+        ],
+        rightOption: "B",
+        explanation: "Relevant is spelled with 'a' in the second syllable.",
+        isCompleted: false
+    },
+    {
+        id: "46",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Rythym" },
+            { id: "B", text: "Rhythym" },
+            { id: "C", text: "Rhythem" },
+            { id: "D", text: "Rhythm" }
+        ],
+        rightOption: "D",
+        explanation: "Rhythm is spelled without a vowel between 'h' and 'm'.",
+        isCompleted: false
+    },
+    {
+        id: "47",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Sincerely" },
+            { id: "B", text: "Sincerly" },
+            { id: "C", text: "Sincerelly" },
+            { id: "D", text: "Sincerley" }
+        ],
+        rightOption: "A",
+        explanation: "Sincerely is the correct spelling.",
+        isCompleted: false
+    },
+    {
+        id: "48",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Threshhold" },
+            { id: "B", text: "Thresold" },
+            { id: "C", text: "Threshold" },
+            { id: "D", text: "Threshould" }
+        ],
+        rightOption: "C",
+        explanation: "Threshold is the correct spelling.",
+        isCompleted: false
+    },
+    {
+        id: "49",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Twelveth" },
+            { id: "B", text: "Twelfth" },
+            { id: "C", text: "Twelth" },
+            { id: "D", text: "Twelvth" }
+        ],
+        rightOption: "B",
+        explanation: "Twelfth is the correct spelling of the ordinal form of twelve.",
+        isCompleted: false
+    },
+    {
+        id: "50",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Writting" },
+            { id: "B", text: "Writeing" },
+            { id: "C", text: "Writen" },
+            { id: "D", text: "Writing" }
+        ],
+        rightOption: "D",
+        explanation: "Writing is formed by dropping the final 'e' from write and adding 'ing'.",
+        isCompleted: false
+    },
+    {
+        id: "51",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Achievement" },
+            { id: "B", text: "Acheivement" },
+            { id: "C", text: "Achievment" },
+            { id: "D", text: "Acheivment" }
+        ],
+        rightOption: "A",
+        explanation: "Achievement is the correct spelling.",
+        isCompleted: false
+    },
+    {
+        id: "52",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Buisness" },
+            { id: "B", text: "Busness" },
+            { id: "C", text: "Business" },
+            { id: "D", text: "Bussiness" }
+        ],
+        rightOption: "C",
+        explanation: "Business is the correct spelling.",
+        isCompleted: false
+    },
+    {
+        id: "53",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Comittee" },
+            { id: "B", text: "Committee" },
+            { id: "C", text: "Committe" },
+            { id: "D", text: "Comitee" }
+        ],
+        rightOption: "B",
+        explanation: "Committee has double 'm', double 't', and double 'e'.",
+        isCompleted: false
+    },
+    {
+        id: "54",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Existance" },
+            { id: "B", text: "Existense" },
+            { id: "C", text: "Exsistence" },
+            { id: "D", text: "Existence" }
+        ],
+        rightOption: "D",
+        explanation: "Existence is the correct spelling and ends in 'ence'.",
+        isCompleted: false
+    },
+    {
+        id: "55",
+        question: "Choose the correctly spelled word.",
+        options: [
+            { id: "A", text: "Pronunciation" },
+            { id: "B", text: "Pronounciation" },
+            { id: "C", text: "Pronunciaton" },
+            { id: "D", text: "Pronounciaton" }
+        ],
+        rightOption: "A",
+        explanation: "Pronunciation is the correct spelling, without an extra 'o'.",
         isCompleted: false
     }
 ];
